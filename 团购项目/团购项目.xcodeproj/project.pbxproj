@@ -289,6 +289,8 @@
 		C709C2C71DDA9F88007D7929 /* LDTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2B81DDA9F88007D7929 /* LDTimeViewController.m */; };
 		C718A8F31DDC2459003CD60F /* LDNextStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = C718A8F21DDC2459003CD60F /* LDNextStepView.m */; };
 		C718A8F61DDD4267003CD60F /* LDHTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C718A8F51DDD4267003CD60F /* LDHTTPTool.m */; };
+		C718A8F91DDD8B43003CD60F /* LDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C718A8F81DDD8B43003CD60F /* LDBaseViewController.m */; };
+		C718A8FD1DDD9E6B003CD60F /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = C718A8FC1DDD9E6B003CD60F /* UIView+Toast.m */; };
 		C75212451DDAD86500772012 /* LDRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75212441DDAD86500772012 /* LDRegisterView.m */; };
 		C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */ = {isa = PBXBuildFile; fileRef = C75212471DDADBDE00772012 /* LDThirdLoginview.m */; };
 		C75212501DDB05FD00772012 /* LDNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C752124F1DDB05FD00772012 /* LDNextViewController.m */; };
@@ -596,6 +598,10 @@
 		C718A8F21DDC2459003CD60F /* LDNextStepView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNextStepView.m; sourceTree = "<group>"; };
 		C718A8F41DDD4267003CD60F /* LDHTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDHTTPTool.h; sourceTree = "<group>"; };
 		C718A8F51DDD4267003CD60F /* LDHTTPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDHTTPTool.m; sourceTree = "<group>"; };
+		C718A8F71DDD8B43003CD60F /* LDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBaseViewController.h; sourceTree = "<group>"; };
+		C718A8F81DDD8B43003CD60F /* LDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBaseViewController.m; sourceTree = "<group>"; };
+		C718A8FB1DDD9E6B003CD60F /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		C718A8FC1DDD9E6B003CD60F /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		C75212431DDAD86500772012 /* LDRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDRegisterView.h; sourceTree = "<group>"; };
 		C75212441DDAD86500772012 /* LDRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDRegisterView.m; sourceTree = "<group>"; };
 		C75212461DDADBDE00772012 /* LDThirdLoginview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDThirdLoginview.h; sourceTree = "<group>"; };
@@ -1563,8 +1569,11 @@
 		C709C2911DDA9F88007D7929 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C718A8FA1DDD9E6B003CD60F /* Toast */,
 				C718A8F41DDD4267003CD60F /* LDHTTPTool.h */,
 				C718A8F51DDD4267003CD60F /* LDHTTPTool.m */,
+				C718A8F71DDD8B43003CD60F /* LDBaseViewController.h */,
+				C718A8F81DDD8B43003CD60F /* LDBaseViewController.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1775,6 +1784,15 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C718A8FA1DDD9E6B003CD60F /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				C718A8FB1DDD9E6B003CD60F /* UIView+Toast.h */,
+				C718A8FC1DDD9E6B003CD60F /* UIView+Toast.m */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		C752124A1DDB05E000772012 /* 下一步 */ = {
@@ -2205,7 +2223,9 @@
 				C709C2BE1DDA9F88007D7929 /* ViewController.m in Sources */,
 				C709C2C41DDA9F88007D7929 /* LDMyMessageTableView.m in Sources */,
 				C709C2BB1DDA9F88007D7929 /* LDNavController.m in Sources */,
+				C718A8F91DDD8B43003CD60F /* LDBaseViewController.m in Sources */,
 				C709C2BD1DDA9F88007D7929 /* AppDelegate.m in Sources */,
+				C718A8FD1DDD9E6B003CD60F /* UIView+Toast.m in Sources */,
 				C709C2BC1DDA9F88007D7929 /* LDTabbarController.m in Sources */,
 				C709C2C21DDA9F88007D7929 /* LDMessageCell.m in Sources */,
 				C709BFD41DD96166007D7929 /* main.m in Sources */,

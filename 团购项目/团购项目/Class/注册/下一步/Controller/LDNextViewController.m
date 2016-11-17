@@ -54,16 +54,18 @@
 //http://123.57.141.249:8080/beautalk/appMember/createCode.do
 -(void)requestVerificationCode{
     
-    [LDHTTPTool postWithURLString:@"appMember/createCode.do" parameters:@{@"MemberId":self.userMessageDic[@"phoneName"]}
+    [self postWithURLString:@"appMember/createCode.do" parameters:@{@"MemberId":self.userMessageDic[@"phoneName"]}
                  success:^(id responseObject) {
                      
                      LDDLog(@"%@",responseObject);
                      if ([responseObject[@"result"] isEqualToString:@"success"]) {
                          [self.nextView countdownTime];// //网络请求成功后，调用倒计时方法
                      }else if ([responseObject[@"result"] isEqualToString:@"TelephoneExistError"]){
-                         LDDLog(@"手机号已经被注册");
+                         //LDDLog(@"手机号已经被注册");
+                         [self showTostMessage:@"当前手机号已被注册"];
                      }else{
-                         LDDLog(@"验证码请求失败");
+                         //LDDLog(@"验证码请求失败");
+                          [self  showTostMessage:@"请求验证码失败,请重试"];
                      }
                      
                  } failure:^(NSError *error) {
@@ -100,7 +102,7 @@
      手机号：Telephone
      
      */
-    [LDHTTPTool  getWithURLString:@"appMember/appRegistration.do"
+    [self  getWithURLString:@"appMember/appRegistration.do"
               parameters:@{@"LoginName":_userMessageDic[@"phoneName"],
                            @"Lpassword":_userMessageDic[@"password"],
                            @"Code":code,
@@ -108,16 +110,18 @@
                  success:^(id responseObject) {
                      
                      if ([responseObject[@"result"] isEqualToString:@"success"]) {
-                         LDDLog(@"注册成功");
+                        // LDDLog(@"注册成功");
+                          [self showTostMessage:@"恭喜您注册成功"];
                      }else if ([responseObject[@"result"] isEqualToString:@"codeError"]){
                          
-                         LDDLog(@"验证码错误");
+                         //LDDLog(@"验证码错误");
+                         [self showTostMessage:@"验证码错误，请重新输入"];
                          
                      }else{
-                         LDDLog(@"注册失败");
+                         //LDDLog(@"注册失败");
+                          [self showTostMessage:@"注册失败"];
                      }
                      
-                     LDDLog(@"responseObject : %@",responseObject);
 
                  } failure:^(NSError *error) {
                      

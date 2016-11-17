@@ -6,9 +6,9 @@
 //  Copyright © 2016年 omni software. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LDBaseViewController.h"
 
-@interface LDNextViewController : UIViewController
+@interface LDNextViewController :LDBaseViewController
 @property(nonatomic,strong)NSDictionary *userMessageDic;//存储用户手机号和密码
 
 @end
