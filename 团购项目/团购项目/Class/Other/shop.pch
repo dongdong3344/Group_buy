@@ -1,0 +1,20 @@
+//
+//  shop.pch
+//  团购项目
+//
+//  Created by Ringo on 2016/11/14.
+//  Copyright © 2016年 omni software. All rights reserved.
+//
+
+#ifndef shop_pch
+#define shop_pch
+
+
+#import "Masonry.h"
+#import "UIImageView+WebCache.h"
+#import "AFNetworking.h"
+#import "macros.h"
+#import "LDHTTPTool.h"
+
+
+#endif /* shop_pch */
