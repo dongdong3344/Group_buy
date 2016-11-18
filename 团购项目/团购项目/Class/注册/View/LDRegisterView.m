@@ -10,7 +10,7 @@
 
 @interface LDRegisterView ()<UITextFieldDelegate>
 @property(strong,nonatomic)UITextField *phoneNumText, *passwordText;
-@property(strong,nonatomic)UIButton *nextStepBtn, *goLoginBtn;
+@property(strong,nonatomic)UIButton *nextStepBtn;
 @property(nonatomic,strong)UILabel *hintLabel,*textBackLabel,*midTextLineLabel;//提示标签,textfield背景，textfield中间那条线
 @property(nonatomic,strong)UIImageView *userNameImg,*passwordImg,*hintImage;
 
@@ -29,7 +29,7 @@
         [self addSubview:self.phoneNumText];//手机号
         [self addSubview:self.midTextLineLabel];//中间线
         [self addSubview:self.nextStepBtn];//下一步按钮
-        [self addSubview:self.goLoginBtn];//去登录按钮
+       
         [self addSubview:self.passwordImg];
         [self addSubview:self.userNameImg];
         [self addSubview:self.hintImage];
@@ -42,21 +42,21 @@
 -(UIImageView *)hintImage{
     
     if (!_hintImage) {
-        _hintImage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"usercenter_main_page_user_default_header"]];
+        _hintImage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Image"]];
     }
     return _hintImage;
 }
 
 -(UIImageView *)passwordImg{
     if (!_passwordImg) {
-        _passwordImg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"uctextfield_leftimage_passw"]];
+        _passwordImg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Login_password"]];
     }
     return _passwordImg;
 }
 
 -(UIImageView *)userNameImg{
     if (!_userNameImg) {
-        _userNameImg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"uctextfield_leftimage_icon"]];
+        _userNameImg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Register_cell"]];
     }
     return _userNameImg;
 }
@@ -97,6 +97,7 @@
     if (!_phoneNumText) {
         _phoneNumText=[[UITextField alloc]init];
         _phoneNumText.placeholder=@"请输入手机号码";
+        _phoneNumText.keyboardType=UIKeyboardTypeNumberPad;//设置数字键盘
         _phoneNumText.font=[UIFont systemFontOfSize:16];
         _phoneNumText.clearButtonMode=UITextFieldViewModeWhileEditing;
         [_phoneNumText addTarget:self action:@selector(phoneNumTextChangeText:) forControlEvents:UIControlEventEditingChanged];
@@ -125,7 +126,7 @@
 -(UIButton *)nextStepBtn{
     if (!_nextStepBtn) {
         _nextStepBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_nextStepBtn setTitle:@"下一步" forState:UIControlStateNormal];
+        [_nextStepBtn setTitle:@"下一步，验证手机号" forState:UIControlStateNormal];
         _nextStepBtn.layer.cornerRadius=5;
         
         _nextStepBtn.backgroundColor=RGBCOLOR(242, 131, 48);
@@ -138,15 +139,6 @@
     return _nextStepBtn;
     
 }
--(UIButton *)goLoginBtn{
-    
-    if (!_goLoginBtn) {
-        _goLoginBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_goLoginBtn setTitle:@"去登录" forState:UIControlStateNormal];
-        [_goLoginBtn setTitleColor:RGBCOLOR(56, 145, 241) forState:UIControlStateNormal];
-    }
-    return _goLoginBtn;
-}
 
 
 -(void)layoutSubviews{
@@ -155,13 +147,13 @@
     
     [_userNameImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
-        make.size.mas_equalTo(CGSizeMake(30, 20));
+        make.size.mas_equalTo(CGSizeMake(25, 20));
         make.top.equalTo(self.phoneNumText.mas_top).offset(12);
     }];
     
     [_passwordImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
-        make.size.mas_equalTo(CGSizeMake(30, 20));
+        make.size.mas_equalTo(CGSizeMake(25, 20));
         make.top.equalTo(self.passwordText.mas_top).offset(12);
     }];
     
@@ -169,12 +161,12 @@
     [ _hintImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(5);
         make.centerX.equalTo(self.mas_centerX);
-        make.size.mas_equalTo(CGSizeMake(80, 80));
+        make.size.mas_equalTo(CGSizeMake(100, 100));
     }];
     
     [_phoneNumText mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.mas_right);
-        make.left.equalTo(self.mas_left).offset(35);
+        make.left.equalTo(self.mas_left).offset(40);
         make.height.equalTo(@44);
         make.top.equalTo(self.textBackLabel.mas_top);
         
@@ -182,7 +174,7 @@
     
     [_passwordText mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self);
-        make.left.equalTo(self.mas_left).offset(35);
+        make.left.equalTo(self.mas_left).offset(40);
         make.height.equalTo(@44);
         make.top.equalTo(self.phoneNumText.mas_bottom).offset(1);
         
@@ -213,14 +205,6 @@
         
     }];
     
-    [_goLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.right.equalTo(self.mas_right).offset(-15);
-        make.height.equalTo(@16);
-        make.width.equalTo(@60);
-        make.top.equalTo(self.nextStepBtn.mas_bottom).offset(22);
-        
-    }];
 }
 
 

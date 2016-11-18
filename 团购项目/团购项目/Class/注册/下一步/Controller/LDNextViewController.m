@@ -22,12 +22,14 @@
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];//不设置颜色，页面切换时闪烁
     self.edgesForExtendedLayout=0;
-    self.title=@"验证手机号";
+    self.title=@"注册2/2";
     //LDDLog(@"用户名和密码是:%@",self.userMessageDic);
     
     [self.view addSubview:self.nextView];
+     [self.nextView countdownTime];// //网络请求成功后，调用倒计时方法
     [self requestVerificationCode];//请求验证码
     [self setupConstraints];
+   
   
 }
 
@@ -57,15 +59,16 @@
     [self postWithURLString:@"appMember/createCode.do" parameters:@{@"MemberId":self.userMessageDic[@"phoneName"]}
                  success:^(id responseObject) {
                      
-                     LDDLog(@"%@",responseObject);
+                     [NSThread sleepForTimeInterval:1.5];//1.5秒后执行显示信息，小圆圈先转1秒
+                     
                      if ([responseObject[@"result"] isEqualToString:@"success"]) {
-                         [self.nextView countdownTime];// //网络请求成功后，调用倒计时方法
+                        
                      }else if ([responseObject[@"result"] isEqualToString:@"TelephoneExistError"]){
-                         //LDDLog(@"手机号已经被注册");
-                         [self showTostMessage:@"当前手机号已被注册"];
+                           [self showTostMessage:@"当前手机号已被注册"];
                      }else{
                          //LDDLog(@"验证码请求失败");
                           [self  showTostMessage:@"请求验证码失败,请重试"];
+                         
                      }
                      
                  } failure:^(NSError *error) {
@@ -109,6 +112,8 @@
                            @"Telephone":_userMessageDic[@"phoneName"]}
                  success:^(id responseObject) {
                      
+                     [NSThread sleepForTimeInterval:1.5];//1.5秒后执行显示信息，小圆圈先转1秒
+                     
                      if ([responseObject[@"result"] isEqualToString:@"success"]) {
                         // LDDLog(@"注册成功");
                           [self showTostMessage:@"恭喜您注册成功"];
@@ -116,6 +121,7 @@
                          
                          //LDDLog(@"验证码错误");
                          [self showTostMessage:@"验证码错误，请重新输入"];
+                         self.nextView.VerificationText.text=@"";//清除当前输入的验证码
                          
                      }else{
                          //LDDLog(@"注册失败");

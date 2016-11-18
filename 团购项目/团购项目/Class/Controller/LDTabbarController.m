@@ -22,14 +22,14 @@
     
 }
 -(void)setupViewcontrollers{
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:56/255.0 green:165/255.0 blue:241/255.0 alpha:1]} forState:UIControlStateSelected];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:132/255.0 green:132/255.0 blue:132/255.0 alpha:1]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBCOLOR(7, 123, 251)} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132)} forState:UIControlStateNormal];
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_back"]];
     
     NSMutableArray *controllersArry=[NSMutableArray arrayWithArray:@ [@"LDTimeViewController",@"LDClassViewController",@"LDBuyCarViewController",@"LDMineViewController"]];
-    NSArray *images=@[@"菜单栏限时特卖按钮未选中状态",@"菜单栏分类按钮未选中状态",@"菜单栏购物车按钮未选中状态",@"菜单栏我的按钮未选中状态"];
-     NSArray *selectedImage=@[@"菜单栏限时特卖按钮选中状态",@"菜单栏分类按钮选中状态",@"菜单栏购物车按钮选中状态",@"菜单栏我的按钮选中状态"];
-    NSArray *titles=@[@"限时购",@"分类",@"购物车",@"我的"];
+    NSArray *images=@[@"home_xianshigou_btn_normal",@"home_class_btn_normal",@"home_buycar_btn_normal",@"home_personal_btn_normal"];
+     NSArray *selectedImage=@[@"home_xianshigou_btn_selected",@"home_class_btn_selected",@"home_buycar_btn_selected",@"home_personal_btn_highlighted"];
+    NSArray *titles=@[@"限时购",@"分类",@"购物车",@"我"];
     for (NSInteger i=0; i<controllersArry.count; i++) {
         NSString *controllerName=controllersArry[i];
         UIViewController *vc=[[NSClassFromString(controllerName) alloc]init];

@@ -14,7 +14,7 @@ typedef void(^NextStepViewBlock)(NSString *code);
 @interface LDNextStepView : UIView
 
 @property(nonatomic,strong)NSString *phoneNumberStr;//手机号码字符串
-
+@property(nonatomic,strong)UITextField *VerificationText;//验证码输入框
 @property(copy,nonatomic)NextStepViewBlock block;
 
 -(void)countdownTime;

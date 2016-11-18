@@ -10,15 +10,11 @@
 
 
 @interface LDNextStepView ()<UITextFieldDelegate>
-@property(nonatomic,strong)UILabel *hintLabel,*backLabel,*verticalLineLabel;//提示标签和背景,竖线
-@property(nonatomic,strong)UITextField *VerificationText;//验证码输入框
+@property(nonatomic,strong)UILabel *hintLabel,*backLabel;//提示标签和背景
+
 @property(nonatomic,strong)UIButton *countdownBtn,*registerBtn;//倒计时按钮,注册按钮
 
 @end
-
-
-
-
 
 @implementation LDNextStepView
 
@@ -29,7 +25,6 @@
         [self  addSubview:self.hintLabel];
         [self  addSubview:self.backLabel];
         [self  addSubview:self.VerificationText];
-        [self  addSubview:self.verticalLineLabel];
         [self  addSubview:self.countdownBtn];
         [self  addSubview:self.registerBtn];
        
@@ -40,7 +35,7 @@
 //创建计时器
 -(void)countdownTime{
     
-    __block NSInteger time =120;
+    __block NSInteger time =60;
     dispatch_queue_t  queue=dispatch_get_global_queue(0, 0);//创建线程
     dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
@@ -81,8 +76,8 @@
 -(void)setPhoneNumberStr:(NSString *)phoneNumberStr{
     
     _phoneNumberStr=phoneNumberStr;
-    NSMutableAttributedString *str1=[[NSMutableAttributedString alloc]initWithString:@"验证码已发至" attributes:@{NSForegroundColorAttributeName:RGBCOLOR(139, 139, 139)}];
-    NSMutableAttributedString *str2=[[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"+86 %@",phoneNumberStr] attributes:@{NSForegroundColorAttributeName:RGBCOLOR(56, 166, 243)}];
+    NSMutableAttributedString *str1=[[NSMutableAttributedString alloc]initWithString:@"验证码短信发送至" attributes:@{NSForegroundColorAttributeName:RGBCOLOR(139, 139, 139)}];
+    NSMutableAttributedString *str2=[[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",phoneNumberStr] attributes:@{NSForegroundColorAttributeName:RGBCOLOR(56, 166, 243)}];
     [str1 insertAttributedString:str2 atIndex:str1.length];//字符串拼接
     self.hintLabel.attributedText=str1;//提示标签赋值（电话号码）
     
@@ -93,10 +88,10 @@
 
 -(NSMutableAttributedString*)makeTimeCountdownAttribute:(NSInteger)timer{
     
-    NSMutableAttributedString *str1=[[NSMutableAttributedString alloc]initWithString:@"秒后重试" attributes:@{NSForegroundColorAttributeName:RGBCOLOR(139, 139, 139)}];
+    NSMutableAttributedString *str1=[[NSMutableAttributedString alloc]initWithString:@"s后可重发" attributes:@{NSForegroundColorAttributeName:RGBCOLOR(188, 188, 188)}];
     NSMutableAttributedString *str2=[[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%ld",(long)timer] attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
     [str2 insertAttributedString:str1 atIndex:str2.length];//字符串拼接
-
+  
     return str2;
     
 }
@@ -106,7 +101,7 @@
     
     if (!_hintLabel) {
         _hintLabel=[[UILabel alloc]init];
-        _hintLabel.font=[UIFont systemFontOfSize:16];
+        _hintLabel.font=[UIFont systemFontOfSize:12];
         _hintLabel.textColor=RGBCOLOR(80, 80, 80);
     }
     return _hintLabel;
@@ -125,7 +120,8 @@
 -(UITextField *)VerificationText{
     if (!_VerificationText) {
         _VerificationText=[[UITextField alloc]init];
-        _VerificationText.placeholder=@"请输入验证码";
+        _VerificationText.placeholder=@"请输入6位验证码";
+        _VerificationText.font=[UIFont systemFontOfSize:14];
         _VerificationText.clearButtonMode=UITextFieldViewModeWhileEditing;
         _VerificationText.delegate=self;
         [_VerificationText addTarget:self action:@selector(VerificationTextChangeText:) forControlEvents:UIControlEventEditingChanged];
@@ -133,23 +129,19 @@
     return _VerificationText;
     
 }
--(UILabel *)verticalLineLabel{
-    
-    if (!_verticalLineLabel) {
-        _verticalLineLabel=[[UILabel alloc]init];
-        _verticalLineLabel.backgroundColor=RGBCOLOR(188, 188, 188);
-    }
-    return _verticalLineLabel;
-}
+
 
 
 -(UIButton *)countdownBtn{
     
     if (!_countdownBtn) {
         _countdownBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        _countdownBtn.titleLabel.font=[UIFont systemFontOfSize:16];
-       // [ _countdownBtn setTitle:@"50秒后重试" forState:UIControlStateNormal];
-       
+        _countdownBtn.titleLabel.font=[UIFont systemFontOfSize:14];
+        _countdownBtn.layer.cornerRadius=3;
+//        _countdownBtn.layer.borderWidth=1;
+//        _countdownBtn.layer.borderColor=RGBCOLOR(188, 188, 188).CGColor;
+        
+        [_countdownBtn setBackgroundColor:RGBCOLOR(249, 249, 249)];
         [_countdownBtn addTarget:self action:@selector(countdownTime) forControlEvents:UIControlEventTouchUpInside];//添加计时器方法
         
     }
@@ -193,7 +185,7 @@
     [_VerificationText mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(15);
         make.top.bottom.equalTo(self.backLabel);
-        make.right.equalTo(self.verticalLineLabel.mas_left).offset(5);
+        make.right.equalTo(self.countdownBtn.mas_left).offset(50);
     }];
     
     [_backLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -205,18 +197,11 @@
     
     
     [_countdownBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(120, 44));
-        make.top.equalTo(self.backLabel);
-        make.right.equalTo(self.backLabel).offset(-10);
+        make.size.mas_equalTo(CGSizeMake(90, 30));
+        make.top.equalTo(self.backLabel).offset(7);
+        make.right.equalTo(self.backLabel).offset(-15);
     }];
     
-    
-    
-    [_verticalLineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(1, 30));
-        make.centerY.equalTo(self.backLabel.mas_centerY);
-        make.right.equalTo(self.countdownBtn.mas_left).offset(-1);
-    }];
     
     [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.backLabel.mas_bottom).offset(40);

@@ -16,9 +16,10 @@
 +(void)initialize{
     UINavigationBar *navBar=[UINavigationBar appearance];
    
-    [navBar setBackgroundImage:[UIImage imageNamed:@"nav_backImage"] forBarMetrics:UIBarMetricsDefault];
+    //[navBar setBackgroundImage:[UIImage imageNamed:@"nav_backImage"] forBarMetrics:UIBarMetricsDefault];
+    navBar.barTintColor=RGBCOLOR(55, 158, 222);
     [navBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16
-                                                          ],NSForegroundColorAttributeName:[UIColor blackColor]}];
+                                                          ],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     
 }
@@ -31,11 +32,14 @@
 {
     if (self.viewControllers.count) { //避免一开始就隐藏了
         viewController.hidesBottomBarWhenPushed = YES;
+       // viewController.navigationController.navigationBar.hidden=YES;
         
         //设置左按钮样式
         UIButton *fanHuiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        fanHuiButton.frame = CGRectMake(0, 0, 35, 35);
-        [fanHuiButton setBackgroundImage:[UIImage imageNamed: @"backWhite_night" ]forState:UIControlStateNormal];
+        fanHuiButton.frame = CGRectMake(0, 0, 25, 25);
+        [fanHuiButton setBackgroundImage:[UIImage imageNamed: @"common_btn_back_arrow" ]forState:UIControlStateNormal];
+        [fanHuiButton setBackgroundImage:[UIImage imageNamed: @"common_btn_back_pressed" ]forState:UIControlStateSelected];
+        
         [fanHuiButton addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:fanHuiButton];
         

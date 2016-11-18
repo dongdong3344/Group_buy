@@ -38,9 +38,9 @@
 -(UILabel *)qqLabel{
     if (!_qqLabel) {
         _qqLabel=[[UILabel alloc]init];
-        _qqLabel.text=@"QQ";
+        _qqLabel.text=@"QQ登录";
         _qqLabel.textColor=RGBCOLOR(190, 190, 190);
-        _qqLabel.font=[UIFont systemFontOfSize:14];
+        _qqLabel.font=[UIFont systemFontOfSize:12];
         _qqLabel.textAlignment=UITextAlignmentCenter;
     }
     return _qqLabel;
@@ -52,8 +52,8 @@
     if (!_wechatLabel) {
         _wechatLabel=[[UILabel alloc]init];
         _wechatLabel.textColor=RGBCOLOR(190, 190, 190);
-        _wechatLabel.text=@"微信";
-        _wechatLabel.font=[UIFont systemFontOfSize:14];
+        _wechatLabel.text=@"微信登录";
+        _wechatLabel.font=[UIFont systemFontOfSize:12];
         _wechatLabel.textAlignment=UITextAlignmentCenter;
     }
     return _wechatLabel;
@@ -66,8 +66,8 @@
     if (!_weiboLabel) {
         _weiboLabel=[[UILabel alloc]init];
         _weiboLabel.textColor=RGBCOLOR(190, 190, 190);
-        _weiboLabel.text=@"微博";
-        _weiboLabel.font=[UIFont systemFontOfSize:14];
+        _weiboLabel.text=@"微博登录";
+        _weiboLabel.font=[UIFont systemFontOfSize:12];
         _weiboLabel.textAlignment=UITextAlignmentCenter;
     }
     return _weiboLabel;
@@ -88,7 +88,7 @@
         _oneKeyLogin.textColor=RGBCOLOR(190, 190, 190) ;
         _oneKeyLogin.backgroundColor=[UIColor whiteColor];//设置按钮的背景矩形区域，背景和view背景相同
         _oneKeyLogin.textAlignment=UITextAlignmentCenter;
-        _oneKeyLogin.font=[UIFont systemFontOfSize:16];
+        _oneKeyLogin.font=[UIFont systemFontOfSize:14];
     }
     return _oneKeyLogin;
     
@@ -99,7 +99,8 @@
     
     if (!_qqBtn) {
         _qqBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_qqBtn setImage:[UIImage imageNamed:@"comment_share_qq"] forState:UIControlStateNormal];
+        [_qqBtn setImage:[UIImage imageNamed:@"registerAndLogin_qq_button"] forState:UIControlStateNormal];
+         [_qqBtn setImage:[UIImage imageNamed:@"registerAndLogin_qq_button"] forState:UIControlStateSelected];
     }
     return _qqBtn;
 }
@@ -108,7 +109,8 @@
     
     if (!_weChatBtn) {
         _weChatBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_weChatBtn setImage:[UIImage imageNamed:@"comment_share_wechat_contact"] forState:UIControlStateNormal];
+        [_weChatBtn setImage:[UIImage imageNamed:@"registerAndLogin_wechat_button"] forState:UIControlStateNormal];
+        [_weChatBtn setImage:[UIImage imageNamed:@"registerAndLogin_wechat_button"] forState:UIControlStateSelected];
     }
     return _weChatBtn;
 }
@@ -117,7 +119,9 @@
     
     if (!_sinaBtn) {
         _sinaBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_sinaBtn setImage:[UIImage imageNamed:@"comment_share_sina"] forState:UIControlStateNormal];
+        [_sinaBtn setImage:[UIImage imageNamed:@"registerAndLogin_weibo_button"] forState:UIControlStateNormal];
+        [_sinaBtn setImage:[UIImage imageNamed:@"registerAndLogin_weibo_button"] forState:UIControlStateSelected];
+
     }
     return _sinaBtn;
 }
@@ -145,7 +149,7 @@
     
     [_wechatLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50, 16));
-        make.top.equalTo(self.weChatBtn.mas_bottom).offset(5);
+        make.top.equalTo(self.weChatBtn.mas_bottom).offset(2);
         make.centerX.equalTo(self.mas_centerX);
 
     }];
@@ -159,7 +163,7 @@
     }];
     [_qqLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50, 16));
-        make.top.equalTo(self.qqBtn.mas_bottom).offset(5);
+        make.top.equalTo(self.qqBtn.mas_bottom).offset(2);
         make.right.equalTo(self.wechatLabel.mas_left).offset(-(self.frame.size.width-150)/4);
     
     }];
@@ -174,7 +178,7 @@
     
     [_weiboLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50, 16));
-        make.top.equalTo(self.sinaBtn.mas_bottom).offset(5);
+        make.top.equalTo(self.sinaBtn.mas_bottom).offset(2);
         make.left.equalTo(self.wechatLabel.mas_right).offset((self.frame.size.width-150)/4);
 
     }];

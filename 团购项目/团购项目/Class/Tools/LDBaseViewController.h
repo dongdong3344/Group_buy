@@ -30,4 +30,5 @@ typedef void(^requestFailureBlock)(NSError  *error);
 
 -(void)showTostMessage:(NSString *)tost;//弹出提示信息
 
+
 @end

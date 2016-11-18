@@ -10,7 +10,7 @@
 
 @interface LDMyMessageHeadView()
 
-@property(nonatomic,strong)UIImageView *headBackIamge;
+@property(nonatomic,strong)UIImageView *headBackIamge,*portraitView;
 @property(nonatomic,strong)UIButton *loginBtn, *registerBtn;
 
 @end
@@ -25,29 +25,33 @@
     if (self) {
         
         [self addSubview:self.headBackIamge];
-        [self addSubview:self.loginBtn];
+        //[self addSubview:self.loginBtn];
         [self addSubview:self.registerBtn];
+        [self addSubview:self.portraitView];
         
     }
     return self;
 }
 
--(UIButton *)loginBtn{
-    if (!_loginBtn) {
-        _loginBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
-        _loginBtn.titleLabel.textColor=[UIColor whiteColor];
-        _loginBtn.titleLabel.font=[UIFont systemFontOfSize:18.0];
-        
+
+-(UIImageView *)portraitView{
+    
+    if (!_portraitView) {
+        _portraitView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"lr_avatar"]];
     }
-    return _loginBtn;
+    return _portraitView;
 }
 -(UIButton *)registerBtn{
     if (!_registerBtn) {
         _registerBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_registerBtn setTitle:@"注册" forState:UIControlStateNormal];
-        _registerBtn.titleLabel.textColor=[UIColor whiteColor];
-        _registerBtn.titleLabel.font=[UIFont systemFontOfSize:18.0];
+        [_registerBtn setTitle:@"登录/注册" forState:UIControlStateNormal];
+        [_registerBtn setBackgroundImage:[UIImage imageNamed:@"myctrip_btn_login"] forState:UIControlStateNormal];
+        [_registerBtn setBackgroundImage:[UIImage imageNamed:@"myctrip_btn_login_pressed"] forState:UIControlStateSelected];
+        _registerBtn.titleLabel.font=[UIFont boldSystemFontOfSize:16.0];
+        
+               _registerBtn.layer.cornerRadius=5;
+//        _registerBtn.layer.borderWidth=1;
+//        _registerBtn.layer.borderColor=[UIColor whiteColor].CGColor;
         [_registerBtn addTarget:self action:@selector(pushRegisterViewController) forControlEvents:UIControlEventTouchUpInside];
         
     }
@@ -64,7 +68,7 @@
 -(UIImageView *)headBackIamge{
     
     if (!_headBackIamge) {
-        _headBackIamge=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"我的背景"]];
+        _headBackIamge=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"register_back"]];
         
     }
     return _headBackIamge;
@@ -83,21 +87,23 @@
 
     }];
     
-    [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(45, 23));
-        make.centerX.equalTo(self.mas_centerX).offset(60);
-        make.centerY.equalTo(self.mas_centerY);
-      
+    
+    [_portraitView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.headBackIamge.mas_centerX);
+        make.centerY.equalTo(self.headBackIamge.mas_centerY).offset(-15);
+        make.size.mas_equalTo(CGSizeMake(80, 80));
+        
     }];
+
     
     [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(45, 23));
-        make.centerX.equalTo(self.mas_centerX).offset(-60);
-        make.centerY.equalTo(self.mas_centerY);
-       
+        make.size.mas_equalTo(CGSizeMake(100, 20));
+        make.centerX.equalTo(self.mas_centerX);
+        make.top.equalTo(self.portraitView.mas_bottom).offset(5);
+    
     }];
     
-      
+    
     
 }
 

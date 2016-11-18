@@ -22,13 +22,15 @@
     
     
     [LDHTTPTool getWithURLString:url parameters:param success:^(id responseObject) {
-        [SVProgressHUD setMinimumDismissTimeInterval:5];//小圆圈动消失
+        
+      
+        [self performSelector:@selector(dismiss)withObject:nil afterDelay:1];///小圆圈显示1秒后消失
+
         if (successBlock) {
             successBlock(responseObject);
         }
     } failure:^(NSError *error) {
         [SVProgressHUD dismiss];//小圆圈消失
-        [self showTostMessage:@"网络请求失败，请检查网络状态"];
         if (failureBlock) {
             failureBlock(error);
         }
@@ -42,13 +44,13 @@
     [SVProgressHUD showWithStatus:@"加载中，请稍后"];//小圆圈动起来
   
     [LDHTTPTool  postWithURLString:url parameters:param success:^(id responseObject) {
-      
-        [self performSelector:@selector(dismiss) withObject:nil afterDelay:1];//小圆圈显示1秒后消失
+       [self performSelector:@selector(dismiss)withObject:nil afterDelay:1];///小圆圈显示1秒后消失
+        
         if (successBlock) {
             successBlock(responseObject);
         }
     } failure:^(NSError *error) {
-        [SVProgressHUD dismiss];//小圆圈动消失
+        [SVProgressHUD dismiss];//小圆圈消失
         if (failureBlock) {
             failureBlock(error);
         }
@@ -64,8 +66,13 @@
 }
 
 -(void)showTostMessage:(NSString *)tost{
-    
-    [self.view makeToast:tost duration:1.5 position:@"center" ];
+    /*
+    @"CSToastPositionTop";
+    @"CSToastPositionCenter";
+    @"CSToastPositionBottom";
+     
+     */
+    [self.view makeToast:tost duration:1.5 position:@"CSToastPositionCenter" ];
 
     
 }

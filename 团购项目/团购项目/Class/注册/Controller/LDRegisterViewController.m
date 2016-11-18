@@ -14,7 +14,7 @@
 
 @interface LDRegisterViewController ()
 @property(nonatomic,strong)LDRegisterView *registerView;
-@property(nonatomic,strong)LDThirdLoginview *thirdLoginview;
+
 
 @end
 
@@ -40,39 +40,34 @@
     return _registerView;
 }
 
--(LDThirdLoginview *)thirdLoginview{
-    if (!_thirdLoginview) {
-        _thirdLoginview=[[LDThirdLoginview alloc]init];
-    }
-    return _thirdLoginview;
-}
+
 
 - (void)viewDidLoad {
-    self.title=@"注册";
+    self.title=@"注册1/2";
     self.view.backgroundColor=[UIColor whiteColor];
-    self.extendedLayoutIncludesOpaqueBars=0;
+    //self.extendedLayoutIncludesOpaqueBars=0;
     [super viewDidLoad];
     [self.view addSubview:self.registerView];
-    [self.view addSubview:self.thirdLoginview];
     [self setupConstraints];
+   // self.registerView.backgroundColor=[UIColor grayColor];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 -(void)setupConstraints{
     
    [ _registerView mas_makeConstraints:^(MASConstraintMaker *make) {
-       make.height.equalTo(@340);
-       make.left.right.top.equalTo(self.view);
+      
+       make.left.bottom.right.equalTo(self.view);
+       make.top.equalTo(self.view.mas_top).offset(64);
  
    }];
     
     
-    [_thirdLoginview mas_makeConstraints:^(MASConstraintMaker *make) {
-      
-        make.top.equalTo(self.registerView.mas_bottom).offset(80);
-        make.left.right.equalTo(self.view);
-        make.height.equalTo(@85);
-    }];
     
 }
 

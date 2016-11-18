@@ -10,6 +10,7 @@
 #import "LDMyMessageTableView.h"
 #import "LDMyMessageHeadView.h"
 #import "LDRegisterViewController.h"
+#import "LDLoginViewController.h"
 @interface LDMineViewController ()
 
 @property(nonatomic,strong)LDMyMessageTableView *tableView;
@@ -25,7 +26,7 @@
         
         __weak typeof(self) weakself=self;
         _headView.block=^(){
-            LDRegisterViewController *vc=[[LDRegisterViewController alloc]init];
+           LDLoginViewController *vc=[[LDLoginViewController alloc]init];
             [weakself.navigationController pushViewController:vc animated:YES];
         };
         
@@ -47,25 +48,31 @@
    
     [super viewDidLoad];
      self.view.backgroundColor=[UIColor whiteColor];
-  
-    [self.view addSubview:self.tableView];
+
     [self.view addSubview:self.headView];
-    [self addAutoLayout];
+    [self.view addSubview:self.tableView];
   
+    [self addAutoLayout];
+    
+   }
 
+//隐藏navigaitonbar
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
-
 
 -(void)addAutoLayout{
     [_headView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view) ;
-        make.height.mas_equalTo(150);
+        make.height.mas_equalTo(171);
     }];
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
         make.height.mas_equalTo(176);
-        make.top.equalTo(self.headView.mas_bottom).offset(35);
+        make.top.equalTo(self.headView.mas_bottom).offset(20);
     }];
     
     

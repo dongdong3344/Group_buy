@@ -22,7 +22,7 @@
     if (self) {
         self.delegate=self;
         self.dataSource=self;
-        self.bounces=NO;//不让tableView滑动
+        self.bounces=NO;//不让tableView滚动
         
         self.separatorInset=UIEdgeInsetsMake(0, 45, 0, 0);//设置分割线位置
     }
@@ -55,7 +55,7 @@
         
         UILabel *phoneNum=[[UILabel alloc]init];
         phoneNum.textColor=RGBCOLOR(124, 122, 128);
-        phoneNum.text=@"152-6235-2648";
+        phoneNum.text=@"15262352648";
        // phoneNum.textColor=[UIColor redColor];
         [cell addSubview:phoneNum];
         
@@ -64,7 +64,7 @@
             
             make.right.equalTo(cell.mas_right).offset(-15);
             make.centerY.equalTo(cell.mas_centerY);
-            make.size.mas_equalTo(CGSizeMake(135, 15));
+            make.size.mas_equalTo(CGSizeMake(110, 15));
         }];
     }
     return cell;
