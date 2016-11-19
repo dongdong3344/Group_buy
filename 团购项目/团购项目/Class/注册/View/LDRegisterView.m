@@ -9,7 +9,6 @@
 #import "LDRegisterView.h"
 
 @interface LDRegisterView ()<UITextFieldDelegate>
-@property(strong,nonatomic)UITextField *phoneNumText, *passwordText;
 @property(strong,nonatomic)UIButton *nextStepBtn;
 @property(nonatomic,strong)UILabel *hintLabel,*textBackLabel,*midTextLineLabel;//提示标签,textfield背景，textfield中间那条线
 @property(nonatomic,strong)UIImageView *userNameImg,*passwordImg,*hintImage;

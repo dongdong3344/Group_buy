@@ -31,6 +31,7 @@
     [self requestVerificationCode];//请求验证码
     [self setupConstraints];
    
+    
   
 }
 
@@ -188,6 +189,8 @@
   
     [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(3, 11)];
     [messageStr addAttribute:NSForegroundColorAttributeName value:RGBCOLOR(56, 166, 243)range:NSMakeRange(3, 11)];
+
+
     
     [alertControl setValue:messageStr forKey:@"attributedMessage"];//改变提示信息的文字颜色
 
@@ -215,10 +218,10 @@
     
     [self presentViewController:alertControl animated:YES completion:nil];
     
-    
-   
 
 }
+
+
 @end
 
 

@@ -14,12 +14,20 @@
 
 @interface LDRegisterViewController ()
 @property(nonatomic,strong)LDRegisterView *registerView;
-
-
 @end
 
 @implementation LDRegisterViewController
 
+
+//navigationcontroller 下一层返回到本页时，需要清空之前输入
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.registerView.passwordText.text=@"";
+    self.registerView.phoneNumText.text=@"";
+    [self.registerView.phoneNumText resignFirstResponder];
+    [self.registerView.passwordText resignFirstResponder];
+    
+}
 -(LDRegisterView *)registerView{
     if (!_registerView) {
         _registerView=[[LDRegisterView alloc]init];
