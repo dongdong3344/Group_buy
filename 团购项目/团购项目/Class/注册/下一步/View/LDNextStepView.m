@@ -137,8 +137,8 @@
         _countdownBtn=[UIButton buttonWithType:UIButtonTypeCustom];
         _countdownBtn.titleLabel.font=[UIFont systemFontOfSize:14];
         _countdownBtn.layer.cornerRadius=3;
-//        _countdownBtn.layer.borderWidth=1;
-//        _countdownBtn.layer.borderColor=RGBCOLOR(188, 188, 188).CGColor;
+        //_countdownBtn.layer.borderWidth=1;
+        //_countdownBtn.layer.borderColor=RGBCOLOR(188, 188, 188).CGColor;
         
         [_countdownBtn setBackgroundColor:RGBCOLOR(249, 249, 249)];
         [_countdownBtn addTarget:self action:@selector(countdownTime) forControlEvents:UIControlEventTouchUpInside];//添加计时器方法

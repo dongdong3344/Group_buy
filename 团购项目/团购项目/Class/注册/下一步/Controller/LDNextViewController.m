@@ -60,7 +60,7 @@
     [self postWithURLString:@"appMember/createCode.do" parameters:@{@"MemberId":self.userMessageDic[@"phoneName"]}
                  success:^(id responseObject) {
                      
-                     [NSThread sleepForTimeInterval:1.5];//1.5秒后执行显示信息，小圆圈先转1秒
+                     [NSThread sleepForTimeInterval:1];//1秒后执行显示信息，小圆圈先转1秒
                      
                      if ([responseObject[@"result"] isEqualToString:@"success"]) {
                         
@@ -181,29 +181,42 @@
 //手机号被注册时处理方式
 -(void)showMessage{
     
-    UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:nil message:@"手机号已被注册" preferredStyle:UIAlertControllerStyleAlert];
+    NSString *str=[NSString stringWithFormat:@"手机号%@已注册",self.userMessageDic[@"phoneName"]];
+    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:str];
     
-    [alertControl  addAction:[UIAlertAction actionWithTitle:@"直接登录" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
-        
+    UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:nil message:str preferredStyle:UIAlertControllerStyleAlert];
+  
+    [messageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(3, 11)];
+    [messageStr addAttribute:NSForegroundColorAttributeName value:RGBCOLOR(56, 166, 243)range:NSMakeRange(3, 11)];
+    
+    [alertControl setValue:messageStr forKey:@"attributedMessage"];//改变提示信息的文字颜色
+
+//    if ([alertControl valueForKey:@"attributedMessage"]) {
+//        [alertControl setValue:messageStr forKey:@"attributedMessage"];
+//    }
+    
+    
+    UIAlertAction *loginAction=[UIAlertAction actionWithTitle:@"直接登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         LDLoginViewController *loginVC=[[LDLoginViewController alloc]init];
         [self.navigationController pushViewController:loginVC animated:YES];
         
-    }]];
+    }];
     
-    [alertControl  addAction:[UIAlertAction actionWithTitle:@"修改号码" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *modifyPhoneAction=[UIAlertAction actionWithTitle:@"修改号码" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         [self.navigationController popViewControllerAnimated:YES];
-        
-    }]];
+
+    }];
+    
+    [modifyPhoneAction setValue:RGBCOLOR(56, 166, 243) forKey:@"_titleTextColor"];//修改按钮颜色
+    [loginAction setValue:RGBCOLOR(56, 166, 243) forKey:@"_titleTextColor"];
+    [alertControl addAction:loginAction];
+    [alertControl addAction:modifyPhoneAction];
+    
     [self presentViewController:alertControl animated:YES completion:nil];
     
     
-//    NSMutableAttributedString *alertControllerMessageStr = [[NSMutableAttributedString alloc] initWithString:@"当前手机已注册"];
-//    [alertControllerMessageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(0, 7)];
-//    [alertControllerMessageStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, 7)];
-//    if ([alertControl valueForKey:@"attributedMessage"]) {
-//        [alertControl setValue:alertControllerMessageStr forKey:@"attributedMessage"];
-//    }
+   
 
 }
 @end
