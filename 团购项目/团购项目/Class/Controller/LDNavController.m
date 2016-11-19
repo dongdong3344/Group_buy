@@ -18,7 +18,7 @@
    
     //[navBar setBackgroundImage:[UIImage imageNamed:@"nav_backImage"] forBarMetrics:UIBarMetricsDefault];
     navBar.barTintColor=RGBCOLOR(55, 158, 222);
-    [navBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16
+    [navBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18
                                                           ],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     

@@ -124,7 +124,6 @@
 		C709C1DA1DD96591007D7929 /* 购物车界面静态购物车图标.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0AB1DD96590007D7929 /* 购物车界面静态购物车图标.png */; };
 		C709C1DB1DD96591007D7929 /* 购物车界面静态购物车图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0AC1DD96590007D7929 /* 购物车界面静态购物车图标@2x.png */; };
 		C709C1DC1DD96591007D7929 /* 购物车界面静态购物车图标@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0AD1DD96590007D7929 /* 购物车界面静态购物车图标@3x.png */; };
-		C709C1DF1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0B21DD96590007D7929 /* Contents.json */; };
 		C709C1E01DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0B41DD96590007D7929 /* Contents.json */; };
 		C709C1E11DD96591007D7929 /* 下一步@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0B51DD96590007D7929 /* 下一步@2x.png */; };
 		C709C1E21DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0B71DD96590007D7929 /* Contents.json */; };
@@ -145,7 +144,6 @@
 		C709C1F11DD96591007D7929 /* 我的界面我的优惠券图标@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0C91DD96590007D7929 /* 我的界面我的优惠券图标@3x.png */; };
 		C709C1F21DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0CB1DD96590007D7929 /* Contents.json */; };
 		C709C1F31DD96591007D7929 /* 我的界面我的收藏图标.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0CC1DD96591007D7929 /* 我的界面我的收藏图标.png */; };
-		C709C1F41DD96591007D7929 /* 我的界面我的收藏图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0CD1DD96591007D7929 /* 我的界面我的收藏图标@2x.png */; };
 		C709C1F51DD96591007D7929 /* 我的界面我的收藏图标@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0CE1DD96591007D7929 /* 我的界面我的收藏图标@3x.png */; };
 		C709C1F61DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0D01DD96591007D7929 /* Contents.json */; };
 		C709C1F71DD96591007D7929 /* 我的界面退出登录按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0D11DD96591007D7929 /* 我的界面退出登录按钮.png */; };
@@ -158,11 +156,6 @@
 		C709C1FE1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0DA1DD96591007D7929 /* Contents.json */; };
 		C709C1FF1DD96591007D7929 /* 我的背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0DB1DD96591007D7929 /* 我的背景@2x.png */; };
 		C709C2001DD96591007D7929 /* 我的背景@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0DC1DD96591007D7929 /* 我的背景@3x.png */; };
-		C709C2011DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0DE1DD96591007D7929 /* Contents.json */; };
-		C709C2021DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0E01DD96591007D7929 /* Contents.json */; };
-		C709C2031DD96591007D7929 /* 我的收藏界面的购物车.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0E11DD96591007D7929 /* 我的收藏界面的购物车.png */; };
-		C709C2041DD96591007D7929 /* 我的收藏界面的购物车@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0E21DD96591007D7929 /* 我的收藏界面的购物车@2x.png */; };
-		C709C2051DD96591007D7929 /* 我的收藏界面的购物车@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0E31DD96591007D7929 /* 我的收藏界面的购物车@3x.png */; };
 		C709C2061DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0E51DD96591007D7929 /* Contents.json */; };
 		C709C2071DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0E71DD96591007D7929 /* Contents.json */; };
 		C709C2081DD96591007D7929 /* nav_backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0E81DD96591007D7929 /* nav_backImage@2x.png */; };
@@ -361,7 +354,6 @@
 		C709C0AB1DD96590007D7929 /* 购物车界面静态购物车图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面静态购物车图标.png"; sourceTree = "<group>"; };
 		C709C0AC1DD96590007D7929 /* 购物车界面静态购物车图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面静态购物车图标@2x.png"; sourceTree = "<group>"; };
 		C709C0AD1DD96590007D7929 /* 购物车界面静态购物车图标@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面静态购物车图标@3x.png"; sourceTree = "<group>"; };
-		C709C0B21DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0B41DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0B51DD96590007D7929 /* 下一步@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "下一步@2x.png"; sourceTree = "<group>"; };
 		C709C0B71DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
@@ -382,7 +374,6 @@
 		C709C0C91DD96590007D7929 /* 我的界面我的优惠券图标@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的界面我的优惠券图标@3x.png"; sourceTree = "<group>"; };
 		C709C0CB1DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0CC1DD96591007D7929 /* 我的界面我的收藏图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的界面我的收藏图标.png"; sourceTree = "<group>"; };
-		C709C0CD1DD96591007D7929 /* 我的界面我的收藏图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的界面我的收藏图标@2x.png"; sourceTree = "<group>"; };
 		C709C0CE1DD96591007D7929 /* 我的界面我的收藏图标@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的界面我的收藏图标@3x.png"; sourceTree = "<group>"; };
 		C709C0D01DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0D11DD96591007D7929 /* 我的界面退出登录按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的界面退出登录按钮.png"; sourceTree = "<group>"; };
@@ -395,11 +386,6 @@
 		C709C0DA1DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0DB1DD96591007D7929 /* 我的背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的背景@2x.png"; sourceTree = "<group>"; };
 		C709C0DC1DD96591007D7929 /* 我的背景@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的背景@3x.png"; sourceTree = "<group>"; };
-		C709C0DE1DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C0E01DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C0E11DD96591007D7929 /* 我的收藏界面的购物车.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的收藏界面的购物车.png"; sourceTree = "<group>"; };
-		C709C0E21DD96591007D7929 /* 我的收藏界面的购物车@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的收藏界面的购物车@2x.png"; sourceTree = "<group>"; };
-		C709C0E31DD96591007D7929 /* 我的收藏界面的购物车@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的收藏界面的购物车@3x.png"; sourceTree = "<group>"; };
 		C709C0E51DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0E71DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0E81DD96591007D7929 /* nav_backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_backImage@2x.png"; sourceTree = "<group>"; };
@@ -565,7 +551,6 @@
 				C709C0201DD96590007D7929 /* 分类界面切图 */,
 				C709C06D1DD96590007D7929 /* 购物车界面 */,
 				C709C0B11DD96590007D7929 /* 我的界面切图 */,
-				C709C0DD1DD96591007D7929 /* 我的收藏界面切图 */,
 				C709C0E41DD96591007D7929 /* 限时特卖界面切图 */,
 				C709C1341DD96591007D7929 /* 详情界面切图 */,
 				C709BFE01DD96166007D7929 /* LaunchScreen.storyboard */,
@@ -929,7 +914,6 @@
 		C709C0B11DD96590007D7929 /* 我的界面切图 */ = {
 			isa = PBXGroup;
 			children = (
-				C709C0B21DD96590007D7929 /* Contents.json */,
 				C709C0B31DD96590007D7929 /* 下一步.imageset */,
 				C709C0B61DD96590007D7929 /* 我的界面关于我们图标.imageset */,
 				C709C0BB1DD96590007D7929 /* 我的界面客服热线图标.imageset */,
@@ -1001,7 +985,6 @@
 			children = (
 				C709C0CB1DD96590007D7929 /* Contents.json */,
 				C709C0CC1DD96591007D7929 /* 我的界面我的收藏图标.png */,
-				C709C0CD1DD96591007D7929 /* 我的界面我的收藏图标@2x.png */,
 				C709C0CE1DD96591007D7929 /* 我的界面我的收藏图标@3x.png */,
 			);
 			path = "我的界面我的收藏图标.imageset";
@@ -1037,26 +1020,6 @@
 				C709C0DC1DD96591007D7929 /* 我的背景@3x.png */,
 			);
 			path = "我的背景.imageset";
-			sourceTree = "<group>";
-		};
-		C709C0DD1DD96591007D7929 /* 我的收藏界面切图 */ = {
-			isa = PBXGroup;
-			children = (
-				C709C0DE1DD96591007D7929 /* Contents.json */,
-				C709C0DF1DD96591007D7929 /* 我的收藏界面的购物车.imageset */,
-			);
-			path = "我的收藏界面切图";
-			sourceTree = "<group>";
-		};
-		C709C0DF1DD96591007D7929 /* 我的收藏界面的购物车.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				C709C0E01DD96591007D7929 /* Contents.json */,
-				C709C0E11DD96591007D7929 /* 我的收藏界面的购物车.png */,
-				C709C0E21DD96591007D7929 /* 我的收藏界面的购物车@2x.png */,
-				C709C0E31DD96591007D7929 /* 我的收藏界面的购物车@3x.png */,
-			);
-			path = "我的收藏界面的购物车.imageset";
 			sourceTree = "<group>";
 		};
 		C709C0E41DD96591007D7929 /* 限时特卖界面切图 */ = {
@@ -1633,12 +1596,10 @@
 				C709C1891DD96591007D7929 /* 分类界面敏感肌肤图标@3x.png in Resources */,
 				C709C1E21DD96591007D7929 /* Contents.json in Resources */,
 				C709C17C1DD96591007D7929 /* 分类界面孕婴护理图标@2x.png in Resources */,
-				C709C2051DD96591007D7929 /* 我的收藏界面的购物车@3x.png in Resources */,
 				C709C2311DD96591007D7929 /* Contents.json in Resources */,
 				C709C1E01DD96591007D7929 /* Contents.json in Resources */,
 				C709C2001DD96591007D7929 /* 我的背景@3x.png in Resources */,
 				C709C18A1DD96591007D7929 /* Contents.json in Resources */,
-				C709C1DF1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1AF1DD96591007D7929 /* 地址背景@2x.png in Resources */,
 				C709C2451DD96591007D7929 /* Contents.json in Resources */,
 				C709C1D11DD96591007D7929 /* Contents.json in Resources */,
@@ -1689,7 +1650,6 @@
 				C709C18B1DD96591007D7929 /* 分类界面水乳咖喱图标.png in Resources */,
 				C709C2561DD96591007D7929 /* Contents.json in Resources */,
 				C709C19B1DD96591007D7929 /* 分类界面眼霜眼贴图标.png in Resources */,
-				C709C1F41DD96591007D7929 /* 我的界面我的收藏图标@2x.png in Resources */,
 				C709C2411DD96591007D7929 /* Contents.json in Resources */,
 				C709C22F1DD96591007D7929 /* 限时特卖界面品牌团购图标@2x.png in Resources */,
 				C709BFE21DD96166007D7929 /* LaunchScreen.storyboard in Resources */,
@@ -1707,12 +1667,10 @@
 				C709C1BA1DD96591007D7929 /* 购物车界面商品加减按钮.png in Resources */,
 				C709C1A11DD96591007D7929 /* 分类界面补水保湿图标@3x.png in Resources */,
 				C709C2571DD96591007D7929 /* 详情界面转发按钮.png in Resources */,
-				C709C2041DD96591007D7929 /* 我的收藏界面的购物车@2x.png in Resources */,
 				C709C16E1DD96591007D7929 /* Contents.json in Resources */,
 				C709C23D1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1851DD96591007D7929 /* 分类界面提升紧致图标@3x.png in Resources */,
 				C709C2531DD96591007D7929 /* 详情界面购物车按钮.png in Resources */,
-				C709C2031DD96591007D7929 /* 我的收藏界面的购物车.png in Resources */,
 				C709C1791DD96591007D7929 /* 分类界面唇膏图标@3x.png in Resources */,
 				C709C25D1DD96591007D7929 /* 详情界面返回按钮@3x.png in Resources */,
 				C709C1DB1DD96591007D7929 /* 购物车界面静态购物车图标@2x.png in Resources */,
@@ -1794,7 +1752,6 @@
 				C709C1951DD96591007D7929 /* 分类界面清痘去印图标@3x.png in Resources */,
 				C709C2381DD96591007D7929 /* 限时特卖界面搜索按钮@3x.png in Resources */,
 				C709C1BF1DD96591007D7929 /* 购物车界面商品未选中@2x.png in Resources */,
-				C709C2021DD96591007D7929 /* Contents.json in Resources */,
 				C709C16D1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1BC1DD96591007D7929 /* 购物车界面商品加减按钮@3x.png in Resources */,
 				C709C2461DD96591007D7929 /* Contents.json in Resources */,
@@ -1804,7 +1761,6 @@
 				C709C1E91DD96591007D7929 /* 我的界面客服热线图标@3x.png in Resources */,
 				C709C1FA1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1CE1DD96591007D7929 /* 购物车界面我的收藏图标.png in Resources */,
-				C709C2011DD96591007D7929 /* Contents.json in Resources */,
 				C709C17E1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1821DD96591007D7929 /* Contents.json in Resources */,
 				C709C1C51DD96591007D7929 /* Contents.json in Resources */,

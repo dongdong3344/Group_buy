@@ -37,7 +37,7 @@
 -(UIImageView *)portraitView{
     
     if (!_portraitView) {
-        _portraitView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"lr_avatar"]];
+        _portraitView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"imageView_touxiang"]];
     }
     return _portraitView;
 }
@@ -68,7 +68,7 @@
 -(UIImageView *)headBackIamge{
     
     if (!_headBackIamge) {
-        _headBackIamge=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"register_back"]];
+        _headBackIamge=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"register_back2"]];
         
     }
     return _headBackIamge;
@@ -90,7 +90,7 @@
     
     [_portraitView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.headBackIamge.mas_centerX);
-        make.centerY.equalTo(self.headBackIamge.mas_centerY).offset(-15);
+        make.centerY.equalTo(self.headBackIamge.mas_centerY);
         make.size.mas_equalTo(CGSizeMake(80, 80));
         
     }];
@@ -99,7 +99,7 @@
     [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(100, 20));
         make.centerX.equalTo(self.mas_centerX);
-        make.top.equalTo(self.portraitView.mas_bottom).offset(5);
+        make.top.equalTo(self.portraitView.mas_bottom).offset(10);
     
     }];
     

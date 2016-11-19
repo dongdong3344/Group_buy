@@ -8,6 +8,7 @@
 
 #import "LDNextViewController.h"
 #import "LDNextStepView.h"
+#import "LDLoginViewController.h"
 
 @interface LDNextViewController ()
 @property(strong,nonatomic)LDNextStepView *nextView;
@@ -64,7 +65,9 @@
                      if ([responseObject[@"result"] isEqualToString:@"success"]) {
                         
                      }else if ([responseObject[@"result"] isEqualToString:@"TelephoneExistError"]){
-                           [self showTostMessage:@"当前手机号已被注册"];
+                     
+                         [self showMessage];
+                         //[self showTostMessage:@"当前手机号已被注册"];
                      }else{
                          //LDDLog(@"验证码请求失败");
                           [self  showTostMessage:@"请求验证码失败,请重试"];
@@ -175,8 +178,34 @@
     
 }
 
+//手机号被注册时处理方式
+-(void)showMessage{
+    
+    UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:nil message:@"手机号已被注册" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertControl  addAction:[UIAlertAction actionWithTitle:@"直接登录" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+        
+        LDLoginViewController *loginVC=[[LDLoginViewController alloc]init];
+        [self.navigationController pushViewController:loginVC animated:YES];
+        
+    }]];
+    
+    [alertControl  addAction:[UIAlertAction actionWithTitle:@"修改号码" style:UIAlertActionStyleDefault  handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }]];
+    [self presentViewController:alertControl animated:YES completion:nil];
+    
+    
+//    NSMutableAttributedString *alertControllerMessageStr = [[NSMutableAttributedString alloc] initWithString:@"当前手机已注册"];
+//    [alertControllerMessageStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(0, 7)];
+//    [alertControllerMessageStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, 7)];
+//    if ([alertControl valueForKey:@"attributedMessage"]) {
+//        [alertControl setValue:alertControllerMessageStr forKey:@"attributedMessage"];
+//    }
 
-
+}
 @end
 
 

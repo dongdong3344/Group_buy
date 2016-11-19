@@ -49,14 +49,14 @@
 
 -(UIImageView *)passwordImg{
     if (!_passwordImg) {
-        _passwordImg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Login_password"]];
+        _passwordImg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"password"]];
     }
     return _passwordImg;
 }
 
 -(UIImageView *)userNameImg{
     if (!_userNameImg) {
-        _userNameImg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Register_cell"]];
+        _userNameImg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"phone_icon"]];
     }
     return _userNameImg;
 }

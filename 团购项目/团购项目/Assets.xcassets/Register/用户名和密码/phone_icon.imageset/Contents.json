@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "phone_icon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "train_button_12306_passenger_manager_add_down@2x.png",
       "scale" : "2x"
     },
     {

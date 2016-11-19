@@ -52,18 +52,11 @@
 }
 
 -(void)setupRightItem{
-    UIButton *addUser = [UIButton buttonWithType:UIButtonTypeCustom];
-    addUser.frame = CGRectMake(0, 0, 25, 25);
-    [addUser setBackgroundImage:[UIImage imageNamed: @"user__add" ]forState:UIControlStateNormal];
-    [addUser setBackgroundImage:[UIImage imageNamed: @"user__add_down" ]forState:UIControlStateSelected];
     
-    [addUser addTarget:self action:@selector(nextViewController) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:addUser];
-    
-    
-//    UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(nextViewController)];
-//    [rightItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:14]} forState:UIControlStateNormal];
-//    self.navigationItem.rightBarButtonItem=rightItem;
+    UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(nextViewController)];
+    [rightItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:16]} forState:UIControlStateNormal];
+     [rightItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],NSFontAttributeName:[UIFont systemFontOfSize:16]} forState:UIControlStateHighlighted];
+    self.navigationItem.rightBarButtonItem=rightItem;
     
 }
 -(void)nextViewController{
@@ -80,15 +73,15 @@
         
         make.left.right.equalTo(self.view);
         make.top.equalTo(self.view.mas_top).offset(60);
-        make.height.equalTo(@150);
+        make.height.equalTo(@200);
         
     }];
     
     
     [self.thirdLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.equalTo(self.view);
-        //make.top.equalTo(self.loginView.mas_bottom).offset(180);
-        make.height.equalTo(@200);
+        make.height.equalTo(@180);
+       
         
     }];
     

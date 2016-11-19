@@ -24,7 +24,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-     
+       //self.backgroundColor=[UIColor grayColor];
         [self addSubview:self.textBackLabel];//textField背景
         [self addSubview:self.passwordText];//密码框
         [self addSubview:self.phoneNumText];//手机号
@@ -41,8 +41,8 @@
     
     if (!_visiblePWBtn) {
         _visiblePWBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_visiblePWBtn setImage:[UIImage imageNamed:@"login_noselect_eye"] forState:UIControlStateNormal];
-        [_visiblePWBtn setImage:[UIImage imageNamed:@"login_select_eye"] forState:UIControlStateSelected];
+        [_visiblePWBtn setImage:[UIImage imageNamed:@"login_noselect_eye2"] forState:UIControlStateNormal];
+        [_visiblePWBtn setImage:[UIImage imageNamed:@"login_select_eye2"] forState:UIControlStateSelected];
         [_visiblePWBtn addTarget:self action:@selector(visiblePWBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _visiblePWBtn;
@@ -87,7 +87,7 @@
 -(UITextField *)phoneNumText{
     if (!_phoneNumText) {
         _phoneNumText=[[UITextField alloc]init];
-        _phoneNumText.placeholder=@"手机号码";
+        _phoneNumText.placeholder=@"请输入账号";
         _phoneNumText.keyboardType=UIKeyboardTypeNumberPad;//设置数字键盘
         _phoneNumText.font=[UIFont systemFontOfSize:16];
         _phoneNumText.clearButtonMode=UITextFieldViewModeWhileEditing;
@@ -100,7 +100,7 @@
 -(UITextField *)passwordText{
     if (!_passwordText) {
         _passwordText=[[UITextField alloc]init];
-        _passwordText.placeholder=@"账户密码";
+        _passwordText.placeholder=@"请输入密码";
         _passwordText.clearButtonMode=UITextFieldViewModeWhileEditing;//编辑时，有删除按钮出现
         _passwordText.font=[UIFont systemFontOfSize:16];
         _passwordText.secureTextEntry=YES;

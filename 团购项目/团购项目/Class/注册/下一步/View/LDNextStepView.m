@@ -58,7 +58,6 @@
             //主线程更新UI
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.countdownBtn.userInteractionEnabled=NO;//倒计时正在进行时，btn可不点击
-                
                 [self.countdownBtn setAttributedTitle:[self makeTimeCountdownAttribute:time] forState:UIControlStateNormal];
                  time--;
                 
@@ -76,7 +75,7 @@
 -(void)setPhoneNumberStr:(NSString *)phoneNumberStr{
     
     _phoneNumberStr=phoneNumberStr;
-    NSMutableAttributedString *str1=[[NSMutableAttributedString alloc]initWithString:@"验证码短信发送至" attributes:@{NSForegroundColorAttributeName:RGBCOLOR(139, 139, 139)}];
+    NSMutableAttributedString *str1=[[NSMutableAttributedString alloc]initWithString:@"验证码短信已发送至" attributes:@{NSForegroundColorAttributeName:RGBCOLOR(139, 139, 139)}];
     NSMutableAttributedString *str2=[[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",phoneNumberStr] attributes:@{NSForegroundColorAttributeName:RGBCOLOR(56, 166, 243)}];
     [str1 insertAttributedString:str2 atIndex:str1.length];//字符串拼接
     self.hintLabel.attributedText=str1;//提示标签赋值（电话号码）
