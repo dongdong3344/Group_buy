@@ -8,23 +8,29 @@
 
 #import "LDLoginView.h"
 
-@interface LDLoginView ()<UITextFieldDelegate>
 
-@property(strong,nonatomic)UIButton *loginBtn;
-@property(nonatomic,strong)UILabel *textBackLabel,*midTextLineLabel;//textfield背景，textfield中间那条线
+NSString * const KEY_USERNAME_PASSWORD = @"com.company.app.usernamepassword";
+NSString * const KEY_USERNAME = @"com.company.app.username";
+NSString * const KEY_PASSWORD = @"com.company.app.password";
+
+
+
+@interface LDLoginView ()<UITextFieldDelegate,BEMCheckBoxDelegate>
+
+@property(strong,nonatomic)UIButton *loginBtn,*forgetBtn;
+@property(nonatomic,strong)UILabel *textBackLabel,*midTextLineLabel,*remPassLabel;//textfield背景，textfield中间那条线
 @property(nonatomic,strong)UIImageView *userNameImg,*passwordImg;
 @property(strong,nonatomic)UIButton *visiblePWBtn;
+@property(strong,nonatomic)BEMCheckBox *checkBox;
 @end
 
 @implementation LDLoginView
-
-
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
        //self.backgroundColor=[UIColor grayColor];
+       
         [self addSubview:self.textBackLabel];//textField背景
         [self addSubview:self.passwordText];//密码框
         [self addSubview:self.phoneNumText];//手机号
@@ -33,10 +39,62 @@
         [self addSubview:self.passwordImg];
         [self addSubview:self.userNameImg];
         [self addSubview:self.visiblePWBtn];
+        [self addSubview:self.checkBox];
+        [self addSubview:self.remPassLabel];
+        [self addSubview:self.forgetBtn];
+        
+        [self loadUserInfo];//加载退出之前用户名和密码是否记住？
+ 
     }
     return self;
 }
 
+
+-(UIButton *)forgetBtn{
+    if (!_forgetBtn) {
+        _forgetBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+        [_forgetBtn setTitle:@"忘记密码？" forState:UIControlStateNormal];
+        [_forgetBtn setTitleColor:RGBCOLOR(56, 166, 243) forState:UIControlStateNormal];
+        _forgetBtn.titleLabel.font=[UIFont systemFontOfSize:14];
+    }
+    return _forgetBtn;
+    
+}
+
+-(UILabel *)remPassLabel{
+    if (!_remPassLabel) {
+        _remPassLabel=[[UILabel alloc]init];
+        _remPassLabel.text=@"记住密码";
+        _remPassLabel.font=[UIFont systemFontOfSize:14];
+        _remPassLabel.textColor=RGBCOLOR(56, 166, 243);
+    }
+    return _remPassLabel;
+}
+
+-(BEMCheckBox *)checkBox{
+
+    
+    if (!_checkBox) {
+        _checkBox=[[BEMCheckBox alloc]init];
+        _checkBox.boxType=BEMBoxTypeSquare;//设置○形状
+        _checkBox.onAnimationType=BEMAnimationTypeFill;
+        _checkBox.offAnimationType=BEMAnimationTypeFill;
+        _checkBox.onTintColor=RGBCOLOR(188, 188, 188);//边缘颜色
+        _checkBox.onCheckColor=[UIColor redColor];//✔颜色
+        _checkBox.delegate=self;
+    }
+    return _checkBox;
+}
+
+
+//敲击复选框时的代理方法
+-(void)didTapCheckBox:(BEMCheckBox *)checkBox{
+    if (checkBox.on) {
+        NSLog(@"********保存用户信息了*******");
+
+    }
+    
+}
 -(UIButton *)visiblePWBtn{
     
     if (!_visiblePWBtn) {
@@ -133,11 +191,70 @@
         [self makeToast:@"请输入密码" duration:1.5 position: @"CSToastPositionCenter"];
     }else {
        [self makeToast:@"登录成功" duration:1.5 position:  @"CSToastPositionCenter"];
+       [self saveUserInfo];
 }
 }
+
+
+-(void)saveUserInfo{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:self.checkBox.on forKey:@"checkboxStatus"];
+    [defaults synchronize];//不要忘记这行代码
+
+    
+    if (self.checkBox.on) {
+        
+            //存用户名和密码到keychain
+            NSMutableDictionary *mutableDict=[NSMutableDictionary dictionary];
+            [mutableDict setObject:self.phoneNumText.text forKey:KEY_USERNAME];
+            [mutableDict setObject:self.passwordText.text  forKey:KEY_PASSWORD];
+
+            [LDDKeyChain save:KEY_USERNAME_PASSWORD data:mutableDict];
+        
+           NSLog(@"字典里所存内容为:%@",mutableDict);
+        
+    }
+}
+
+-(void)loadUserInfo{
+    
+    //调用之前checkbox按钮状态
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.checkBox.on = [defaults boolForKey:@"checkboxStatus"];
+
+    // 从keychain中读取用户名和密码
+    NSMutableDictionary* readDict = (NSMutableDictionary *)[LDDKeyChain load:KEY_USERNAME_PASSWORD];
+    NSString *userName = [readDict objectForKey:KEY_USERNAME];
+    NSString *password = [readDict objectForKey:KEY_PASSWORD];
+    self.phoneNumText.text=userName;
+    self.passwordText.text=password;
+    
+    }
+
 -(void)layoutSubviews{
     
     [super layoutSubviews];
+    
+    [_checkBox mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(15, 15));
+        make.left.equalTo(self.mas_left).offset(15);
+        make.top.equalTo(self.textBackLabel.mas_bottom).offset(15);
+    }];
+    
+    [_remPassLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+         make.size.mas_equalTo(CGSizeMake(60, 15));
+         make.left.equalTo(self.mas_left).offset(35);
+        make.top.equalTo(self.textBackLabel.mas_bottom).offset(15);
+
+    }];
+    
+    [_forgetBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.mas_right).offset(-10);
+        make.size.mas_equalTo(CGSizeMake(75, 15));
+        make.top.equalTo(self.textBackLabel.mas_bottom).offset(15);
+        
+    }];
     
     [_userNameImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
@@ -153,7 +270,7 @@
     
 
     [_phoneNumText mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.mas_right);
+        make.right.equalTo(self.mas_right).offset(-50);;
         make.left.equalTo(self.mas_left).offset(35);
         make.height.equalTo(@44);
         make.top.equalTo(self.textBackLabel.mas_top);
@@ -161,7 +278,7 @@
     }];
     
     [_passwordText mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self);
+        make.right.equalTo(self.mas_right).offset(-50);
         make.left.equalTo(self.mas_left).offset(35);
         make.height.equalTo(@44);
         make.top.equalTo(self.phoneNumText.mas_bottom).offset(1);
@@ -171,7 +288,7 @@
     [_visiblePWBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.size.mas_equalTo(CGSizeMake(20, 20));
-        make.right.equalTo(self.passwordText.mas_right).offset(-30);
+        make.right.equalTo(self.mas_right).offset(-20);
         make.centerY.equalTo(self.passwordText.mas_centerY);
         
     }];
@@ -196,7 +313,7 @@
         make.left.equalTo(self.mas_left).offset(16);
         make.right.equalTo(self.mas_right).offset(-16);
         make.height.equalTo(@35);
-        make.top.equalTo(self.passwordText.mas_bottom).offset(40);
+        make.top.equalTo(self.forgetBtn.mas_bottom).offset(15);
         
     }];
     
@@ -209,7 +326,7 @@
     self.passwordText.secureTextEntry=button.selected;
     button.selected=!button.selected;
     //self.passwordText.enabled = YES;
-    [self.passwordText becomeFirstResponder];
+    //[self.passwordText becomeFirstResponder];
     
 }
 

@@ -11,7 +11,7 @@
 @interface LDRegisterView ()<UITextFieldDelegate>
 @property(strong,nonatomic)UIButton *nextStepBtn;
 @property(nonatomic,strong)UILabel *hintLabel,*textBackLabel,*midTextLineLabel;//提示标签,textfield背景，textfield中间那条线
-@property(nonatomic,strong)UIImageView *userNameImg,*passwordImg,*hintImage;
+@property(nonatomic,strong)UIImageView *userNameImg,*passwordImg,*logoImage;
 
 @end
 
@@ -31,21 +31,19 @@
        
         [self addSubview:self.passwordImg];
         [self addSubview:self.userNameImg];
-        [self addSubview:self.hintImage];
+        [self addSubview:self.logoImage];
        // self.backgroundColor=[UIColor grayColor];
     }
     return self;
 }
 
-
--(UIImageView *)hintImage{
-    
-    if (!_hintImage) {
-        _hintImage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Image"]];
+-(UIImageView *)logoImage{
+    if (!_logoImage) {
+        _logoImage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo_1"]];
+        
     }
-    return _hintImage;
+    return _logoImage;
 }
-
 -(UIImageView *)passwordImg{
     if (!_passwordImg) {
         _passwordImg=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Login_password"]];
@@ -150,6 +148,9 @@
         make.top.equalTo(self.phoneNumText.mas_top).offset(12);
     }];
     
+ 
+
+    
     [_passwordImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
         make.size.mas_equalTo(CGSizeMake(25, 20));
@@ -157,11 +158,13 @@
     }];
     
     
-    [ _hintImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(5);
-        make.centerX.equalTo(self.mas_centerX);
-        make.size.mas_equalTo(CGSizeMake(100, 100));
+    [ _logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(10);
+        make.right.equalTo(self.mas_right).offset(-70);
+        make.left.equalTo(self.mas_left).offset(70);
+        make.height.mas_equalTo( 50);
     }];
+    
     
     [_phoneNumText mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.mas_right);
@@ -183,7 +186,7 @@
     
        [_textBackLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@89);
-        make.top.equalTo(self.hintImage.mas_bottom).offset(5);
+        make.top.equalTo(self.logoImage.mas_bottom).offset(10);
         make.left.equalTo(self.mas_left).offset(-1);
         make.right.equalTo(self.mas_right).offset(1);
         
@@ -191,7 +194,7 @@
     
     [_midTextLineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@1);
-        make.left.equalTo(self.textBackLabel.mas_left).offset(15);
+        make.left.equalTo(self.userNameImg.mas_left);
         make.right.equalTo(self.textBackLabel.mas_right).offset(-15);
         make.centerY.equalTo(self.textBackLabel.mas_centerY);
     }];

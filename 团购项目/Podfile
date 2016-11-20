@@ -10,4 +10,5 @@ target '团购项目' do
   pod 'SDWebImage', '~> 3.8.2'
  pod 'AFNetworking', '~> 3.1.0'
  pod 'SVProgressHUD', '~> 2.0.3'
+  pod 'BEMCheckBox', '~> 1.2.1'
 end

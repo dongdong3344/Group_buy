@@ -37,7 +37,7 @@
 -(UIImageView *)portraitView{
     
     if (!_portraitView) {
-        _portraitView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"imageView_touxiang"]];
+        _portraitView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"defautImage"]];
     }
     return _portraitView;
 }

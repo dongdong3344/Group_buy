@@ -35,14 +35,18 @@
        // viewController.navigationController.navigationBar.hidden=YES;
         
         //设置左按钮样式
-        UIButton *fanHuiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        fanHuiButton.frame = CGRectMake(0, 0, 25, 25);
-        [fanHuiButton setBackgroundImage:[UIImage imageNamed: @"common_btn_back_arrow" ]forState:UIControlStateNormal];
-        [fanHuiButton setBackgroundImage:[UIImage imageNamed: @"common_btn_back_pressed" ]forState:UIControlStateSelected];
+        UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        backBtn.frame = CGRectMake(0, 0, 25, 25);
+        [backBtn setBackgroundImage:[UIImage imageNamed: @"common_btn_back_arrow" ]forState:UIControlStateNormal];
+        [backBtn setBackgroundImage:[UIImage imageNamed: @"common_btn_back_pressed" ]forState:UIControlStateSelected];
         
-        [fanHuiButton addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
-       viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:fanHuiButton];
-        
+        [backBtn addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
+        //创建空格
+        UIBarButtonItem * spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        //将宽度设为负值
+        spaceItem.width = -15;
+      UIBarButtonItem* leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+        viewController.navigationItem.leftBarButtonItems=@[spaceItem,leftBarButtonItem];
     }
     
     [super pushViewController:viewController animated:animated];

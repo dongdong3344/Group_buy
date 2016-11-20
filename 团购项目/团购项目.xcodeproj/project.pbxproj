@@ -10,7 +10,6 @@
 		0DBD14A7D4FE4DF980AAB51F /* libPods-团购项目.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDF239B3A22FCB0A61247AF /* libPods-团购项目.a */; };
 		C709BFD41DD96166007D7929 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C709BFD31DD96166007D7929 /* main.m */; };
 		C709BFDD1DD96166007D7929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709BFDB1DD96166007D7929 /* Main.storyboard */; };
-		C709BFDF1DD96166007D7929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C709BFDE1DD96166007D7929 /* Assets.xcassets */; };
 		C709BFE21DD96166007D7929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709BFE01DD96166007D7929 /* LaunchScreen.storyboard */; };
 		C709C16D1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0211DD96590007D7929 /* Contents.json */; };
 		C709C16E1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0231DD96590007D7929 /* Contents.json */; };
@@ -231,6 +230,9 @@
 		C75212501DDB05FD00772012 /* LDNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C752124F1DDB05FD00772012 /* LDNextViewController.m */; };
 		C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */; };
 		C7CCCF3E1DDEA4E900601687 /* LDLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3D1DDEA4E900601687 /* LDLoginView.m */; };
+		C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF411DE07C4B00601687 /* LDDKeyChain.m */; };
+		C7CCCF441DE086D800601687 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CCCF431DE086D800601687 /* Security.framework */; };
+		C7CCCF491DE144E400601687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CCCF481DE144E400601687 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -239,7 +241,6 @@
 		C709BFCF1DD96166007D7929 /* 团购项目.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "团购项目.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C709BFD31DD96166007D7929 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C709BFDC1DD96166007D7929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C709BFDE1DD96166007D7929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C709BFE11DD96166007D7929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C709BFE31DD96166007D7929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C709C0211DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
@@ -484,6 +485,11 @@
 		C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDLoginViewController.m; sourceTree = "<group>"; };
 		C7CCCF3C1DDEA4E900601687 /* LDLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLoginView.h; sourceTree = "<group>"; };
 		C7CCCF3D1DDEA4E900601687 /* LDLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDLoginView.m; sourceTree = "<group>"; };
+		C7CCCF401DE07C4B00601687 /* LDDKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDDKeyChain.h; sourceTree = "<group>"; };
+		C7CCCF411DE07C4B00601687 /* LDDKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDDKeyChain.m; sourceTree = "<group>"; };
+		C7CCCF431DE086D800601687 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C7CCCF471DE11C1500601687 /* 团购项目.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "团购项目.entitlements"; sourceTree = "<group>"; };
+		C7CCCF481DE144E400601687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8C5B3B6E1E624CBFDFF3F40 /* Pods-团购项目.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-团购项目.release.xcconfig"; path = "Pods/Target Support Files/Pods-团购项目/Pods-团购项目.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -492,6 +498,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7CCCF441DE086D800601687 /* Security.framework in Frameworks */,
 				0DBD14A7D4FE4DF980AAB51F /* libPods-团购项目.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +509,7 @@
 		0158CB2F7EC9BE895CC3A19D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7CCCF431DE086D800601687 /* Security.framework */,
 				2DDF239B3A22FCB0A61247AF /* libPods-团购项目.a */,
 			);
 			name = Frameworks;
@@ -538,6 +546,7 @@
 		C709BFD11DD96166007D7929 /* 团购项目 */ = {
 			isa = PBXGroup;
 			children = (
+				C7CCCF471DE11C1500601687 /* 团购项目.entitlements */,
 				C709C2841DDA9F88007D7929 /* Class */,
 			);
 			path = "团购项目";
@@ -546,8 +555,8 @@
 		C709BFD21DD96166007D7929 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C7CCCF481DE144E400601687 /* Assets.xcassets */,
 				C709BFDB1DD96166007D7929 /* Main.storyboard */,
-				C709BFDE1DD96166007D7929 /* Assets.xcassets */,
 				C709C0201DD96590007D7929 /* 分类界面切图 */,
 				C709C06D1DD96590007D7929 /* 购物车界面 */,
 				C709C0B11DD96590007D7929 /* 我的界面切图 */,
@@ -1236,6 +1245,8 @@
 		C709C2911DDA9F88007D7929 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C7CCCF401DE07C4B00601687 /* LDDKeyChain.h */,
+				C7CCCF411DE07C4B00601687 /* LDDKeyChain.m */,
 				C718A8FA1DDD9E6B003CD60F /* Toast */,
 				C718A8F41DDD4267003CD60F /* LDHTTPTool.h */,
 				C718A8F51DDD4267003CD60F /* LDHTTPTool.m */,
@@ -1538,6 +1549,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = M6ZDLRSM4A;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1646,6 +1662,7 @@
 				C709C1BE1DD96591007D7929 /* 购物车界面商品未选中.png in Resources */,
 				C709C1881DD96591007D7929 /* 分类界面敏感肌肤图标@2x.png in Resources */,
 				C709C24D1DD96591007D7929 /* 详情界面收藏按钮@3x.png in Resources */,
+				C7CCCF491DE144E400601687 /* Assets.xcassets in Resources */,
 				C709C2C11DDA9F88007D7929 /* cellList.plist in Resources */,
 				C709C18B1DD96591007D7929 /* 分类界面水乳咖喱图标.png in Resources */,
 				C709C2561DD96591007D7929 /* Contents.json in Resources */,
@@ -1676,7 +1693,6 @@
 				C709C1DB1DD96591007D7929 /* 购物车界面静态购物车图标@2x.png in Resources */,
 				C709C19F1DD96591007D7929 /* 分类界面补水保湿图标.png in Resources */,
 				C709C1DA1DD96591007D7929 /* 购物车界面静态购物车图标.png in Resources */,
-				C709BFDF1DD96166007D7929 /* Assets.xcassets in Resources */,
 				C709C1FE1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1A21DD96591007D7929 /* Contents.json in Resources */,
 				C709C1A51DD96591007D7929 /* 分类界面面膜图标@3x.png in Resources */,
@@ -1840,6 +1856,7 @@
 				C709C2C71DDA9F88007D7929 /* LDTimeViewController.m in Sources */,
 				C718A8F61DDD4267003CD60F /* LDHTTPTool.m in Sources */,
 				C75212451DDAD86500772012 /* LDRegisterView.m in Sources */,
+				C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */,
 				C718A8F31DDC2459003CD60F /* LDNextStepView.m in Sources */,
 				C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */,
 				C709C2C31DDA9F88007D7929 /* LDMyMessageHeadView.m in Sources */,
@@ -1963,6 +1980,7 @@
 			baseConfigurationReference = 7BA62325D170AB7B60CB63CC /* Pods-团购项目.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "团购项目/团购项目.entitlements";
 				DEVELOPMENT_TEAM = M6ZDLRSM4A;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/团购项目/Class/Other/shop.pch";
 				INFOPLIST_FILE = "团购项目/Info.plist";
@@ -1978,6 +1996,7 @@
 			baseConfigurationReference = E8C5B3B6E1E624CBFDFF3F40 /* Pods-团购项目.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "团购项目/团购项目.entitlements";
 				DEVELOPMENT_TEAM = M6ZDLRSM4A;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/团购项目/Class/Other/shop.pch";
 				INFOPLIST_FILE = "团购项目/Info.plist";

@@ -39,6 +39,7 @@
     if (!_qqLabel) {
         _qqLabel=[[UILabel alloc]init];
         _qqLabel.text=@"QQ登录";
+       // _qqLabel.textColor=[UIColor blackColor];
         _qqLabel.textColor=RGBCOLOR(190, 190, 190);
         _qqLabel.font=[UIFont systemFontOfSize:12];
         _qqLabel.textAlignment=UITextAlignmentCenter;
@@ -51,6 +52,7 @@
 -(UILabel *)wechatLabel{
     if (!_wechatLabel) {
         _wechatLabel=[[UILabel alloc]init];
+       // _wechatLabel.textColor=[UIColor blackColor];
         _wechatLabel.textColor=RGBCOLOR(190, 190, 190);
         _wechatLabel.text=@"微信登录";
         _wechatLabel.font=[UIFont systemFontOfSize:12];
@@ -65,6 +67,7 @@
     
     if (!_weiboLabel) {
         _weiboLabel=[[UILabel alloc]init];
+       // _weiboLabel.textColor=[UIColor blackColor];
         _weiboLabel.textColor=RGBCOLOR(190, 190, 190);
         _weiboLabel.text=@"微博登录";
         _weiboLabel.font=[UIFont systemFontOfSize:12];
@@ -85,7 +88,8 @@
     if (!_oneKeyLogin) {
         _oneKeyLogin=[[UILabel alloc]init];
         _oneKeyLogin.text=@"第三方账号快速登录";
-        _oneKeyLogin.textColor=RGBCOLOR(190, 190, 190) ;
+        _oneKeyLogin.textColor=[UIColor blackColor];
+        //_oneKeyLogin.textColor=RGBCOLOR(190, 190, 190) ;
         _oneKeyLogin.backgroundColor=[UIColor whiteColor];//设置按钮的背景矩形区域，背景和view背景相同
         _oneKeyLogin.textAlignment=UITextAlignmentCenter;
         _oneKeyLogin.font=[UIFont systemFontOfSize:14];
@@ -149,7 +153,7 @@
     
     [_wechatLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50, 16));
-        make.top.equalTo(self.weChatBtn.mas_bottom).offset(2);
+        make.top.equalTo(self.weChatBtn.mas_bottom).offset(5);
         make.centerX.equalTo(self.mas_centerX);
 
     }];
@@ -163,7 +167,7 @@
     }];
     [_qqLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50, 16));
-        make.top.equalTo(self.qqBtn.mas_bottom).offset(2);
+        make.top.equalTo(self.qqBtn.mas_bottom).offset(5);
         make.right.equalTo(self.wechatLabel.mas_left).offset(-(self.frame.size.width-150)/4);
     
     }];
@@ -178,7 +182,7 @@
     
     [_weiboLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50, 16));
-        make.top.equalTo(self.sinaBtn.mas_bottom).offset(2);
+        make.top.equalTo(self.sinaBtn.mas_bottom).offset(5);
         make.left.equalTo(self.wechatLabel.mas_right).offset((self.frame.size.width-150)/4);
 
     }];

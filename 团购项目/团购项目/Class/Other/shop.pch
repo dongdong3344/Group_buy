@@ -17,4 +17,6 @@
 #import "LDHTTPTool.h"
 #import "SVProgressHUD.h"
 #import "UIView+Toast.h"
+#import "BEMCheckBox.h"
+#import "LDDKeyChain.h"//保存用户名和密码
 #endif /* shop_pch */

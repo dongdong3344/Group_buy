@@ -10,6 +10,7 @@
 #import "LDRegisterViewController.h"
 #import "LDThirdLoginview.h"
 #import "LDLoginView.h"
+
 @interface LDLoginViewController ()
 @property(strong,nonatomic)LDLoginView *loginView;
 @property(strong,nonatomic)LDThirdLoginview *thirdLoginView;
@@ -18,13 +19,13 @@
 @implementation LDLoginViewController
 
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    self.loginView.passwordText.text=@"";
-    self.loginView.phoneNumText.text=@"";
-    [self.loginView.passwordText resignFirstResponder];
-    [self.loginView.phoneNumText resignFirstResponder];
-}
+//-(void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    self.loginView.passwordText.text=@"";
+//    self.loginView.phoneNumText.text=@"";
+//    [self.loginView.passwordText resignFirstResponder];
+//    [self.loginView.phoneNumText resignFirstResponder];
+//}
 
 -(LDLoginView *)loginView{
     
