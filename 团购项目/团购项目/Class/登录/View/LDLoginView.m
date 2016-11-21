@@ -9,19 +9,16 @@
 #import "LDLoginView.h"
 
 
-NSString * const KEY_USERNAME_PASSWORD = @"com.company.app.usernamepassword";
-NSString * const KEY_USERNAME = @"com.company.app.username";
-NSString * const KEY_PASSWORD = @"com.company.app.password";
-
 
 
 @interface LDLoginView ()<UITextFieldDelegate,BEMCheckBoxDelegate>
 
-@property(strong,nonatomic)UIButton *loginBtn,*forgetBtn;
+@property(strong,nonatomic)UIButton *forgetBtn;
 @property(nonatomic,strong)UILabel *textBackLabel,*midTextLineLabel,*remPassLabel;//textfield背景，textfield中间那条线
+
 @property(nonatomic,strong)UIImageView *userNameImg,*passwordImg;
 @property(strong,nonatomic)UIButton *visiblePWBtn;
-@property(strong,nonatomic)BEMCheckBox *checkBox;
+
 @end
 
 @implementation LDLoginView
@@ -43,7 +40,7 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
         [self addSubview:self.remPassLabel];
         [self addSubview:self.forgetBtn];
         
-        [self loadUserInfo];//加载退出之前用户名和密码是否记住？
+       // [self loadUserInfo];//加载退出之前用户名和密码是否记住？
  
     }
     return self;
@@ -176,61 +173,21 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
         _loginBtn.backgroundColor=RGBCOLOR(242, 131, 48);
         [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
-        [_loginBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-        
+              
         
     }
     return _loginBtn;
     
 }
 
--(void)loginAction{
-    if ([self.phoneNumText.text isEqualToString:@""]) {
-        [self makeToast:@"请输入用户名" duration:1.5 position: @"CSToastPositionCenter"];
-    }else if ([self.passwordText.text isEqualToString:@""]){
-        [self makeToast:@"请输入密码" duration:1.5 position: @"CSToastPositionCenter"];
-    }else {
-       [self makeToast:@"登录成功" duration:1.5 position:  @"CSToastPositionCenter"];
-       [self saveUserInfo];
-}
-}
+//-(void)pushNextViewController{
+//    if (self.loginblock) {
+//        self.loginblock(@{@"userName":_phoneNumText.text,@"password":_passwordText.text});
+//    }
+//}
 
 
--(void)saveUserInfo{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:self.checkBox.on forKey:@"checkboxStatus"];
-    [defaults synchronize];//不要忘记这行代码
 
-    
-    if (self.checkBox.on) {
-        
-            //存用户名和密码到keychain
-            NSMutableDictionary *mutableDict=[NSMutableDictionary dictionary];
-            [mutableDict setObject:self.phoneNumText.text forKey:KEY_USERNAME];
-            [mutableDict setObject:self.passwordText.text  forKey:KEY_PASSWORD];
-
-            [LDDKeyChain save:KEY_USERNAME_PASSWORD data:mutableDict];
-        
-           NSLog(@"字典里所存内容为:%@",mutableDict);
-        
-    }
-}
-
--(void)loadUserInfo{
-    
-    //调用之前checkbox按钮状态
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    self.checkBox.on = [defaults boolForKey:@"checkboxStatus"];
-
-    // 从keychain中读取用户名和密码
-    NSMutableDictionary* readDict = (NSMutableDictionary *)[LDDKeyChain load:KEY_USERNAME_PASSWORD];
-    NSString *userName = [readDict objectForKey:KEY_USERNAME];
-    NSString *password = [readDict objectForKey:KEY_PASSWORD];
-    self.phoneNumText.text=userName;
-    self.passwordText.text=password;
-    
-    }
 
 -(void)layoutSubviews{
     

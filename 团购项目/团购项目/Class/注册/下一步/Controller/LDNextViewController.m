@@ -9,6 +9,9 @@
 #import "LDNextViewController.h"
 #import "LDNextStepView.h"
 #import "LDLoginViewController.h"
+#import "LDNavController.h"
+
+#import "LDRegisterViewController.h"
 
 @interface LDNextViewController ()
 @property(strong,nonatomic)LDNextStepView *nextView;
@@ -120,9 +123,16 @@
                      
                      if ([responseObject[@"result"] isEqualToString:@"success"]) {
                         // LDDLog(@"注册成功");
-                          [self showTostMessage:@"恭喜您注册成功"];
-                     }else if ([responseObject[@"result"] isEqualToString:@"codeError"]){
+                        [self showTostMessage:@"恭喜您注册成功,即将跳转至登录界面"];
                          
+                           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                             LDLoginViewController *loginVC=[[LDLoginViewController alloc]init];
+                               [self.navigationController pushViewController:loginVC animated:YES];
+                             
+                         });
+                         
+                      
+                     }else if ([responseObject[@"result"] isEqualToString:@"codeError"]){
                          //LDDLog(@"验证码错误");
                          [self showTostMessage:@"验证码错误，请重新输入"];
                          self.nextView.VerificationText.text=@"";//清除当前输入的验证码
@@ -200,11 +210,9 @@
     
     
     UIAlertAction *loginAction=[UIAlertAction actionWithTitle:@"直接登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        LDLoginViewController *loginVC=[[LDLoginViewController alloc]init];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        [self popToLoginVC];
+        }];
         
-    }];
-    
     UIAlertAction *modifyPhoneAction=[UIAlertAction actionWithTitle:@"修改号码" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         [self.navigationController popViewControllerAnimated:YES];
@@ -221,7 +229,37 @@
 
 }
 
+-(void)popToLoginVC{
+    
+   // 方法一:使用popviewcontroller方法，一定要遍历找到需要跳转的viewController并且创建中间变量revise，这样可以拿到被跳转控制器的属性
+        
+       for (LDBaseViewController  *controller in self.navigationController.viewControllers) {
+        if ([controller isKindOfClass:[LDLoginViewController class]]) {
+            LDLoginViewController *revise =(LDLoginViewController *)controller;
+            revise.loginView.phoneNumText.text=_userMessageDic[@"phoneName"];
+            revise.loginView.passwordText.text=@"";
+            revise.loginView.checkBox.on=NO;
+            [revise.loginView.phoneNumText resignFirstResponder];//pop到登录界面时，让界面上不显示键盘
+            [revise.loginView.passwordText resignFirstResponder];
 
+        
+        [self.navigationController popToViewController:revise animated:YES];
+           
+        }
+        
+    }
+    
+    // 方法2:使用presentViewController方法
+    // LDLoginViewController *loginVC=[[LDLoginViewController alloc]init];
+
+//    LDNavController *nav=[[LDNavController alloc]initWithRootViewController:loginVC];//没有创建nav的话，presentViewcontroller时，没有导航栏
+//     [self presentViewController:nav animated :YES completion:^{
+//        loginVC.loginView.phoneNumText.text=_userMessageDic[@"phoneName"];
+//        loginVC.loginView.passwordText.text=@"";
+//        loginVC.loginView.checkBox.on=NO;
+//            }];
+
+}
 @end
 
 

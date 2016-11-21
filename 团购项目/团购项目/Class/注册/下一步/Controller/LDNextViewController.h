@@ -13,5 +13,4 @@
 @interface LDNextViewController :LDBaseViewController
 @property(nonatomic,strong)NSDictionary *userMessageDic;//存储用户手机号和密码
 
-
 @end

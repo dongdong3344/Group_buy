@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LDBaseViewController.h"
+#import "LDLoginView.h"
 
-@interface LDLoginViewController : UIViewController
+@interface LDLoginViewController :LDBaseViewController
+@property(strong,nonatomic)LDLoginView *loginView;
 
 @end

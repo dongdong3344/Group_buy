@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef  void(^LoginBlock)(NSDictionary *dict);
 @interface LDLoginView : UIView
+
+@property(copy,nonatomic)LoginBlock  loginblock;
 @property(strong,nonatomic)UITextField *phoneNumText, *passwordText;
+@property(strong,nonatomic)UIButton *loginBtn;
+@property(strong,nonatomic)BEMCheckBox *checkBox;
 @end
