@@ -53,6 +53,7 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
         _loginView=[[LDLoginView alloc]init];
         
         [self.loginView.loginBtn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     return _loginView;
 }
@@ -82,6 +83,9 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
         if ([responseObject[@"ErrorMessage"] isEqualToString:@"登陆成功"]) {
             [self saveUserInfo];//保存用户名和密码信息
                 [self showTostMessage:@"恭喜您，登录成功"];
+            //存储登录状态
+            [[NSUserDefaults standardUserDefaults ]setObject:responseObject forKey:@"ISLOGIN"];
+            [self performSelector:@selector(popToMineViewController) withObject:nil afterDelay:1];//1秒后跳转我的界面
         }else if ([responseObject[@"ErrorMessage"] isEqualToString:@"密码错误"]){
             [self showTostMessage:@"用户名或密码错误，请重新输入"];
 
@@ -97,13 +101,14 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
             LDDLog(@"error : %@",error);
 
         }];
-        
-        
-    }
 
+    }
+}
+-(void)popToMineViewController{
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
     
 }
-
 
 -(void)saveUserInfo{
     
@@ -111,7 +116,7 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
     [defaults setBool:self.loginView.checkBox.on forKey:@"checkboxStatus"];
     [defaults synchronize];//不要忘记这行代码
     
-    NSLog(@"**********8checkbox的状态为：%d",self.loginView.checkBox.on);
+   // NSLog(@"**********checkbox的状态为：%d",self.loginView.checkBox.on);
     
     
     NSMutableDictionary *mutableDict=[NSMutableDictionary dictionary];
@@ -223,4 +228,10 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
     [self.loginView.passwordText resignFirstResponder];
 }
 
+
+- (BOOL)textFieldShouldReturn:(UITextField*)textField {
+    
+    
+    return YES;
+}
 @end

@@ -13,6 +13,7 @@ typedef  void(^LoginBlock)(NSDictionary *dict);
 
 @property(copy,nonatomic)LoginBlock  loginblock;
 @property(strong,nonatomic)UITextField *phoneNumText, *passwordText;
-@property(strong,nonatomic)UIButton *loginBtn;
+@property(strong,nonatomic)UIButton *loginBtn,*registerBtn;;
 @property(strong,nonatomic)BEMCheckBox *checkBox;
+
 @end

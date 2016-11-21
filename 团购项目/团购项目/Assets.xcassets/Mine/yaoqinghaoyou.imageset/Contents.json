@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "shouchang3.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "MyMobile_clique@2x.png",
       "scale" : "2x"
     },
     {

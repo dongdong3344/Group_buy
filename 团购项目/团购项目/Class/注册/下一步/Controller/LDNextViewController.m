@@ -125,6 +125,8 @@
                         // LDDLog(@"注册成功");
                         [self showTostMessage:@"恭喜您注册成功,即将跳转至登录界面"];
                          
+                         
+                         
                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                              LDLoginViewController *loginVC=[[LDLoginViewController alloc]init];
                                [self.navigationController pushViewController:loginVC animated:YES];
@@ -248,17 +250,19 @@
         }
         
     }
-    
-    // 方法2:使用presentViewController方法
-    // LDLoginViewController *loginVC=[[LDLoginViewController alloc]init];
+    /*
+     //方法2:使用presentViewController方法
+     LDLoginViewController *loginVC=[[LDLoginViewController alloc]init];
 
-//    LDNavController *nav=[[LDNavController alloc]initWithRootViewController:loginVC];//没有创建nav的话，presentViewcontroller时，没有导航栏
-//     [self presentViewController:nav animated :YES completion:^{
-//        loginVC.loginView.phoneNumText.text=_userMessageDic[@"phoneName"];
-//        loginVC.loginView.passwordText.text=@"";
-//        loginVC.loginView.checkBox.on=NO;
-//            }];
+    LDNavController *nav=[[LDNavController alloc]initWithRootViewController:loginVC];//没有创建nav的话，presentViewcontroller时，没有导航栏
+     [self presentViewController:nav animated :YES completion:^{
+        loginVC.loginView.phoneNumText.text=_userMessageDic[@"phoneName"];
+        loginVC.loginView.passwordText.text=@"";
+        loginVC.loginView.checkBox.on=NO;
+            }];
 
+
+     */
 }
 @end
 

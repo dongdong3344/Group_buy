@@ -20,6 +20,9 @@
 
 @implementation LDMineViewController
 
+
+
+
 -(LDMyMessageHeadView *)headView{
     if (!_headView) {
         _headView=[[LDMyMessageHeadView alloc]init];
@@ -52,7 +55,7 @@
     [self.view addSubview:self.headView];
     [self.view addSubview:self.tableView];
   
-    [self addAutoLayout];
+    [self setupConstraints];
     
    }
 
@@ -61,9 +64,10 @@
     
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+     [self.tableView reloadData];//刷新数据表格
 }
 
--(void)addAutoLayout{
+-(void)setupConstraints{
     [_headView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view) ;
         make.height.mas_equalTo(171);
@@ -71,7 +75,7 @@
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(176);
+        make.height.mas_equalTo(264);
         make.top.equalTo(self.headView.mas_bottom).offset(20);
     }];
     

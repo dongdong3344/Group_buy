@@ -14,7 +14,7 @@
 @interface LDLoginView ()<UITextFieldDelegate,BEMCheckBoxDelegate>
 
 @property(strong,nonatomic)UIButton *forgetBtn;
-@property(nonatomic,strong)UILabel *textBackLabel,*midTextLineLabel,*remPassLabel;//textfield背景，textfield中间那条线
+@property(nonatomic,strong)UILabel *textBackLabel,*midTextLineLabel,*remPassLabel,*messageLabel;//textfield背景，textfield中间那条线
 
 @property(nonatomic,strong)UIImageView *userNameImg,*passwordImg;
 @property(strong,nonatomic)UIButton *visiblePWBtn;
@@ -39,12 +39,12 @@
         [self addSubview:self.checkBox];
         [self addSubview:self.remPassLabel];
         [self addSubview:self.forgetBtn];
-        
-       // [self loadUserInfo];//加载退出之前用户名和密码是否记住？
+      
  
     }
     return self;
 }
+
 
 
 -(UIButton *)forgetBtn{
@@ -53,6 +53,7 @@
         [_forgetBtn setTitle:@"忘记密码？" forState:UIControlStateNormal];
         [_forgetBtn setTitleColor:RGBCOLOR(56, 166, 243) forState:UIControlStateNormal];
         _forgetBtn.titleLabel.font=[UIFont systemFontOfSize:14];
+        _forgetBtn.titleLabel.textAlignment=UITextAlignmentLeft;
     }
     return _forgetBtn;
     
@@ -146,6 +147,7 @@
         _phoneNumText.keyboardType=UIKeyboardTypeNumberPad;//设置数字键盘
         _phoneNumText.font=[UIFont systemFontOfSize:16];
         _phoneNumText.clearButtonMode=UITextFieldViewModeWhileEditing;
+       // _phoneNumText.returnKeyType=UIReturnKeyNext;
        _phoneNumText.delegate=self;
     }
     return _phoneNumText;
@@ -157,6 +159,7 @@
         _passwordText=[[UITextField alloc]init];
         _passwordText.placeholder=@"请输入密码";
         _passwordText.clearButtonMode=UITextFieldViewModeWhileEditing;//编辑时，有删除按钮出现
+        _passwordText.returnKeyType=UIReturnKeyDone;
         _passwordText.font=[UIFont systemFontOfSize:16];
         _passwordText.secureTextEntry=YES;
         _passwordText.delegate=self;
@@ -180,19 +183,10 @@
     
 }
 
-//-(void)pushNextViewController{
-//    if (self.loginblock) {
-//        self.loginblock(@{@"userName":_phoneNumText.text,@"password":_passwordText.text});
-//    }
-//}
-
-
-
-
 -(void)layoutSubviews{
     
     [super layoutSubviews];
-    
+
     [_checkBox mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(15, 15));
         make.left.equalTo(self.mas_left).offset(15);

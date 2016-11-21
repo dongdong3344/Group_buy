@@ -39,8 +39,13 @@
 #pragma mark -tableView delegate-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
-}
+    
+    NSDictionary *loginDic=[[NSUserDefaults standardUserDefaults]valueForKey:@"ISLOGIN"];
+    if (loginDic.count) {//字典里有值的话
+        return 6;
+    }else  return 4;
+    
+    }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LDMessageCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
