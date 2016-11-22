@@ -122,6 +122,9 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
     
    // NSLog(@"**********checkbox的状态为：%d",self.loginView.checkBox.on);
     
+   _phoneNumDefaultes=[NSUserDefaults standardUserDefaults];
+    
+    [_phoneNumDefaultes setObject:self.loginView.phoneNumText.text  forKey:@"phone"];
     
     NSMutableDictionary *mutableDict=[NSMutableDictionary dictionary];
     [mutableDict setObject:self.loginView.phoneNumText.text forKey:KEY_USERNAME];

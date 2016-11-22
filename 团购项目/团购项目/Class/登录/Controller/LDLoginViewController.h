@@ -10,7 +10,9 @@
 #import "LDBaseViewController.h"
 #import "LDLoginView.h"
 
+
+
 @interface LDLoginViewController :LDBaseViewController
 @property(strong,nonatomic)LDLoginView *loginView;
-
+@property(strong,nonatomic)NSUserDefaults *phoneNumDefaultes;
 @end

@@ -13,7 +13,7 @@ typedef void(^MyMessageheadViewBlock)();
 
 
 @interface LDMyMessageHeadView : UIView
-
+@property(nonatomic,strong)UILabel *welcomeLabel;
 @property(nonatomic,copy)MyMessageheadViewBlock block;
 - (void)reloadHeadView;
 @end

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "shouchang.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Flow_comboOuter@2x.png",
       "scale" : "2x"
     },
     {

@@ -12,7 +12,7 @@
 
 @property(nonatomic,strong)UIImageView *headBackIamge,*portraitView,*loginPortraitView;//图片背景，头像,登录后的头像
 @property(nonatomic,strong)UIButton *registerBtn;//登录注册
-@property(nonatomic,strong)UILabel *welcomeLabel;
+
 @end
 
 
@@ -33,12 +33,16 @@
     }
     return self;
 }
+
+
+
+
 -(UILabel *)welcomeLabel{
     
     if (!_welcomeLabel) {
         _welcomeLabel=[[UILabel alloc]init];
-        _welcomeLabel.text=@"欢迎您,15262352648";
-        _welcomeLabel.font=[UIFont systemFontOfSize:14];
+        //_welcomeLabel.text=@"欢迎您,15262352648";
+        _welcomeLabel.font=[UIFont boldSystemFontOfSize:14];
         _welcomeLabel.textColor=[UIColor whiteColor];
         _welcomeLabel.textAlignment= kCTTextAlignmentCenter ;
 
@@ -157,9 +161,7 @@
          make.centerX.equalTo(self.loginPortraitView.mas_centerX);
     }];
     
-    NSLog(@"frame:%@",NSStringFromCGRect(self.welcomeLabel.frame));
 
-    
     [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(100, 20));
         make.centerX.equalTo(self.mas_centerX);

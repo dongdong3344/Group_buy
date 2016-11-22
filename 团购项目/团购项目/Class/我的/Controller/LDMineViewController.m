@@ -70,7 +70,7 @@
    
     LDSheetViewController *sheetVC=[[LDSheetViewController alloc]init];
     sheetVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;//OverCurrentContext
-    
+    sheetVC.modalTransitionStyle=UIModalTransitionStyleCrossDissolve;
     //以下几个代码目的是为了隐藏tabbar
     AppDelegate *appdelegate=(AppDelegate*)[[UIApplication sharedApplication] delegate];
     appdelegate.window.rootViewController.definesPresentationContext = YES;
@@ -107,7 +107,6 @@
 }
 
 
-
 - (void)viewDidLoad {
    
     [super viewDidLoad];
@@ -115,6 +114,8 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;//可以让tabview覆盖在状态栏下（不是在状态栏顶部下20像素）
     [self.view addSubview:self.headView];
     [self.view addSubview:self.tableView];
+   
+
     
     NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
     
@@ -129,6 +130,18 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.tableView reloadData];//刷新数据表格
     [self.headView reloadHeadView];
+    
+    //设置欢迎信息富文本
+    NSUserDefaults *user=[NSUserDefaults standardUserDefaults];
+    NSString *phoneStr=[user objectForKey:@"phone"];
+    NSString  *str=[NSString stringWithFormat:@"欢迎你,%@",phoneStr];
+    NSMutableAttributedString *welcomeStr = [[NSMutableAttributedString alloc] initWithString:str];
+    [welcomeStr addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, 4)];
+    [welcomeStr addAttribute:NSForegroundColorAttributeName value:RGBCOLOR(56, 166, 243)range:NSMakeRange(4, 11)];
+    self.headView.welcomeLabel.attributedText=welcomeStr;
+//    NSLog(@"电话号码:%@",phoneStr);
+    
+    //self.headView.welcomeLabel.text=str;
 }
 
 - (void)dealloc
