@@ -22,6 +22,8 @@
     
 }
 -(void)setupViewcontrollers{
+    
+  
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBCOLOR(7, 123, 251)} forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132)} forState:UIControlStateNormal];
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_back"]];

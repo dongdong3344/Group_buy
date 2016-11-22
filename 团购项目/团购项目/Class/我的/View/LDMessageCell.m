@@ -22,6 +22,7 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        
         [self addSubview:self.iconImage];
         [self addSubview:self.titleLabel];
         [self addSubview:self.nextImage];

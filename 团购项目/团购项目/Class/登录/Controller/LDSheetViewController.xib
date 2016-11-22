@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LDSheetViewController">
+            <connections>
+                <outlet property="cancleBtn" destination="rlo-N2-g9r" id="D13-0g-10q"/>
+                <outlet property="quitBtn" destination="nEC-kC-RPk" id="Yhn-Ao-JVJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bib-5d-sQD">
+                    <rect key="frame" x="0.0" y="529" width="375" height="138"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlo-N2-g9r">
+                            <rect key="frame" x="0.0" y="94" width="375" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="V2j-24-iXa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="cancleAction:" destination="-1" eventType="touchUpInside" id="Boz-Ef-V0O"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEC-kC-RPk">
+                            <rect key="frame" x="0.0" y="45" width="375" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="yko-Fy-Dgw"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="退出登录">
+                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="exitAction:" destination="-1" eventType="touchUpInside" id="yod-mc-h7z"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbG-4n-Epu">
+                            <rect key="frame" x="0.0" y="45" width="375" height="0.0"/>
+                            <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="rUZ-gj-ue6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <color key="highlightedColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="退出后不会删除任何历史数据，下次登录仍然可以使用本账号。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2Y-uB-uAa">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="HSq-UQ-VSR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="lbG-4n-Epu" firstAttribute="leading" secondItem="bib-5d-sQD" secondAttribute="leading" id="0MO-WO-DAu"/>
+                        <constraint firstAttribute="trailing" secondItem="nEC-kC-RPk" secondAttribute="trailing" id="6iZ-K3-Gdw"/>
+                        <constraint firstItem="nEC-kC-RPk" firstAttribute="top" secondItem="lbG-4n-Epu" secondAttribute="bottom" id="9yf-YM-8gx"/>
+                        <constraint firstAttribute="height" constant="138" id="BgU-ut-EHA"/>
+                        <constraint firstAttribute="trailing" secondItem="b2Y-uB-uAa" secondAttribute="trailing" id="KrW-8y-1kd"/>
+                        <constraint firstItem="b2Y-uB-uAa" firstAttribute="top" secondItem="bib-5d-sQD" secondAttribute="top" id="TWJ-DY-3Ap"/>
+                        <constraint firstItem="b2Y-uB-uAa" firstAttribute="leading" secondItem="bib-5d-sQD" secondAttribute="leading" id="Xeg-GI-JkX"/>
+                        <constraint firstAttribute="trailing" secondItem="lbG-4n-Epu" secondAttribute="trailing" id="dZP-xP-Bgz"/>
+                        <constraint firstAttribute="trailing" secondItem="rlo-N2-g9r" secondAttribute="trailing" id="e0t-iy-ngv"/>
+                        <constraint firstItem="nEC-kC-RPk" firstAttribute="leading" secondItem="bib-5d-sQD" secondAttribute="leading" id="gVq-IU-eQ8"/>
+                        <constraint firstAttribute="bottom" secondItem="rlo-N2-g9r" secondAttribute="bottom" id="ggo-yj-phR"/>
+                        <constraint firstItem="rlo-N2-g9r" firstAttribute="top" secondItem="nEC-kC-RPk" secondAttribute="bottom" constant="5" id="ooq-fk-XK3"/>
+                        <constraint firstItem="rlo-N2-g9r" firstAttribute="leading" secondItem="bib-5d-sQD" secondAttribute="leading" id="qpw-Aa-QNP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bib-5d-sQD" secondAttribute="bottom" id="0rD-Er-ivl"/>
+                <constraint firstItem="bib-5d-sQD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="L9d-GD-U1o"/>
+                <constraint firstAttribute="trailing" secondItem="bib-5d-sQD" secondAttribute="trailing" id="eAD-by-fOC"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

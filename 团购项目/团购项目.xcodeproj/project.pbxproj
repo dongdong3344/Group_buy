@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0DBD14A7D4FE4DF980AAB51F /* libPods-团购项目.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDF239B3A22FCB0A61247AF /* libPods-团购项目.a */; };
+		C70607E41DE3F1F5008E64FE /* JGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = C70607E31DE3F1F5008E64FE /* JGActionSheet.m */; };
+		C70607E81DE3FE99008E64FE /* LDSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C70607E61DE3FE99008E64FE /* LDSheetViewController.m */; };
+		C70607E91DE3FE99008E64FE /* LDSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70607E71DE3FE99008E64FE /* LDSheetViewController.xib */; };
 		C709BFD41DD96166007D7929 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C709BFD31DD96166007D7929 /* main.m */; };
 		C709BFDD1DD96166007D7929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709BFDB1DD96166007D7929 /* Main.storyboard */; };
 		C709BFE21DD96166007D7929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709BFE01DD96166007D7929 /* LaunchScreen.storyboard */; };
@@ -238,6 +241,11 @@
 /* Begin PBXFileReference section */
 		2DDF239B3A22FCB0A61247AF /* libPods-团购项目.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-团购项目.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA62325D170AB7B60CB63CC /* Pods-团购项目.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-团购项目.debug.xcconfig"; path = "Pods/Target Support Files/Pods-团购项目/Pods-团购项目.debug.xcconfig"; sourceTree = "<group>"; };
+		C70607E21DE3F1F5008E64FE /* JGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGActionSheet.h; sourceTree = "<group>"; };
+		C70607E31DE3F1F5008E64FE /* JGActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGActionSheet.m; sourceTree = "<group>"; };
+		C70607E51DE3FE99008E64FE /* LDSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDSheetViewController.h; path = "../../登录/Controller/LDSheetViewController.h"; sourceTree = "<group>"; };
+		C70607E61DE3FE99008E64FE /* LDSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDSheetViewController.m; path = "../../登录/Controller/LDSheetViewController.m"; sourceTree = "<group>"; };
+		C70607E71DE3FE99008E64FE /* LDSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LDSheetViewController.xib; path = "../../登录/Controller/LDSheetViewController.xib"; sourceTree = "<group>"; };
 		C709BFCF1DD96166007D7929 /* 团购项目.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "团购项目.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C709BFD31DD96166007D7929 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C709BFDC1DD96166007D7929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -522,6 +530,15 @@
 				E8C5B3B6E1E624CBFDFF3F40 /* Pods-团购项目.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C70607E11DE3F1F5008E64FE /* JGActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				C70607E21DE3F1F5008E64FE /* JGActionSheet.h */,
+				C70607E31DE3F1F5008E64FE /* JGActionSheet.m */,
+			);
+			path = JGActionSheet;
 			sourceTree = "<group>";
 		};
 		C709BFC61DD96166007D7929 = {
@@ -1245,6 +1262,7 @@
 		C709C2911DDA9F88007D7929 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C70607E11DE3F1F5008E64FE /* JGActionSheet */,
 				C7CCCF401DE07C4B00601687 /* LDDKeyChain.h */,
 				C7CCCF411DE07C4B00601687 /* LDDKeyChain.m */,
 				C718A8FA1DDD9E6B003CD60F /* Toast */,
@@ -1302,6 +1320,9 @@
 		C709C2991DDA9F88007D7929 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C70607E51DE3FE99008E64FE /* LDSheetViewController.h */,
+				C70607E61DE3FE99008E64FE /* LDSheetViewController.m */,
+				C70607E71DE3FE99008E64FE /* LDSheetViewController.xib */,
 				C709C29A1DDA9F88007D7929 /* LDMineViewController.h */,
 				C709C29B1DDA9F88007D7929 /* LDMineViewController.m */,
 			);
@@ -1708,6 +1729,7 @@
 				C709C1AD1DD96591007D7929 /* 位置@3x.png in Resources */,
 				C709C1741DD96591007D7929 /* 分类界面口腔洁牙图标@2x.png in Resources */,
 				C709C1AE1DD96591007D7929 /* Contents.json in Resources */,
+				C70607E91DE3FE99008E64FE /* LDSheetViewController.xib in Resources */,
 				C709C1F71DD96591007D7929 /* 我的界面退出登录按钮.png in Resources */,
 				C709C1871DD96591007D7929 /* 分类界面敏感肌肤图标.png in Resources */,
 				C709C1701DD96591007D7929 /* 分类界面t区黑头图标@2x.png in Resources */,
@@ -1844,6 +1866,7 @@
 				C709C2C61DDA9F88007D7929 /* LDBuyCarViewController.m in Sources */,
 				C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */,
 				C709C2BE1DDA9F88007D7929 /* ViewController.m in Sources */,
+				C70607E81DE3FE99008E64FE /* LDSheetViewController.m in Sources */,
 				C709C2C41DDA9F88007D7929 /* LDMyMessageTableView.m in Sources */,
 				C709C2BB1DDA9F88007D7929 /* LDNavController.m in Sources */,
 				C718A8F91DDD8B43003CD60F /* LDBaseViewController.m in Sources */,
@@ -1857,6 +1880,7 @@
 				C718A8F61DDD4267003CD60F /* LDHTTPTool.m in Sources */,
 				C75212451DDAD86500772012 /* LDRegisterView.m in Sources */,
 				C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */,
+				C70607E41DE3F1F5008E64FE /* JGActionSheet.m in Sources */,
 				C718A8F31DDC2459003CD60F /* LDNextStepView.m in Sources */,
 				C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */,
 				C709C2C31DDA9F88007D7929 /* LDMyMessageHeadView.m in Sources */,

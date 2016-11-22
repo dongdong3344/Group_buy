@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LDMyMessageTableView : UITableView
+typedef void(^MyMessageTableViewBlock)();
 
+@interface LDMyMessageTableView : UITableView
+@property(strong,nonatomic)UIButton *logoutButton;
+@property(copy,nonatomic)MyMessageTableViewBlock exitBlcok;
 @end

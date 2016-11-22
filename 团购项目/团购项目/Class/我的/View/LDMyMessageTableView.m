@@ -23,7 +23,7 @@
         self.delegate=self;
         self.dataSource=self;
         self.bounces=NO;//不让tableView滚动
-        
+              
         self.separatorInset=UIEdgeInsetsMake(0, 45, 0, 0);//设置分割线位置
     }
     return self;
@@ -85,6 +85,48 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     LDDLog(@"我选中的是第%li",indexPath.row);
+    
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 64;
+}
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    NSDictionary *loginDic = [[NSUserDefaults standardUserDefaults]valueForKey:@"ISLOGIN"];
+    if (loginDic.count){
+        
+        UIView *footView=[[UIView alloc]initWithFrame:CGRectMake(0, 20, SCREEN_WITH,44)];
+         footView.backgroundColor=RGBCOLOR(242, 242, 242);
+
+       
+        _logoutButton=[UIButton buttonWithType:UIButtonTypeCustom];
+        _logoutButton.frame=footView.frame;
+        [_logoutButton setTitle:@"退出当前账号" forState:UIControlStateNormal];
+        _logoutButton.titleLabel.font=[UIFont systemFontOfSize:15];
+        [_logoutButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [_logoutButton setTitle:@"退出当前账号" forState:UIControlStateHighlighted];
+        [_logoutButton setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted];
+        [_logoutButton addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];
+        _logoutButton.backgroundColor=[UIColor whiteColor];
+       // logoutBtn.layer.cornerRadius=5;
+    
+        self.logoutButton.userInteractionEnabled=YES;
+        [footView addSubview:_logoutButton];
+        return footView;
+
+    }
+    
+    return  nil;
+}
+
+-(void)logoutAction{
+    
+    if (self.exitBlcok) {
+        self.exitBlcok();
+    }
     
 }
 

@@ -70,6 +70,10 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
      @"CSToastPositionBottom";
      
      */
+    
+    
+    [self.loginView.passwordText resignFirstResponder];
+    [self.loginView.phoneNumText resignFirstResponder];
     if ([self.loginView.phoneNumText.text isEqualToString:@""]) {
         [self.view makeToast:@"请输入用户名" duration:1.5 position:  @"CSToastPositionCenter"];
         
@@ -82,15 +86,15 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
           LDDLog(@"responseObject : %@",responseObject);
         if ([responseObject[@"ErrorMessage"] isEqualToString:@"登陆成功"]) {
             [self saveUserInfo];//保存用户名和密码信息
-                [self showTostMessage:@"恭喜您，登录成功"];
+                [self showTostMessage:@"登录成功"];
             //存储登录状态
             [[NSUserDefaults standardUserDefaults ]setObject:responseObject forKey:@"ISLOGIN"];
             [self performSelector:@selector(popToMineViewController) withObject:nil afterDelay:1];//1秒后跳转我的界面
         }else if ([responseObject[@"ErrorMessage"] isEqualToString:@"密码错误"]){
-            [self showTostMessage:@"用户名或密码错误，请重新输入"];
+            [self showTostMessage:@"用户名或密码错误，请核实后重新输入"];
 
         }else if ([responseObject[@"ErrorMessage"] isEqualToString:@"用户名或密码错误，请重新输入"]){
-            [self showTostMessage:@"用户名或密码错误，请重新输入"];
+            [self showTostMessage:@"用户名或密码错误，请核实后重新输入"];
 
         }else{
             [self showTostMessage:@"登录失败"];
@@ -185,20 +189,24 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
 
 
 -(void)setupRightItem{
+    UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.frame=CGRectMake(0, 0, 35, 20);
     
-    UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(nextViewController)];
-    [rightItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:16]} forState:UIControlStateNormal];
-     [rightItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],NSFontAttributeName:[UIFont systemFontOfSize:16]} forState:UIControlStateHighlighted];
+    [rightBtn setTitle:@"注册" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rightBtn setTitle:@"注册" forState:UIControlStateHighlighted];
+    [rightBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted];
+    rightBtn.titleLabel.font=[UIFont systemFontOfSize:16];
+    [rightBtn addTarget:self action:@selector(nextViewController) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithCustomView:rightBtn];
     self.navigationItem.rightBarButtonItem=rightItem;
-    
+
 }
 -(void)nextViewController{
     LDRegisterViewController *regVC=[[LDRegisterViewController alloc]init];
     [self.navigationController pushViewController:regVC animated:YES];
     
 }
-
-
 
 -(void)setupConstraints{
     

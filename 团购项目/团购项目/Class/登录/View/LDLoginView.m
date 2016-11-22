@@ -52,6 +52,9 @@
         _forgetBtn=[UIButton buttonWithType:UIButtonTypeCustom];
         [_forgetBtn setTitle:@"忘记密码？" forState:UIControlStateNormal];
         [_forgetBtn setTitleColor:RGBCOLOR(56, 166, 243) forState:UIControlStateNormal];
+        
+       [_forgetBtn setTitle:@"忘记密码？" forState:UIControlStateHighlighted ];
+        [_forgetBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted ];
         _forgetBtn.titleLabel.font=[UIFont systemFontOfSize:14];
         _forgetBtn.titleLabel.textAlignment=UITextAlignmentLeft;
     }
