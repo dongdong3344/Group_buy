@@ -23,8 +23,7 @@
         self.delegate=self;
         self.dataSource=self;
         self.bounces=NO;//不让tableView滚动
-              
-        self.separatorInset=UIEdgeInsetsMake(0, 45, 0, 0);//设置分割线位置
+        self.separatorInset=UIEdgeInsetsMake(0, 45, 0, 0);//设置分割线距离左边45
     }
     return self;
 }
@@ -88,10 +87,18 @@
     
 }
 
-
+//设置footer高度
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 64;
+    NSDictionary *loginDic=[[NSUserDefaults standardUserDefaults]valueForKey:@"ISLOGIN"];
+    if (loginDic.count) {
+          return SCREEN_HEIGHT-171-44*6;
+    }else{
+          return SCREEN_HEIGHT-171-44*4;
+        
+    }
+    
 }
+
 
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
@@ -99,7 +106,7 @@
     if (loginDic.count){
         
         UIView *footView=[[UIView alloc]initWithFrame:CGRectMake(0, 20, SCREEN_WITH,44)];
-         footView.backgroundColor=RGBCOLOR(242, 242, 242);
+        footView.backgroundColor=RGBCOLOR(242, 242, 242);
 
        
         _logoutButton=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -112,8 +119,6 @@
         [_logoutButton addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];
         _logoutButton.backgroundColor=[UIColor whiteColor];
        // logoutBtn.layer.cornerRadius=5;
-    
-        self.logoutButton.userInteractionEnabled=YES;
         [footView addSubview:_logoutButton];
         return footView;
 

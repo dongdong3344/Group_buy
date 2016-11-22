@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LDMyMessageHeadView.h"
+#import "LDMyMessageTableView.h"
 
 @interface LDMineViewController : UIViewController
+
 
 @end

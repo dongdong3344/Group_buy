@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LDSheetViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIButton *cancleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *quitBtn;
 @end

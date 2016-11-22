@@ -10,8 +10,7 @@
 #import "LDMineViewController.h"
 
 @interface LDSheetViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *cancleBtn;
-@property (weak, nonatomic) IBOutlet UIButton *quitBtn;
+
 
 @end
 
@@ -23,9 +22,27 @@
 }
 - (IBAction)exitAction:(id)sender {
     
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"ISLOGIN"];
+    
+   // [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        NSLog(@"名称：%@",self.presentedViewController.title);
+
+    }];
+    
+    
+    //创建通知
+    NSNotification *notification=[NSNotification notificationWithName:@"reloadData" object:nil ];
+ 
+    //通过通知中心发送通知
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+
+    
+
+
     
 }
-
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -41,6 +58,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title=@"123";
     self.view.backgroundColor=[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];}
 
 - (void)didReceiveMemoryWarning {

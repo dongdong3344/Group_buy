@@ -15,5 +15,5 @@ typedef void(^MyMessageheadViewBlock)();
 @interface LDMyMessageHeadView : UIView
 
 @property(nonatomic,copy)MyMessageheadViewBlock block;
-
+- (void)reloadHeadView;
 @end

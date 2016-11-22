@@ -7,32 +7,39 @@
 //
 
 #import "LDMineViewController.h"
-#import "LDMyMessageTableView.h"
-#import "LDMyMessageHeadView.h"
+
 #import "LDRegisterViewController.h"
 #import "LDLoginViewController.h"
 #import "LDSheetViewController.h"
-
 #import "AppDelegate.h"
 @interface LDMineViewController ()<UIActionSheetDelegate>
-
 @property(nonatomic,strong)LDMyMessageTableView *tableView;
 @property(nonatomic,strong)LDMyMessageHeadView *headView;
-
 @end
 
 @implementation LDMineViewController
 
 
+// @selector方法， 即受到通知之后的事件
+- (void)receiveNotification{
+    
+    // NSNotification 有三个属性，name, object, userInfo，其中最关键的object就是从第三个界面传来的数据。name就是通知事件的名字， userInfo一般是事件的信息。
+    [self.tableView reloadData];
+    [self.headView reloadHeadView];
+    
+}
+
+
+
 
 -(LDMyMessageHeadView *)headView{
     if (!_headView) {
-        _headView=[[LDMyMessageHeadView alloc]init];
+        _headView=[[LDMyMessageHeadView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WITH, 171)];
         
         __weak typeof(self) weakself=self;
         _headView.block=^(){
            LDLoginViewController *vc=[[LDLoginViewController alloc]init];
-            [weakself.navigationController pushViewController:vc animated:YES];
+           [weakself.navigationController pushViewController:vc animated:YES];
         };
         
     }
@@ -45,18 +52,18 @@
 -(UITableView *)tableView{
     
     if (!_tableView) {
-        _tableView=[[LDMyMessageTableView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
+        _tableView=[[LDMyMessageTableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT) style:UITableViewStylePlain];
 
         __block typeof(self) weakself=self;
         _tableView.exitBlcok=^(){
           
             [weakself logout];
         };
+        _tableView.tableHeaderView=self.headView;
         
     }
     return _tableView;
 }
-
 
 
 -(void)logout{
@@ -92,11 +99,8 @@
 //    }];
   //  [cancelAction setValue:RGBCOLOR(188, 188, 188) forKey:@"_titleTextColor"];
 
-    
 //    [alertVC addAction:cancelAction];
-//    
-//    
-//    
+    
 //    [self  presentViewController:alertVC animated:YES completion:nil];
 // 
     
@@ -107,12 +111,15 @@
 - (void)viewDidLoad {
    
     [super viewDidLoad];
-     self.view.backgroundColor=[UIColor whiteColor];
-    self.view.backgroundColor=RGBCOLOR(242, 242, 242);
-
+    self.view.backgroundColor=[UIColor whiteColor];
+    self.edgesForExtendedLayout = UIRectEdgeNone;//可以让tabview覆盖在状态栏下（不是在状态栏顶部下20像素）
     [self.view addSubview:self.headView];
     [self.view addSubview:self.tableView];
-    [self setupConstraints];
+    
+    NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
+    
+    // 注册一个监听事件。第三个参数的事件名， 系统用这个参数来区别不同事件。
+    [notiCenter addObserver:self selector:@selector(receiveNotification) name:@"reloadData" object:nil];
     
    }
 
@@ -121,22 +128,15 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.tableView reloadData];//刷新数据表格
+    [self.headView reloadHeadView];
 }
 
--(void)setupConstraints{
-    [_headView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self.view) ;
-        make.height.mas_equalTo(171);
-    }];
+- (void)dealloc
+{
     
-    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(320);
-        make.top.equalTo(self.headView.mas_bottom).offset(20);
-    }];
+    [[NSNotificationCenter defaultCenter] removeObserver:self]; // 移除当前对象监听的事件
     
     
 }
-
 
 @end

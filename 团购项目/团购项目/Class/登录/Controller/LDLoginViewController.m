@@ -190,8 +190,7 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
 
 -(void)setupRightItem{
     UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    rightBtn.frame=CGRectMake(0, 0, 35, 20);
-    
+    rightBtn.frame=CGRectMake(0, 0, 35, 20);//不设置btn frame，无法显示出来
     [rightBtn setTitle:@"注册" forState:UIControlStateNormal];
     [rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [rightBtn setTitle:@"注册" forState:UIControlStateHighlighted];
