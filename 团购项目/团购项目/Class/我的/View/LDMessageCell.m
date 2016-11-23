@@ -27,6 +27,8 @@
         [self addSubview:self.titleLabel];
         [self addSubview:self.nextImage];
         [self addSubview:self.lineLabel];
+        //self.selectionStyle = UITableViewCellSelectionStyleNone;//选中时，不显示选中颜色
+
     }
     return self;
 }

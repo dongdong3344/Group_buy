@@ -131,7 +131,7 @@
     cell.sourceDic=self.cellTableSource[indexPath.row];
     
     //如果是最后一行，隐藏nextImage,新加一个label
-    if (indexPath.row==3) {
+    if (indexPath.row==2) {
         UIImageView *nextImage=[cell valueForKey:@"nextImage"];
         nextImage.hidden=YES;//此处不能移除，否则崩溃
         
@@ -160,8 +160,16 @@
 
 //选中某行
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row==2) {
+        //让系统自带拨号
+         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://15262352648"]];
+       
+          }
     
-   // LDDLog(@"我选中的是第%li",indexPath.row);
+    
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];//点击一下后，表格被选中，然后立即变成未选中状态，防止一直处于灰色状态
+
+   
     
 }
 
@@ -210,7 +218,7 @@
 }
 
 
-//下拉放大表头
+//下拉放大表头图片
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
  
     CGPoint offset = scrollView.contentOffset;   //获取偏移量

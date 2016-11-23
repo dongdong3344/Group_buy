@@ -78,6 +78,7 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
         [self.view makeToast:@"请输入用户名" duration:1.5 position:  @"CSToastPositionCenter"];
         
     }else if ([self.loginView.passwordText.text isEqualToString:@""]){
+        
         [self.view makeToast:@"请输入密码" duration:1.5 position:  @"CSToastPositionCenter"];
     }else{
         
@@ -108,6 +109,12 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
 
     }
 }
+
+
+
+
+
+//跳到我的页面
 -(void)popToMineViewController{
     
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -190,7 +197,7 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
 
 }
 
-
+//配置右上角按钮
 -(void)setupRightItem{
     UIButton *rightBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     rightBtn.frame=CGRectMake(0, 0, 35, 20);//不设置btn frame，无法显示出来

@@ -16,15 +16,15 @@
 	</dict>
 	<dict>
 		<key>image</key>
-		<string>detail</string>
-		<key>title</key>
-		<string>关于我们</string>
-	</dict>
-	<dict>
-		<key>image</key>
 		<string>service</string>
 		<key>title</key>
 		<string>客服中心</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>detail</string>
+		<key>title</key>
+		<string>关于我们</string>
 	</dict>
 	<dict>
 		<key>image</key>
