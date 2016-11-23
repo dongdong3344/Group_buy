@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LDBaseViewController.h"
+@interface LDSheetViewController :LDBaseViewController
 
-@interface LDSheetViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *cancleBtn;
-@property (weak, nonatomic) IBOutlet UIButton *quitBtn;
 @end

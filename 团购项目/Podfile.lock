@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - BEMCheckBox (1.2.1)
   - Masonry (1.0.2)
+  - MJRefresh (3.1.12)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - BEMCheckBox (~> 1.2.1)
   - Masonry (~> 1.0.2)
+  - MJRefresh (~> 3.1.12)
   - SDWebImage (~> 3.8.2)
   - SVProgressHUD (~> 2.0.3)
 
@@ -32,9 +34,10 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BEMCheckBox: 264b8b72aa92adbfefa265cc58a0cdb86b207b9f
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: ac0f8b0f484be462ca02b3cf657df7fc5a4cc62d
+PODFILE CHECKSUM: 2b876d5d9287ce7813f0963629adff28a141c564
 
 COCOAPODS: 1.0.1

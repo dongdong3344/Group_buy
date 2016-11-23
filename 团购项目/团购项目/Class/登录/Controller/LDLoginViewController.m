@@ -83,7 +83,7 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
         
         [self getWithURLString:@"appMember/appLogin.do" parameters:@{@"LoginName":self.loginView.phoneNumText.text,@"Lpassword":self.loginView.passwordText.text} success:^(id responseObject) {
               [NSThread sleepForTimeInterval:1.5];//1.5秒后执行显示信息，小圆圈先转1秒
-          LDDLog(@"responseObject : %@",responseObject);
+          //LDDLog(@"responseObject : %@",responseObject);
         if ([responseObject[@"ErrorMessage"] isEqualToString:@"登陆成功"]) {
             [self saveUserInfo];//保存用户名和密码信息
                 [self showTostMessage:@"登录成功"];
@@ -91,10 +91,10 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
             [[NSUserDefaults standardUserDefaults ]setObject:responseObject forKey:@"ISLOGIN"];
             [self performSelector:@selector(popToMineViewController) withObject:nil afterDelay:1];//1秒后跳转我的界面
         }else if ([responseObject[@"ErrorMessage"] isEqualToString:@"密码错误"]){
-            [self showTostMessage:@"用户名或密码错误，请核实后重新输入"];
+            [self showTostMessage:@"用户名或密码错误，请认真核实后重新输入"];
 
         }else if ([responseObject[@"ErrorMessage"] isEqualToString:@"用户名或密码错误，请重新输入"]){
-            [self showTostMessage:@"用户名或密码错误，请核实后重新输入"];
+            [self showTostMessage:@"用户名或密码错误，请认真核实后重新输入"];
 
         }else{
             [self showTostMessage:@"登录失败"];

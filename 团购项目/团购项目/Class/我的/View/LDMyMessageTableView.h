@@ -13,5 +13,10 @@ typedef void(^MyMessageTableViewBlock)();
 @interface LDMyMessageTableView : UITableView
 @property(strong,nonatomic)UIButton *logoutButton;
 @property(copy,nonatomic)MyMessageTableViewBlock exitBlcok;
+@property(nonatomic,strong)UIImageView *topLogoImageView ;
+
+
+
+
 
 @end

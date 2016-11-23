@@ -123,7 +123,7 @@
                      
                      if ([responseObject[@"result"] isEqualToString:@"success"]) {
                         // LDDLog(@"注册成功");
-                        [self showTostMessage:@"恭喜您注册成功,即将跳转至登录界面"];
+                        [self showTostMessage:@"注册成功,即将跳转至登录界面"];
                          
                          
                          

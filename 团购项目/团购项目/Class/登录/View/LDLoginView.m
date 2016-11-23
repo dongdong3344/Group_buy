@@ -91,8 +91,7 @@
 //敲击复选框时的代理方法
 -(void)didTapCheckBox:(BEMCheckBox *)checkBox{
     if (checkBox.on) {
-        NSLog(@"********保存用户信息了*******");
-
+     
     }
     
 }
@@ -173,11 +172,15 @@
 
 -(UIButton *)loginBtn{
     if (!_loginBtn) {
+        
         _loginBtn=[UIButton buttonWithType:UIButtonTypeCustom];
         [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
+        [_loginBtn setTitle:@"登录" forState:UIControlStateHighlighted];
+        [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_loginBtn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         _loginBtn.layer.cornerRadius=5;
         _loginBtn.backgroundColor=RGBCOLOR(242, 131, 48);
-        [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+      
         
               
         

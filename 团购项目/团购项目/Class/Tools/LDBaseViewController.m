@@ -41,7 +41,7 @@
 
 //post
 -(void)postWithURLString:(NSString *)url parameters:(NSDictionary *)param success:(requestSuccessBlock)successBlock failure:(requestFailureBlock)failureBlock{
-    [SVProgressHUD showWithStatus:@"加载中，请稍后"];//小圆圈动起来
+    [SVProgressHUD showWithStatus:nil];//小圆圈动起来
   
     [LDHTTPTool  postWithURLString:url parameters:param success:^(id responseObject) {
        [self performSelector:@selector(dismiss)withObject:nil afterDelay:1];///小圆圈显示1秒后消失

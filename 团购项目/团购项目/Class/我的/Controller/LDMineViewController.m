@@ -124,6 +124,27 @@
     
    }
 
+
+//下拉logo设置
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // taleview的子视图中,有一张弹簧似的View,这张view在tableView的正常状态下的高度为0,然后随着tableView的滑动，该View会随着tableview的滑动而变高，其底部永远紧贴tableView的顶部.我们应该遇到过这种现象，当我们把 tablview的背景色设置为白色时，往下滑tableView，我们会发现最顶端tableView的背景色为灰白色，这灰白色的View就是这张具有弹簧效果的view
+    
+    UIView *springview = self.tableView.subviews.firstObject;
+    [springview insertSubview:self.tableView.topLogoImageView atIndex:0];
+    
+    [self.tableView.topLogoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(100, 30));
+        make.centerX.mas_equalTo(self.tableView.topLogoImageView.superview);
+        // 必须设置底部约束
+        make.bottom.mas_equalTo(self.tableView.topLogoImageView.superview).offset(-30);
+    }];
+}
+
+
+
+
 //隐藏navigaitonbar
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -143,6 +164,11 @@
     
     //self.headView.welcomeLabel.text=str;
 }
+
+
+
+
+
 
 - (void)dealloc
 {

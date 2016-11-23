@@ -69,8 +69,6 @@
     dispatch_resume(timer);
 }
 
-
-
 //设置提示标签上的文字
 -(void)setPhoneNumberStr:(NSString *)phoneNumberStr{
     

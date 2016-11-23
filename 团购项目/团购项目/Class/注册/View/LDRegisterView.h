@@ -14,5 +14,5 @@ typedef void(^RegisterViewBlock)(NSDictionary *dict) ;//传递手机号和密码
 @property(strong,nonatomic)UITextField *phoneNumText, *passwordText;
 
 @property(nonatomic,copy)RegisterViewBlock block;
-
+@property(strong,nonatomic)UIButton *nextStepBtn;
 @end

@@ -24,6 +24,8 @@
     [super viewWillDisappear:animated];
     self.registerView.passwordText.text=@"";
     self.registerView.phoneNumText.text=@"";
+    [self.registerView.nextStepBtn setTitleColor:RGBCOLOR(132, 132, 132) forState:UIControlStateNormal];
+    self.registerView.nextStepBtn.userInteractionEnabled=NO;
     [self.registerView.phoneNumText resignFirstResponder];
     [self.registerView.passwordText resignFirstResponder];
     
