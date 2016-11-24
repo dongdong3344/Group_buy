@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,6 +30,11 @@
 			<false/>
 		</dict>
 		<key>Pods-团购项目.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDCycleScrollView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,6 +52,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>30ED8FF8DCE52260F8C97EE5E1847CBE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>39E9228D293092730FCDDE2B1B537FAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
@@ -52,17 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>798E94B190744D7169EDF775E0ADDB18</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>8C80F913EE213FA1EE3801FF8CEF0DD4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>91D2E6E217C0231380BEB453C412DD82</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A06FE5927C062686183C4AE01FB560BF</key>
+		<key>9E51D1D727A9F6F7E1823AAD4F7EB740</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DAFAC90827C25CEE77DB8FD4A9CFA3C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

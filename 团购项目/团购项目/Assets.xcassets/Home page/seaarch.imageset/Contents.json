@@ -2,16 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "seaarch.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "nav_backImage@2x.png",
+      "filename" : "seaarch@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "nav_backImage@3x.png",
+      "filename" : "seaarch@3x.png",
       "scale" : "3x"
     }
   ],

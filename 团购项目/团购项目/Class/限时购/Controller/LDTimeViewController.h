@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LDTimeViewController : UIViewController
+#import "LDBaseViewController.h"
+@interface LDTimeViewController : LDBaseViewController
 
 @end

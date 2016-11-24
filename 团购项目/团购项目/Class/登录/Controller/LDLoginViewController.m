@@ -83,10 +83,11 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
     }else{
         
         [self getWithURLString:@"appMember/appLogin.do" parameters:@{@"LoginName":self.loginView.phoneNumText.text,@"Lpassword":self.loginView.passwordText.text} success:^(id responseObject) {
+         
               [NSThread sleepForTimeInterval:1.5];//1.5秒后执行显示信息，小圆圈先转1秒
           //LDDLog(@"responseObject : %@",responseObject);
         if ([responseObject[@"ErrorMessage"] isEqualToString:@"登陆成功"]) {
-            [self saveUserInfo];//保存用户名和密码信息
+                [self saveUserInfo];//保存用户名和密码信息
                 [self showTostMessage:@"登录成功"];
             //存储登录状态
             [[NSUserDefaults standardUserDefaults ]setObject:responseObject forKey:@"ISLOGIN"];

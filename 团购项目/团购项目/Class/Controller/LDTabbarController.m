@@ -31,7 +31,7 @@
     NSMutableArray *controllersArry=[NSMutableArray arrayWithArray:@ [@"LDTimeViewController",@"LDClassViewController",@"LDBuyCarViewController",@"LDMineViewController"]];
     NSArray *images=@[@"home_xianshigou_btn_normal",@"home_class_btn_normal",@"home_buycar_btn_normal",@"home_personal_btn_normal"];
      NSArray *selectedImage=@[@"home_xianshigou_btn_selected",@"home_class_btn_selected",@"home_buycar_btn_selected",@"home_personal_btn_selected"];
-    NSArray *titles=@[@"限时购",@"分类",@"购物车",@"我"];
+    NSArray *titles=@[@"首页",@"分类",@"购物车",@"我的"];
     for (NSInteger i=0; i<controllersArry.count; i++) {
         NSString *controllerName=controllersArry[i];
         UIViewController *vc=[[NSClassFromString(controllerName) alloc]init];

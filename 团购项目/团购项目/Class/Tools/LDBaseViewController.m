@@ -17,8 +17,10 @@
 
 //get
 -(void)getWithURLString:(NSString *)url parameters:(NSDictionary *)param success:(requestSuccessBlock)successBlock failure:(requestFailureBlock)failureBlock{
-  
-    [SVProgressHUD show];//小圆圈动起来，
+    
+    [SVProgressHUD setDefaultAnimationType:  SVProgressHUDAnimationTypeNative ];//小圆圈动画风格
+    
+     [SVProgressHUD show];//小圆圈动起来，
     
     
     [LDHTTPTool getWithURLString:url parameters:param success:^(id responseObject) {

@@ -20,7 +20,7 @@
 #import "BEMCheckBox.h"
 #import "LDDKeyChain.h"//保存用户名和密码
 #import "MJRefresh.h"
-
-
+#import "SDCycleScrollView.h"
+#import "MJExtension.h"
 
 #endif /* shop_pch */

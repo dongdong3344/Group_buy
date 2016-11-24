@@ -224,6 +224,10 @@
     CGPoint offset = scrollView.contentOffset;   //获取偏移量
     //判断是否改变
     if (offset.y < 0) {
+        
+//        CGFloat height=171+ABS(offset.y);
+//        CGFloat width=SCREEN_WITH*height/171;
+//        self.tableHeaderView.frame=CGRectMake(-(width-SCREEN_WITH)/2, -(height-171)/2, width, height);
         CGRect rect = self.tableHeaderView.frame;   //  只需要改变图片的y值和高度即可
         rect.origin.y = offset.y;
         rect.size.height = 171 - offset.y; //171为图片高度

@@ -11,5 +11,7 @@ target '团购项目' do
  pod 'AFNetworking', '~> 3.1.0'
  pod 'SVProgressHUD', '~> 2.0.3'
  pod 'BEMCheckBox', '~> 1.2.1'
-   pod 'MJRefresh', '~> 3.1.12'
+pod 'MJRefresh', '~> 3.1.12'
+pod 'SDCycleScrollView', '~> 1.65'
+ pod 'MJExtension', '~> 3.0.13'
 end
