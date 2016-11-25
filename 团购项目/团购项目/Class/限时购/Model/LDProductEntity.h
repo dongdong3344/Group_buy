@@ -10,15 +10,17 @@
 
 @interface LDProductEntity : NSObject
 
+//注意首字母大写，因为请求到的字典数组里都是大写，否则解析后都是nil
 
-@property (nonatomic, strong) NSString * countryImg;     //国家图片1
-@property (nonatomic, strong) NSString * discount;       //购买数量
-@property (nonatomic, strong) NSString * domesticPrice; //本地价格1
-@property (nonatomic, strong) NSString * foreignPrice;  //国外价格1
-@property (nonatomic, strong) NSString * goodsId;  //产品ID   1
-@property (nonatomic, strong) NSString * goodsIntro;   //商品信息
-@property (nonatomic, strong) NSString * imgView;    //缩略图1
-@property (nonatomic, strong) NSString * price;         //原来的价格1
-@property (nonatomic, strong) NSString * title;  //商品名称
+
+
+@property (nonatomic, strong) NSString * Discount;          //购买数量
+@property (nonatomic, strong) NSString * DomesticPrice; //本地价格1
+@property (nonatomic, strong) NSString * ForeignPrice;  //国外价格1
+@property (nonatomic, strong) NSString * GoodsId;        //产品ID   1
+@property (nonatomic, strong) NSString * GoodsIntro;   //商品信息
+@property (nonatomic, strong) NSString * ImgView;    //缩略图1
+@property (nonatomic, strong) NSString * Price;        //原来的价格1
+@property (nonatomic, strong) NSString * Title;        //商品名称
 
 @end

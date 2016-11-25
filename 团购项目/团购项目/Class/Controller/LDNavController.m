@@ -45,7 +45,7 @@
         UIBarButtonItem * spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         //将宽度设为负值
         spaceItem.width = -10;
-      UIBarButtonItem* leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+        UIBarButtonItem* leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
         viewController.navigationItem.leftBarButtonItems=@[spaceItem,leftBarButtonItem];
     }
     

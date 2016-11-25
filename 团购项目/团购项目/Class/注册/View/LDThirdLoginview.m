@@ -42,7 +42,7 @@
        // _qqLabel.textColor=[UIColor blackColor];
         _qqLabel.textColor=RGBCOLOR(190, 190, 190);
         _qqLabel.font=[UIFont systemFontOfSize:12];
-        _qqLabel.textAlignment=UITextAlignmentCenter;
+        _qqLabel.textAlignment=NSTextAlignmentCenter;
     }
     return _qqLabel;
 
@@ -56,7 +56,7 @@
         _wechatLabel.textColor=RGBCOLOR(190, 190, 190);
         _wechatLabel.text=@"微信登录";
         _wechatLabel.font=[UIFont systemFontOfSize:12];
-        _wechatLabel.textAlignment=UITextAlignmentCenter;
+        _wechatLabel.textAlignment=NSTextAlignmentCenter;
     }
     return _wechatLabel;
     
@@ -71,7 +71,7 @@
         _weiboLabel.textColor=RGBCOLOR(190, 190, 190);
         _weiboLabel.text=@"微博登录";
         _weiboLabel.font=[UIFont systemFontOfSize:12];
-        _weiboLabel.textAlignment=UITextAlignmentCenter;
+        _weiboLabel.textAlignment=NSTextAlignmentCenter;
     }
     return _weiboLabel;
     
@@ -91,7 +91,7 @@
         _oneKeyLogin.textColor=[UIColor blackColor];
         //_oneKeyLogin.textColor=RGBCOLOR(190, 190, 190) ;
         _oneKeyLogin.backgroundColor=[UIColor whiteColor];//设置按钮的背景矩形区域，背景和view背景相同
-        _oneKeyLogin.textAlignment=UITextAlignmentCenter;
+        _oneKeyLogin.textAlignment=NSTextAlignmentCenter;
         _oneKeyLogin.font=[UIFont systemFontOfSize:14];
     }
     return _oneKeyLogin;

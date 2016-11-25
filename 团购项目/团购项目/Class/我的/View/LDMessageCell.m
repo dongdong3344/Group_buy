@@ -53,7 +53,7 @@
 
 -(UIImageView *)nextImage{
     if (!_nextImage) {
-        _nextImage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"下一步"]];
+        _nextImage=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"next"]];
     }
     return _nextImage;
     

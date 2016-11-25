@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LDClassViewController : UIViewController
+@interface LDCategoryViewController : UIViewController
 
 @end

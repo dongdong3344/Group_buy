@@ -10,6 +10,7 @@
 #import "LDProductEntity.h"
 
 @interface LDProductTableViewCell : UITableViewCell
+
 @property(strong,nonatomic)LDProductEntity *productEntiy;
 
 @end

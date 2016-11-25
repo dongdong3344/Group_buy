@@ -13,7 +13,6 @@
 		C709BFD41DD96166007D7929 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C709BFD31DD96166007D7929 /* main.m */; };
 		C709BFDD1DD96166007D7929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709BFDB1DD96166007D7929 /* Main.storyboard */; };
 		C709BFE21DD96166007D7929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709BFE01DD96166007D7929 /* LaunchScreen.storyboard */; };
-		C709C16D1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0211DD96590007D7929 /* Contents.json */; };
 		C709C16E1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0231DD96590007D7929 /* Contents.json */; };
 		C709C16F1DD96591007D7929 /* 分类界面t区黑头图标.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0241DD96590007D7929 /* 分类界面t区黑头图标.png */; };
 		C709C1701DD96591007D7929 /* 分类界面t区黑头图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0251DD96590007D7929 /* 分类界面t区黑头图标@2x.png */; };
@@ -74,7 +73,6 @@
 		C709C1A71DD96591007D7929 /* 分类界面面部精华图标.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C06A1DD96590007D7929 /* 分类界面面部精华图标.png */; };
 		C709C1A81DD96591007D7929 /* 分类界面面部精华图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C06B1DD96590007D7929 /* 分类界面面部精华图标@2x.png */; };
 		C709C1A91DD96591007D7929 /* 分类界面面部精华图标@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C06C1DD96590007D7929 /* 分类界面面部精华图标@3x.png */; };
-		C709C1AA1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C06E1DD96590007D7929 /* Contents.json */; };
 		C709C1AB1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0701DD96590007D7929 /* Contents.json */; };
 		C709C1AC1DD96591007D7929 /* 位置@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0711DD96590007D7929 /* 位置@2x.png */; };
 		C709C1AD1DD96591007D7929 /* 位置@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0721DD96590007D7929 /* 位置@3x.png */; };
@@ -154,7 +152,7 @@
 		C709C2BC1DDA9F88007D7929 /* LDTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2891DDA9F88007D7929 /* LDTabbarController.m */; };
 		C709C2BD1DDA9F88007D7929 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C28C1DDA9F88007D7929 /* AppDelegate.m */; };
 		C709C2BE1DDA9F88007D7929 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2901DDA9F88007D7929 /* ViewController.m */; };
-		C709C2BF1DDA9F88007D7929 /* LDClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2951DDA9F88007D7929 /* LDClassViewController.m */; };
+		C709C2BF1DDA9F88007D7929 /*  LDCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2951DDA9F88007D7929 /*  LDCategoryViewController.m */; };
 		C709C2C01DDA9F88007D7929 /* LDMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C29B1DDA9F88007D7929 /* LDMineViewController.m */; };
 		C709C2C11DDA9F88007D7929 /* cellList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C709C29E1DDA9F88007D7929 /* cellList.plist */; };
 		C709C2C21DDA9F88007D7929 /* LDMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2A01DDA9F88007D7929 /* LDMessageCell.m */; };
@@ -162,7 +160,7 @@
 		C709C2C41DDA9F88007D7929 /* LDMyMessageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2A41DDA9F88007D7929 /* LDMyMessageTableView.m */; };
 		C709C2C51DDA9F88007D7929 /* LDRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2A81DDA9F88007D7929 /* LDRegisterViewController.m */; };
 		C709C2C61DDA9F88007D7929 /* LDBuyCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2B21DDA9F88007D7929 /* LDBuyCarViewController.m */; };
-		C709C2C71DDA9F88007D7929 /* LDTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2B81DDA9F88007D7929 /* LDTimeViewController.m */; };
+		C709C2C71DDA9F88007D7929 /* LDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2B81DDA9F88007D7929 /* LDHomeViewController.m */; };
 		C718A8F31DDC2459003CD60F /* LDNextStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = C718A8F21DDC2459003CD60F /* LDNextStepView.m */; };
 		C718A8F61DDD4267003CD60F /* LDHTTPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C718A8F51DDD4267003CD60F /* LDHTTPTool.m */; };
 		C718A8F91DDD8B43003CD60F /* LDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C718A8F81DDD8B43003CD60F /* LDBaseViewController.m */; };
@@ -172,6 +170,8 @@
 		C75212451DDAD86500772012 /* LDRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75212441DDAD86500772012 /* LDRegisterView.m */; };
 		C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */ = {isa = PBXBuildFile; fileRef = C75212471DDADBDE00772012 /* LDThirdLoginview.m */; };
 		C75212501DDB05FD00772012 /* LDNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C752124F1DDB05FD00772012 /* LDNextViewController.m */; };
+		C783D6781DE7F8F1003E7FBF /* LDBrandEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C783D6771DE7F8F1003E7FBF /* LDBrandEntity.m */; };
+		C783D67B1DE7F914003E7FBF /* LDBrandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C783D67A1DE7F914003E7FBF /* LDBrandTableViewCell.m */; };
 		C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */; };
 		C7CCCF3E1DDEA4E900601687 /* LDLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3D1DDEA4E900601687 /* LDLoginView.m */; };
 		C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF411DE07C4B00601687 /* LDDKeyChain.m */; };
@@ -190,7 +190,6 @@
 		C709BFDC1DD96166007D7929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C709BFE11DD96166007D7929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C709BFE31DD96166007D7929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C709C0211DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0231DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0241DD96590007D7929 /* 分类界面t区黑头图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类界面t区黑头图标.png"; sourceTree = "<group>"; };
 		C709C0251DD96590007D7929 /* 分类界面t区黑头图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类界面t区黑头图标@2x.png"; sourceTree = "<group>"; };
@@ -251,7 +250,6 @@
 		C709C06A1DD96590007D7929 /* 分类界面面部精华图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类界面面部精华图标.png"; sourceTree = "<group>"; };
 		C709C06B1DD96590007D7929 /* 分类界面面部精华图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类界面面部精华图标@2x.png"; sourceTree = "<group>"; };
 		C709C06C1DD96590007D7929 /* 分类界面面部精华图标@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分类界面面部精华图标@3x.png"; sourceTree = "<group>"; };
-		C709C06E1DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0701DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0711DD96590007D7929 /* 位置@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "位置@2x.png"; sourceTree = "<group>"; };
 		C709C0721DD96590007D7929 /* 位置@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "位置@3x.png"; sourceTree = "<group>"; };
@@ -337,8 +335,8 @@
 		C709C28E1DDA9F88007D7929 /* shop.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shop.pch; sourceTree = "<group>"; };
 		C709C28F1DDA9F88007D7929 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C709C2901DDA9F88007D7929 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C709C2941DDA9F88007D7929 /* LDClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDClassViewController.h; sourceTree = "<group>"; };
-		C709C2951DDA9F88007D7929 /* LDClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDClassViewController.m; sourceTree = "<group>"; };
+		C709C2941DDA9F88007D7929 /*  LDCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = " LDCategoryViewController.h"; sourceTree = "<group>"; };
+		C709C2951DDA9F88007D7929 /*  LDCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = " LDCategoryViewController.m"; sourceTree = "<group>"; };
 		C709C29A1DDA9F88007D7929 /* LDMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDMineViewController.h; sourceTree = "<group>"; };
 		C709C29B1DDA9F88007D7929 /* LDMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDMineViewController.m; sourceTree = "<group>"; };
 		C709C29E1DDA9F88007D7929 /* cellList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cellList.plist; sourceTree = "<group>"; };
@@ -352,8 +350,8 @@
 		C709C2A81DDA9F88007D7929 /* LDRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDRegisterViewController.m; sourceTree = "<group>"; };
 		C709C2B11DDA9F88007D7929 /* LDBuyCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBuyCarViewController.h; sourceTree = "<group>"; };
 		C709C2B21DDA9F88007D7929 /* LDBuyCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBuyCarViewController.m; sourceTree = "<group>"; };
-		C709C2B71DDA9F88007D7929 /* LDTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTimeViewController.h; sourceTree = "<group>"; };
-		C709C2B81DDA9F88007D7929 /* LDTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTimeViewController.m; sourceTree = "<group>"; };
+		C709C2B71DDA9F88007D7929 /* LDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDHomeViewController.h; sourceTree = "<group>"; };
+		C709C2B81DDA9F88007D7929 /* LDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDHomeViewController.m; sourceTree = "<group>"; };
 		C718A8F11DDC2459003CD60F /* LDNextStepView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNextStepView.h; sourceTree = "<group>"; };
 		C718A8F21DDC2459003CD60F /* LDNextStepView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNextStepView.m; sourceTree = "<group>"; };
 		C718A8F41DDD4267003CD60F /* LDHTTPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDHTTPTool.h; sourceTree = "<group>"; };
@@ -372,6 +370,10 @@
 		C75212471DDADBDE00772012 /* LDThirdLoginview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDThirdLoginview.m; path = "../../注册/View/LDThirdLoginview.m"; sourceTree = "<group>"; };
 		C752124E1DDB05FD00772012 /* LDNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNextViewController.h; sourceTree = "<group>"; };
 		C752124F1DDB05FD00772012 /* LDNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNextViewController.m; sourceTree = "<group>"; };
+		C783D6761DE7F8F1003E7FBF /* LDBrandEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDBrandEntity.h; path = ../View/LDBrandEntity.h; sourceTree = "<group>"; };
+		C783D6771DE7F8F1003E7FBF /* LDBrandEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDBrandEntity.m; path = ../View/LDBrandEntity.m; sourceTree = "<group>"; };
+		C783D6791DE7F914003E7FBF /* LDBrandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBrandTableViewCell.h; sourceTree = "<group>"; };
+		C783D67A1DE7F914003E7FBF /* LDBrandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBrandTableViewCell.m; sourceTree = "<group>"; };
 		C7CCCF391DDE991B00601687 /* LDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLoginViewController.h; sourceTree = "<group>"; };
 		C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDLoginViewController.m; sourceTree = "<group>"; };
 		C7CCCF3C1DDEA4E900601687 /* LDLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLoginView.h; sourceTree = "<group>"; };
@@ -462,7 +464,6 @@
 		C709C0201DD96590007D7929 /* 分类界面切图 */ = {
 			isa = PBXGroup;
 			children = (
-				C709C0211DD96590007D7929 /* Contents.json */,
 				C709C0221DD96590007D7929 /* 分类界面t区黑头图标.imageset */,
 				C709C0271DD96590007D7929 /* 分类界面口腔洁牙图标.imageset */,
 				C709C02C1DD96590007D7929 /* 分类界面唇膏图标.imageset */,
@@ -650,7 +651,6 @@
 		C709C06D1DD96590007D7929 /* 购物车界面 */ = {
 			isa = PBXGroup;
 			children = (
-				C709C06E1DD96590007D7929 /* Contents.json */,
 				C709C06F1DD96590007D7929 /* 位置.imageset */,
 				C709C0731DD96590007D7929 /* 地址背景.imageset */,
 				C709C0771DD96590007D7929 /* 购物车界面关于我们图标.imageset */,
@@ -956,8 +956,8 @@
 		C709C2931DDA9F88007D7929 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C709C2941DDA9F88007D7929 /* LDClassViewController.h */,
-				C709C2951DDA9F88007D7929 /* LDClassViewController.m */,
+				C709C2941DDA9F88007D7929 /*  LDCategoryViewController.h */,
+				C709C2951DDA9F88007D7929 /*  LDCategoryViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1139,8 +1139,8 @@
 		C709C2B61DDA9F88007D7929 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C709C2B71DDA9F88007D7929 /* LDTimeViewController.h */,
-				C709C2B81DDA9F88007D7929 /* LDTimeViewController.m */,
+				C709C2B71DDA9F88007D7929 /* LDHomeViewController.h */,
+				C709C2B81DDA9F88007D7929 /* LDHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1148,6 +1148,8 @@
 		C709C2B91DDA9F88007D7929 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C783D6761DE7F8F1003E7FBF /* LDBrandEntity.h */,
+				C783D6771DE7F8F1003E7FBF /* LDBrandEntity.m */,
 				C73078821DE6CF4400A0743D /* LDProductEntity.h */,
 				C73078831DE6CF4400A0743D /* LDProductEntity.m */,
 			);
@@ -1159,6 +1161,8 @@
 			children = (
 				C730787F1DE6C84600A0743D /* LDProductTableViewCell.h */,
 				C73078801DE6C84600A0743D /* LDProductTableViewCell.m */,
+				C783D6791DE7F914003E7FBF /* LDBrandTableViewCell.h */,
+				C783D67A1DE7F914003E7FBF /* LDBrandTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1326,7 +1330,6 @@
 				C709C17F1DD96591007D7929 /* 分类界面抗氧防衰图标.png in Resources */,
 				C709C25B1DD96591007D7929 /* 详情界面返回按钮.png in Resources */,
 				C709C1B21DD96591007D7929 /* 购物车界面关于我们图标.png in Resources */,
-				C709C1AA1DD96591007D7929 /* Contents.json in Resources */,
 				C709C2541DD96591007D7929 /* 详情界面购物车按钮@2x.png in Resources */,
 				C709C1BE1DD96591007D7929 /* 购物车界面商品未选中.png in Resources */,
 				C709C1881DD96591007D7929 /* 分类界面敏感肌肤图标@2x.png in Resources */,
@@ -1407,7 +1410,6 @@
 				C709C1981DD96591007D7929 /* 分类界面眼霜图标@2x.png in Resources */,
 				C709C1951DD96591007D7929 /* 分类界面清痘去印图标@3x.png in Resources */,
 				C709C1BF1DD96591007D7929 /* 购物车界面商品未选中@2x.png in Resources */,
-				C709C16D1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1BC1DD96591007D7929 /* 购物车界面商品加减按钮@3x.png in Resources */,
 				C709C2461DD96591007D7929 /* Contents.json in Resources */,
 				C709C1C61DD96591007D7929 /* 购物车界面客服热线图标.png in Resources */,
@@ -1478,6 +1480,7 @@
 				C709C2C01DDA9F88007D7929 /* LDMineViewController.m in Sources */,
 				C709C2C51DDA9F88007D7929 /* LDRegisterViewController.m in Sources */,
 				C709C2C61DDA9F88007D7929 /* LDBuyCarViewController.m in Sources */,
+				C783D6781DE7F8F1003E7FBF /* LDBrandEntity.m in Sources */,
 				C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */,
 				C73078841DE6CF4400A0743D /* LDProductEntity.m in Sources */,
 				C709C2BE1DDA9F88007D7929 /* ViewController.m in Sources */,
@@ -1485,13 +1488,14 @@
 				C709C2C41DDA9F88007D7929 /* LDMyMessageTableView.m in Sources */,
 				C709C2BB1DDA9F88007D7929 /* LDNavController.m in Sources */,
 				C718A8F91DDD8B43003CD60F /* LDBaseViewController.m in Sources */,
+				C783D67B1DE7F914003E7FBF /* LDBrandTableViewCell.m in Sources */,
 				C7CCCF3E1DDEA4E900601687 /* LDLoginView.m in Sources */,
 				C709C2BD1DDA9F88007D7929 /* AppDelegate.m in Sources */,
 				C718A8FD1DDD9E6B003CD60F /* UIView+Toast.m in Sources */,
 				C709C2BC1DDA9F88007D7929 /* LDTabbarController.m in Sources */,
 				C709C2C21DDA9F88007D7929 /* LDMessageCell.m in Sources */,
 				C709BFD41DD96166007D7929 /* main.m in Sources */,
-				C709C2C71DDA9F88007D7929 /* LDTimeViewController.m in Sources */,
+				C709C2C71DDA9F88007D7929 /* LDHomeViewController.m in Sources */,
 				C718A8F61DDD4267003CD60F /* LDHTTPTool.m in Sources */,
 				C75212451DDAD86500772012 /* LDRegisterView.m in Sources */,
 				C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */,
@@ -1499,7 +1503,7 @@
 				C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */,
 				C73078811DE6C84600A0743D /* LDProductTableViewCell.m in Sources */,
 				C709C2C31DDA9F88007D7929 /* LDMyMessageHeadView.m in Sources */,
-				C709C2BF1DDA9F88007D7929 /* LDClassViewController.m in Sources */,
+				C709C2BF1DDA9F88007D7929 /*  LDCategoryViewController.m in Sources */,
 				C75212501DDB05FD00772012 /* LDNextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

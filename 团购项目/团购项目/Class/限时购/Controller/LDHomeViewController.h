@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "LDBaseViewController.h"
-@interface LDTimeViewController : LDBaseViewController
+@interface LDHomeViewController : LDBaseViewController
 
 @end

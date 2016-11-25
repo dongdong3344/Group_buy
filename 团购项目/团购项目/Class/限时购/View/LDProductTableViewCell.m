@@ -11,7 +11,7 @@
 
 @interface LDProductTableViewCell ()
 @property (strong, nonatomic)   UIImageView *iconImage;              /** 图片 */
-@property (strong, nonatomic)   UIImageView *countryImage;         /** 国旗 */
+
 @property (strong, nonatomic)   UILabel *titleLabel;                    /** 标题label */
 @property (strong, nonatomic)   UILabel *contentLabel;              /** 内容 */
 @property (strong, nonatomic)   UILabel *pricLabel;                   /** 价格label */
@@ -24,7 +24,7 @@
     self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self addSubview:self.iconImage];
-        [self addSubview:self.countryImage];
+
         [self addSubview:self.titleLabel];
         [self addSubview:self.contentLabel];
         [self addSubview:self.pricLabel];
@@ -34,80 +34,88 @@
     return  self;
 }
 
-
+//重写set方法
 -(void)setProductEntiy:(LDProductEntity *)productEntiy{
     
-  //  _productEntiy=productEntiy;
-    _titleLabel.text=productEntiy.title;
-     _contentLabel.text = productEntiy.goodsIntro;
+     _productEntiy=productEntiy;
+    _titleLabel.text=productEntiy.Title;
+    _contentLabel.text = productEntiy.GoodsIntro;//icon_placeholder
+    [_iconImage sd_setImageWithURL:[NSURL URLWithString:self.productEntiy.ImgView] placeholderImage:[UIImage imageNamed:@"icon_placeholder"]];
+      //_pricLabel.text=[NSString stringWithFormat:@"￥:%@,%@",productEntiy.DomesticPrice,productEntiy.Price];
+    [self priceAttributedString];
+}
+
+- (void)priceAttributedString{
+    
+    NSString *price=[NSString stringWithFormat:@"%@ ",self.productEntiy.Price];
+    NSMutableAttributedString   *priceStr=[[NSMutableAttributedString alloc]initWithString:price attributes:@{NSForegroundColorAttributeName:RGBCOLOR(230, 50, 37),NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
     
     
+    NSString *domesticPrice=[NSString stringWithFormat:@"￥%@",self.productEntiy.DomesticPrice];
+    NSMutableAttributedString   *domesticPriceStr =[[NSMutableAttributedString alloc]initWithString:domesticPrice attributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132),NSFontAttributeName:[UIFont systemFontOfSize:12],NSStrikethroughStyleAttributeName:@(2),NSStrikethroughColorAttributeName:[UIColor grayColor]}];
+    
+    [priceStr insertAttributedString:domesticPriceStr atIndex:price.length];
+    self.pricLabel.attributedText=priceStr;
+  
+
     
 }
 
+
 - (void)layoutSubviews{
     [super layoutSubviews];
-    __weak typeof (self) weakSelf = self;
-    
+  
     [_iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(140, 140));
-        make.centerY.equalTo(weakSelf.mas_centerY);
-        make.left.equalTo(weakSelf.mas_left).offset(5);
+        make.centerY.equalTo(self.mas_centerY);
+        make.left.equalTo(self.mas_left).offset(5);
     }];
     
-    [_countryImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(25, 20));
-        make.left.equalTo(weakSelf.iconImage.mas_left).offset(8);
-        make.top.equalTo(weakSelf.iconImage.mas_top).offset(8);
-    }];
-    
+
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf.mas_right).offset(-15);
-        make.left.equalTo(weakSelf.iconImage.mas_right).offset(6);
-        make.top.equalTo(weakSelf.mas_top).offset(25);
+        make.right.equalTo(self.mas_right).offset(-15);
+        make.left.equalTo(self.iconImage.mas_right).offset(6);
+        make.top.equalTo(self.mas_top).offset(25);
         make.height.equalTo(@15);
     }];
     
     [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(7);
-        make.right.equalTo(weakSelf.mas_right).offset(-15);
-        make.left.equalTo(weakSelf.iconImage.mas_right).offset(6);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(7);
+        make.right.equalTo(self.mas_right).offset(-15);
+        make.left.equalTo(self.iconImage.mas_right).offset(6);
         make.height.equalTo(@60);
     }];
     
     [_pricLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@15);
-        make.left.equalTo(weakSelf.iconImage.mas_right).offset(6);
-        make.right.equalTo(weakSelf.buyCarBtn.mas_left).offset(-20);
-        make.bottom.equalTo(weakSelf.mas_bottom).offset(-23);
+        make.left.equalTo(self.iconImage.mas_right).offset(6);
+        make.right.equalTo(self.buyCarBtn.mas_left).offset(-20);
+        make.bottom.equalTo(self.mas_bottom).offset(-23);
     }];
     
     [_buyCarBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(37, 37));
-        make.right.equalTo(weakSelf.mas_right).offset(-45);
-        make.bottom.equalTo(weakSelf.mas_bottom).offset(-20);
+        make.right.equalTo(self.mas_right).offset(-15);
+        make.bottom.equalTo(self.mas_bottom).offset(-20);
     }];
 }
 
 - (UIImageView *)iconImage{
     if (!_iconImage) {
         _iconImage = [[UIImageView alloc]init];
+        _iconImage.layer.cornerRadius=5;
+        _iconImage.clipsToBounds=YES;
     }
     return _iconImage;
 }
 
-- (UIImageView *)countryImage{
-    if (!_countryImage) {
-        _countryImage = [[UIImageView alloc]init];
-    }
-    return _countryImage;
-}
+
 
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc]init];
         _titleLabel.font = [UIFont boldSystemFontOfSize:14.0];
-        _titleLabel.textColor = [UIColor redColor];
+        _titleLabel.textColor = [UIColor orangeColor];
     }
     return _titleLabel;
 }
@@ -115,7 +123,7 @@
 - (UILabel *)contentLabel{
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc]init];
-        _contentLabel.textColor = RGBCOLOR(35, 35, 35);
+        _contentLabel.textColor =[UIColor blackColor];
         _contentLabel.font = [UIFont systemFontOfSize:13.0];
         _contentLabel.numberOfLines = 3;
     }
@@ -132,7 +140,7 @@
 - (UIButton *)buyCarBtn{
     if (!_buyCarBtn) {
         _buyCarBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_buyCarBtn setImage:[UIImage imageNamed:@"car"] forState:(UIControlStateNormal)];
+        [_buyCarBtn setImage:[UIImage imageNamed:@"cart01"] forState:(UIControlStateNormal)];
     }
     return _buyCarBtn;
 }
