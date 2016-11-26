@@ -11,15 +11,21 @@
 #import "LDProductTableViewCell.h"
 #import "LDBrandEntity.h"
 #import "LDBrandTableViewCell.h"
+#import "LDButtonSwitchView.h"
+
+
+#define PRODUCT_CELL_WIDTH 170
+#define BRAND_CELL_WIDTH 200
 
 @interface LDHomeViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property(strong,nonatomic)UIScrollView *mainScrollView;
 @property(strong,nonatomic)SDCycleScrollView *cycleScrollView;
-@property(strong,nonatomic)UIView *buttonBarView;
+
 @property(strong,nonatomic)UITableView *productTableView,*brandTableView;
-@property(strong,nonatomic)UIButton *productBtn,*brandBtn;
+
 @property(strong,nonatomic)NSArray *productEntityArry;//存放新品数据模型的数组
 @property(strong,nonatomic)NSArray *brandEntityArry;//存放品牌数据模型的数组
+@property(strong,nonatomic)LDButtonSwitchView *buttonSwitchView;
 @end
 
 @implementation LDHomeViewController
@@ -32,16 +38,10 @@
     
     [self.mainScrollView addSubview:self.productTableView];
     [self.mainScrollView addSubview:self.brandTableView];
- 
-    [self.mainScrollView addSubview:self.buttonBarView];
-    [self.buttonBarView addSubview:self.brandBtn];
-    [self.buttonBarView addSubview:self.productBtn];
-  
+    [self.mainScrollView addSubview:self.buttonSwitchView];
     [self  getCycleImages];
     [self getProducts];
-    
     [self getBrands];
-
 
 }
 
@@ -50,7 +50,7 @@
     
     if (!_mainScrollView) {
         _mainScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT-49-64)];
-        //_mainScrollView.contentSize=CGSizeMake(0, 2680);
+        _mainScrollView.contentSize=CGSizeMake(0, 1980);
         _mainScrollView.showsVerticalScrollIndicator=NO;
         _mainScrollView.delegate=self;
         
@@ -77,67 +77,22 @@
 
 
 //放按钮的view
--(UIView *)buttonBarView{
+-(LDButtonSwitchView *)buttonSwitchView{
     
-    if (!_buttonBarView) {
-        _buttonBarView=[[UIView alloc]initWithFrame:CGRectMake(0, 230, SCREEN_WITH, 50)];
-        _buttonBarView.backgroundColor=[UIColor whiteColor];
-       
-
-        
+    if (!_buttonSwitchView) {
+       _buttonSwitchView=[[LDButtonSwitchView alloc]initWithFrame:CGRectMake(0, 230, SCREEN_WITH, 50)];
+        _buttonSwitchView.backgroundColor=[UIColor whiteColor];
     }
-    return _buttonBarView;
+    return _buttonSwitchView;
  
-}
-
-//新品团购按钮
--(UIButton *)productBtn{
-    if (!_productBtn) {
-        _productBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_productBtn setImage:[UIImage imageNamed:@"product_un"] forState:UIControlStateNormal];
-        [_productBtn setImage:[UIImage  imageNamed:@"product"] forState:UIControlStateSelected];
-        [_productBtn setTitle:@"新品团购" forState:UIControlStateNormal];
-        [_productBtn setTitleColor:RGBCOLOR(56, 166, 243) forState:UIControlStateNormal];
-        [_productBtn setTitleColor:RGBCOLOR(213, 48, 34) forState:UIControlStateSelected];
-        _productBtn.titleLabel.font=[UIFont systemFontOfSize:14];
-         _productBtn.selected=YES;
-        [_productBtn addTarget:self action:@selector(changeTableView:) forControlEvents:UIControlEventTouchUpInside];
-        _productBtn.frame=CGRectMake(0, 0, SCREEN_WITH/2, 50);
-     
-
-    }
-    return _productBtn;
-    
-}
-
-//品牌团购按钮
--(UIButton *)brandBtn{
-    if (!_brandBtn) {
-        _brandBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        [_brandBtn setImage:[UIImage imageNamed:@"brand_un"] forState:UIControlStateNormal];
-        [_brandBtn setImage:[UIImage  imageNamed:@"brand"] forState:UIControlStateSelected];
-        _brandBtn.titleLabel.font=[UIFont systemFontOfSize:14];
-        [_brandBtn setTitle:@"品牌团购" forState:UIControlStateNormal];
-        
-        [_brandBtn setTitleColor:RGBCOLOR(56, 166, 243) forState:UIControlStateNormal];
-        [_brandBtn setTitleColor: RGBCOLOR(213, 48, 34) forState:UIControlStateSelected];
-        
-         _brandBtn.frame=CGRectMake(SCREEN_WITH/2, 0, SCREEN_WITH/2, 50);
-         _brandBtn.selected=NO;
-        [_brandBtn addTarget:self action:@selector(changeTableView:) forControlEvents:UIControlEventTouchUpInside];
-       
-        
-    }
-    return _brandBtn;
-    
 }
 
 
 -(void)changeTableView:(UIButton *)button{
     
-    if (button==self.productBtn) {//如何新品团购按钮被选中
+    if (button==self.buttonSwitchView.productBtn) {//如何新品团购按钮被选中
         button.selected=YES;
-        self.brandBtn.selected=NO;
+        self.buttonSwitchView.brandBtn.selected=NO;
         
     [UIView animateWithDuration:0.2 animations:^{
         CGRect productRect=self.productTableView.frame;
@@ -149,11 +104,10 @@
         self.brandTableView.frame=brandRect;
         self.mainScrollView.contentSize=CGSizeMake(0,self.productEntityArry.count*170+280 );//改变大的Scroll
     }];
-       
         
     }else{
         button.selected=YES;
-        self.productBtn.selected=NO;
+        self.buttonSwitchView.productBtn.selected=NO;
         [UIView animateWithDuration:0.2 animations:^{
             CGRect brandRect=self.brandTableView.frame;
             brandRect.origin.x=0;
@@ -165,7 +119,7 @@
             self.mainScrollView.contentSize=CGSizeMake(0,self.brandEntityArry.count*200+280 );//改变大的Scroll
 
         }];
-
+      
     }
     
 }
@@ -173,7 +127,7 @@
 -(UITableView *)productTableView{
     
     if (!_productTableView) {
-        _productTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 280, SCREEN_WITH, 1700) style:UITableViewStylePlain];
+        _productTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 280, SCREEN_WITH, self.productEntityArry.count*PRODUCT_CELL_WIDTH) style:UITableViewStylePlain];
         _productTableView.delegate=self;
         _productTableView.dataSource=self;
         _productTableView.bounces=NO;//不让上下回弹
@@ -185,7 +139,7 @@
 -(UITableView *)brandTableView{
     
     if (!_brandTableView) {
-        _brandTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 280, SCREEN_WITH, 1700) style:UITableViewStylePlain];
+        _brandTableView=[[UITableView alloc]initWithFrame:CGRectMake(SCREEN_WITH, 280, SCREEN_WITH, self.brandEntityArry.count*BRAND_CELL_WIDTH) style:UITableViewStylePlain]; //注意是。orgin.x=SCREEN_WITH,如果写成0 ，则页面加载时，会先显示brandTableView
         _brandTableView.delegate=self;
         _brandTableView.dataSource=self;
         _brandTableView.bounces=NO;//不让上下回弹
@@ -270,6 +224,7 @@
         return 170;
     }else  return 200;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (tableView==self.productTableView) {
@@ -306,14 +261,14 @@
     
     CGFloat offsetY=scrollView.contentOffset.y;
     if (offsetY>230) {
-        CGRect rect=self.buttonBarView.frame;
+        CGRect rect=self.buttonSwitchView.frame;
         rect.origin.y=offsetY;
-        self.buttonBarView.frame=rect;
+        self.buttonSwitchView.frame=rect;
         
     }else {
-        CGRect rect=self.buttonBarView.frame;
+        CGRect rect=self.buttonSwitchView.frame;
         rect.origin.y=230;
-        self.buttonBarView.frame=rect;
+        self.buttonSwitchView.frame=rect;
         
     }
     
@@ -321,14 +276,7 @@
 }
 
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    if (self.navigationController.viewControllers.count >1) {
-        self.tabBarController.tabBar.hidden =YES;
-    }else {
-        self.tabBarController.tabBar.hidden =NO;
-    }
-}
+
 
 
 @end

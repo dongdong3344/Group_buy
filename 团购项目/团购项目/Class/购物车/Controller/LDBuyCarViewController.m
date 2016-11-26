@@ -60,7 +60,11 @@
         _goShopBtn.titleLabel.font=[UIFont boldSystemFontOfSize:16];
         [_goShopBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _goShopBtn.layer.cornerRadius=5;
+     
+        [_goShopBtn addTarget:self action:@selector(backGroundHighlighted:) forControlEvents:UIControlEventTouchDown];
+
         [_goShopBtn addTarget:self action:@selector(backToHomePage) forControlEvents:UIControlEventTouchUpInside];
+       
     }
     return _goShopBtn;
 }
@@ -74,11 +78,25 @@
         _collectionBtn.backgroundColor=RGBCOLOR(18, 99, 177);
 
         [_collectionBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+       // [_collectionBtn addTarget:self action:@selector(backGroundHighlighted:) forControlEvents:UIControlEventTouchDown];
         _collectionBtn.layer.cornerRadius=5;
     }
     return _collectionBtn;
 }
 
+
+
+-(void)backGroundHighlighted:(UIButton*)button{
+    button.backgroundColor=RGBCOLOR(1, 14, 66);//背景颜色高亮
+}
+
+
+//设置颜色，点击时按钮颜色高亮，然后再回到页面上，恢复原始颜色。在viewWillAppear方法里恢复
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.goShopBtn.backgroundColor=RGBCOLOR(18, 99, 177);
+    self.collectionBtn.backgroundColor=RGBCOLOR(18, 99, 177);
+}
 -(void)backToHomePage{
    
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:0];

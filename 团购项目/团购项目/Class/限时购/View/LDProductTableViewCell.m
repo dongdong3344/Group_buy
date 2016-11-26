@@ -140,7 +140,7 @@
 - (UIButton *)buyCarBtn{
     if (!_buyCarBtn) {
         _buyCarBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_buyCarBtn setImage:[UIImage imageNamed:@"cart01"] forState:(UIControlStateNormal)];
+        [_buyCarBtn setImage:[UIImage imageNamed:@"buycar_btn"] forState:(UIControlStateNormal)];
     }
     return _buyCarBtn;
 }

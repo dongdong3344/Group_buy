@@ -177,6 +177,7 @@
 		C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF411DE07C4B00601687 /* LDDKeyChain.m */; };
 		C7CCCF441DE086D800601687 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CCCF431DE086D800601687 /* Security.framework */; };
 		C7CCCF491DE144E400601687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CCCF481DE144E400601687 /* Assets.xcassets */; };
+		C7F5F4071DE961FF00DC081D /* LDButtonSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F5F4061DE961FF00DC081D /* LDButtonSwitchView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -383,6 +384,8 @@
 		C7CCCF431DE086D800601687 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C7CCCF471DE11C1500601687 /* 团购项目.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "团购项目.entitlements"; sourceTree = "<group>"; };
 		C7CCCF481DE144E400601687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7F5F4051DE961FF00DC081D /* LDButtonSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDButtonSwitchView.h; sourceTree = "<group>"; };
+		C7F5F4061DE961FF00DC081D /* LDButtonSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDButtonSwitchView.m; sourceTree = "<group>"; };
 		E8C5B3B6E1E624CBFDFF3F40 /* Pods-团购项目.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-团购项目.release.xcconfig"; path = "Pods/Target Support Files/Pods-团购项目/Pods-团购项目.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1163,6 +1166,8 @@
 				C73078801DE6C84600A0743D /* LDProductTableViewCell.m */,
 				C783D6791DE7F914003E7FBF /* LDBrandTableViewCell.h */,
 				C783D67A1DE7F914003E7FBF /* LDBrandTableViewCell.m */,
+				C7F5F4051DE961FF00DC081D /* LDButtonSwitchView.h */,
+				C7F5F4061DE961FF00DC081D /* LDButtonSwitchView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1501,6 +1506,7 @@
 				C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */,
 				C718A8F31DDC2459003CD60F /* LDNextStepView.m in Sources */,
 				C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */,
+				C7F5F4071DE961FF00DC081D /* LDButtonSwitchView.m in Sources */,
 				C73078811DE6C84600A0743D /* LDProductTableViewCell.m in Sources */,
 				C709C2C31DDA9F88007D7929 /* LDMyMessageHeadView.m in Sources */,
 				C709C2BF1DDA9F88007D7929 /*  LDCategoryViewController.m in Sources */,
