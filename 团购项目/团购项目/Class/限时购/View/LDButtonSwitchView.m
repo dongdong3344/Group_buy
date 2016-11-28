@@ -37,8 +37,6 @@
         [_productBtn setTitleColor:RGBCOLOR(56, 166, 243) forState:UIControlStateNormal];
         [_productBtn setTitleColor:RGBCOLOR(213, 48, 34) forState:UIControlStateSelected];
         _productBtn.titleLabel.font=[UIFont systemFontOfSize:14];
-        
-        [_productBtn addTarget:self action:@selector(changeTableView:) forControlEvents:UIControlEventTouchUpInside];
         _productBtn.frame=CGRectMake(0, 0, SCREEN_WITH/2, 50);
         _productBtn.selected=YES;
         
@@ -61,8 +59,7 @@
         
         _brandBtn.frame=CGRectMake(SCREEN_WITH/2, 0, SCREEN_WITH/2, 50);
         
-        [_brandBtn addTarget:self action:@selector(changeTableView:) forControlEvents:UIControlEventTouchUpInside];
-        
+            
         _brandBtn.selected=NO;
         
     }

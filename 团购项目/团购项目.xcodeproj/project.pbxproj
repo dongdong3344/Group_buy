@@ -144,10 +144,6 @@
 		C709C2571DD96591007D7929 /* 详情界面转发按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C14C1DD96591007D7929 /* 详情界面转发按钮.png */; };
 		C709C2581DD96591007D7929 /* 详情界面转发按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C14D1DD96591007D7929 /* 详情界面转发按钮@2x.png */; };
 		C709C2591DD96591007D7929 /* 详情界面转发按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C14E1DD96591007D7929 /* 详情界面转发按钮@3x.png */; };
-		C709C25A1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C1501DD96591007D7929 /* Contents.json */; };
-		C709C25B1DD96591007D7929 /* 详情界面返回按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1511DD96591007D7929 /* 详情界面返回按钮.png */; };
-		C709C25C1DD96591007D7929 /* 详情界面返回按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1521DD96591007D7929 /* 详情界面返回按钮@2x.png */; };
-		C709C25D1DD96591007D7929 /* 详情界面返回按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1531DD96591007D7929 /* 详情界面返回按钮@3x.png */; };
 		C709C2BB1DDA9F88007D7929 /* LDNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2871DDA9F88007D7929 /* LDNavController.m */; };
 		C709C2BC1DDA9F88007D7929 /* LDTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2891DDA9F88007D7929 /* LDTabbarController.m */; };
 		C709C2BD1DDA9F88007D7929 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C28C1DDA9F88007D7929 /* AppDelegate.m */; };
@@ -170,6 +166,11 @@
 		C75212451DDAD86500772012 /* LDRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75212441DDAD86500772012 /* LDRegisterView.m */; };
 		C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */ = {isa = PBXBuildFile; fileRef = C75212471DDADBDE00772012 /* LDThirdLoginview.m */; };
 		C75212501DDB05FD00772012 /* LDNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C752124F1DDB05FD00772012 /* LDNextViewController.m */; };
+		C759A72D1DEBC45B009135FC /* LDTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C759A72C1DEBC45B009135FC /* LDTableView.m */; };
+		C759A7341DEBD5AB009135FC /* LDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C759A7331DEBD5AB009135FC /* LDDetailViewController.m */; };
+		C759A7371DEBE002009135FC /* LDCycleImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = C759A7361DEBE002009135FC /* LDCycleImgView.m */; };
+		C759A73A1DEBFFB9009135FC /* LDImageEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C759A7391DEBFFB9009135FC /* LDImageEntity.m */; };
+		C759A73D1DEC0ED5009135FC /* LDTitleLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C759A73C1DEC0ED5009135FC /* LDTitleLabelView.m */; };
 		C783D6781DE7F8F1003E7FBF /* LDBrandEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C783D6771DE7F8F1003E7FBF /* LDBrandEntity.m */; };
 		C783D67B1DE7F914003E7FBF /* LDBrandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C783D67A1DE7F914003E7FBF /* LDBrandTableViewCell.m */; };
 		C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */; };
@@ -322,10 +323,6 @@
 		C709C14C1DD96591007D7929 /* 详情界面转发按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面转发按钮.png"; sourceTree = "<group>"; };
 		C709C14D1DD96591007D7929 /* 详情界面转发按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面转发按钮@2x.png"; sourceTree = "<group>"; };
 		C709C14E1DD96591007D7929 /* 详情界面转发按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面转发按钮@3x.png"; sourceTree = "<group>"; };
-		C709C1501DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C1511DD96591007D7929 /* 详情界面返回按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面返回按钮.png"; sourceTree = "<group>"; };
-		C709C1521DD96591007D7929 /* 详情界面返回按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面返回按钮@2x.png"; sourceTree = "<group>"; };
-		C709C1531DD96591007D7929 /* 详情界面返回按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面返回按钮@3x.png"; sourceTree = "<group>"; };
 		C709C2861DDA9F88007D7929 /* LDNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNavController.h; sourceTree = "<group>"; };
 		C709C2871DDA9F88007D7929 /* LDNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNavController.m; sourceTree = "<group>"; };
 		C709C2881DDA9F88007D7929 /* LDTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTabbarController.h; sourceTree = "<group>"; };
@@ -371,6 +368,16 @@
 		C75212471DDADBDE00772012 /* LDThirdLoginview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDThirdLoginview.m; path = "../../注册/View/LDThirdLoginview.m"; sourceTree = "<group>"; };
 		C752124E1DDB05FD00772012 /* LDNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDNextViewController.h; sourceTree = "<group>"; };
 		C752124F1DDB05FD00772012 /* LDNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDNextViewController.m; sourceTree = "<group>"; };
+		C759A72B1DEBC45B009135FC /* LDTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTableView.h; sourceTree = "<group>"; };
+		C759A72C1DEBC45B009135FC /* LDTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTableView.m; sourceTree = "<group>"; };
+		C759A7321DEBD5AB009135FC /* LDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDDetailViewController.h; sourceTree = "<group>"; };
+		C759A7331DEBD5AB009135FC /* LDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDDetailViewController.m; sourceTree = "<group>"; };
+		C759A7351DEBE002009135FC /* LDCycleImgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDCycleImgView.h; sourceTree = "<group>"; };
+		C759A7361DEBE002009135FC /* LDCycleImgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDCycleImgView.m; sourceTree = "<group>"; };
+		C759A7381DEBFFB9009135FC /* LDImageEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDImageEntity.h; sourceTree = "<group>"; };
+		C759A7391DEBFFB9009135FC /* LDImageEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDImageEntity.m; sourceTree = "<group>"; };
+		C759A73B1DEC0ED5009135FC /* LDTitleLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTitleLabelView.h; sourceTree = "<group>"; };
+		C759A73C1DEC0ED5009135FC /* LDTitleLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTitleLabelView.m; sourceTree = "<group>"; };
 		C783D6761DE7F8F1003E7FBF /* LDBrandEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDBrandEntity.h; path = ../View/LDBrandEntity.h; sourceTree = "<group>"; };
 		C783D6771DE7F8F1003E7FBF /* LDBrandEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDBrandEntity.m; path = ../View/LDBrandEntity.m; sourceTree = "<group>"; };
 		C783D6791DE7F914003E7FBF /* LDBrandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBrandTableViewCell.h; sourceTree = "<group>"; };
@@ -821,7 +828,6 @@
 				C709C1401DD96591007D7929 /* 详情界面立即购买按钮.imageset */,
 				C709C1451DD96591007D7929 /* 详情界面购物车按钮.imageset */,
 				C709C14A1DD96591007D7929 /* 详情界面转发按钮.imageset */,
-				C709C14F1DD96591007D7929 /* 详情界面返回按钮.imageset */,
 			);
 			path = "详情界面切图";
 			sourceTree = "<group>";
@@ -881,20 +887,10 @@
 			path = "详情界面转发按钮.imageset";
 			sourceTree = "<group>";
 		};
-		C709C14F1DD96591007D7929 /* 详情界面返回按钮.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				C709C1501DD96591007D7929 /* Contents.json */,
-				C709C1511DD96591007D7929 /* 详情界面返回按钮.png */,
-				C709C1521DD96591007D7929 /* 详情界面返回按钮@2x.png */,
-				C709C1531DD96591007D7929 /* 详情界面返回按钮@3x.png */,
-			);
-			path = "详情界面返回按钮.imageset";
-			sourceTree = "<group>";
-		};
 		C709C2841DDA9F88007D7929 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				C759A72E1DEBD55C009135FC /* 详情页面 */,
 				C709C28A1DDA9F88007D7929 /* Other */,
 				C709C2851DDA9F88007D7929 /* Controller */,
 				C709C2911DDA9F88007D7929 /* Tools */,
@@ -1168,6 +1164,8 @@
 				C783D67A1DE7F914003E7FBF /* LDBrandTableViewCell.m */,
 				C7F5F4051DE961FF00DC081D /* LDButtonSwitchView.h */,
 				C7F5F4061DE961FF00DC081D /* LDButtonSwitchView.m */,
+				C759A72B1DEBC45B009135FC /* LDTableView.h */,
+				C759A72C1DEBC45B009135FC /* LDTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1212,6 +1210,45 @@
 			children = (
 				C718A8F11DDC2459003CD60F /* LDNextStepView.h */,
 				C718A8F21DDC2459003CD60F /* LDNextStepView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C759A72E1DEBD55C009135FC /* 详情页面 */ = {
+			isa = PBXGroup;
+			children = (
+				C759A72F1DEBD55C009135FC /* Controller */,
+				C759A7301DEBD55C009135FC /* Model */,
+				C759A7311DEBD55C009135FC /* View */,
+			);
+			path = "详情页面";
+			sourceTree = "<group>";
+		};
+		C759A72F1DEBD55C009135FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C759A7321DEBD5AB009135FC /* LDDetailViewController.h */,
+				C759A7331DEBD5AB009135FC /* LDDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C759A7301DEBD55C009135FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C759A7381DEBFFB9009135FC /* LDImageEntity.h */,
+				C759A7391DEBFFB9009135FC /* LDImageEntity.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C759A7311DEBD55C009135FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C759A7351DEBE002009135FC /* LDCycleImgView.h */,
+				C759A7361DEBE002009135FC /* LDCycleImgView.m */,
+				C759A73B1DEC0ED5009135FC /* LDTitleLabelView.h */,
+				C759A73C1DEC0ED5009135FC /* LDTitleLabelView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1333,7 +1370,6 @@
 				C709C18F1DD96591007D7929 /* 分类界面淡斑亮白图标.png in Resources */,
 				C709C1721DD96591007D7929 /* Contents.json in Resources */,
 				C709C17F1DD96591007D7929 /* 分类界面抗氧防衰图标.png in Resources */,
-				C709C25B1DD96591007D7929 /* 详情界面返回按钮.png in Resources */,
 				C709C1B21DD96591007D7929 /* 购物车界面关于我们图标.png in Resources */,
 				C709C2541DD96591007D7929 /* 详情界面购物车按钮@2x.png in Resources */,
 				C709C1BE1DD96591007D7929 /* 购物车界面商品未选中.png in Resources */,
@@ -1358,7 +1394,6 @@
 				C709C1851DD96591007D7929 /* 分类界面提升紧致图标@3x.png in Resources */,
 				C709C2531DD96591007D7929 /* 详情界面购物车按钮.png in Resources */,
 				C709C1791DD96591007D7929 /* 分类界面唇膏图标@3x.png in Resources */,
-				C709C25D1DD96591007D7929 /* 详情界面返回按钮@3x.png in Resources */,
 				C709C1DB1DD96591007D7929 /* 购物车界面静态购物车图标@2x.png in Resources */,
 				C709C19F1DD96591007D7929 /* 分类界面补水保湿图标.png in Resources */,
 				C709C1DA1DD96591007D7929 /* 购物车界面静态购物车图标.png in Resources */,
@@ -1366,7 +1401,6 @@
 				C709C1A51DD96591007D7929 /* 分类界面面膜图标@3x.png in Resources */,
 				C709C1A91DD96591007D7929 /* 分类界面面部精华图标@3x.png in Resources */,
 				C709C24A1DD96591007D7929 /* Contents.json in Resources */,
-				C709C25C1DD96591007D7929 /* 详情界面返回按钮@2x.png in Resources */,
 				C709C1AD1DD96591007D7929 /* 位置@3x.png in Resources */,
 				C709C1741DD96591007D7929 /* 分类界面口腔洁牙图标@2x.png in Resources */,
 				C709C1AE1DD96591007D7929 /* Contents.json in Resources */,
@@ -1406,7 +1440,6 @@
 				C709C17B1DD96591007D7929 /* 分类界面孕婴护理图标.png in Resources */,
 				C709C1751DD96591007D7929 /* 分类界面口腔洁牙图标@3x.png in Resources */,
 				C709C1B11DD96591007D7929 /* Contents.json in Resources */,
-				C709C25A1DD96591007D7929 /* Contents.json in Resources */,
 				C709C18E1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1D61DD96591007D7929 /* 购物车界面逛一逛按钮.png in Resources */,
 				C709C1B61DD96591007D7929 /* 购物车界面去结算按钮.png in Resources */,
@@ -1485,6 +1518,7 @@
 				C709C2C01DDA9F88007D7929 /* LDMineViewController.m in Sources */,
 				C709C2C51DDA9F88007D7929 /* LDRegisterViewController.m in Sources */,
 				C709C2C61DDA9F88007D7929 /* LDBuyCarViewController.m in Sources */,
+				C759A7371DEBE002009135FC /* LDCycleImgView.m in Sources */,
 				C783D6781DE7F8F1003E7FBF /* LDBrandEntity.m in Sources */,
 				C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */,
 				C73078841DE6CF4400A0743D /* LDProductEntity.m in Sources */,
@@ -1493,14 +1527,18 @@
 				C709C2C41DDA9F88007D7929 /* LDMyMessageTableView.m in Sources */,
 				C709C2BB1DDA9F88007D7929 /* LDNavController.m in Sources */,
 				C718A8F91DDD8B43003CD60F /* LDBaseViewController.m in Sources */,
+				C759A7341DEBD5AB009135FC /* LDDetailViewController.m in Sources */,
 				C783D67B1DE7F914003E7FBF /* LDBrandTableViewCell.m in Sources */,
+				C759A73D1DEC0ED5009135FC /* LDTitleLabelView.m in Sources */,
 				C7CCCF3E1DDEA4E900601687 /* LDLoginView.m in Sources */,
+				C759A73A1DEBFFB9009135FC /* LDImageEntity.m in Sources */,
 				C709C2BD1DDA9F88007D7929 /* AppDelegate.m in Sources */,
 				C718A8FD1DDD9E6B003CD60F /* UIView+Toast.m in Sources */,
 				C709C2BC1DDA9F88007D7929 /* LDTabbarController.m in Sources */,
 				C709C2C21DDA9F88007D7929 /* LDMessageCell.m in Sources */,
 				C709BFD41DD96166007D7929 /* main.m in Sources */,
 				C709C2C71DDA9F88007D7929 /* LDHomeViewController.m in Sources */,
+				C759A72D1DEBC45B009135FC /* LDTableView.m in Sources */,
 				C718A8F61DDD4267003CD60F /* LDHTTPTool.m in Sources */,
 				C75212451DDAD86500772012 /* LDRegisterView.m in Sources */,
 				C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */,
