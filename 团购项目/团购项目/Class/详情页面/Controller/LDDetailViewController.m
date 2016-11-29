@@ -13,19 +13,16 @@
 @property(nonatomic,strong)UIScrollView *mainScrollView;
 @property(nonatomic,strong)LDCycleImgView *cycleView;
 @end
-
 @implementation LDDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
    // self.edgesForExtendedLayout = 0;
+    self.navigationController.navigationBar.barTintColor=[UIColor whiteColor];
     self.view.backgroundColor=[UIColor whiteColor];
     [self.view addSubview:self.mainScrollView];
     [self.mainScrollView addSubview:self.cycleView];
     [self setupConstraint];
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];//navigationbar变透明
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];//去除阴影线
-
     [self getCycleImages];
 
 }
@@ -47,14 +44,13 @@
 
 -(void)getCycleImages{
     
-    [self  getWithURLString:@"appGoods/findGoodsImgList.do"  parameters:@{@"GoodsId":self.detailGoodsID} success:^(id responseObject) {
-
+    [self  getWithURLString:@"appGoods/findGoodsImgList.do"parameters:@{@"GoodsId":self.detailGoodsID} success:^(id responseObject) {
         [SVProgressHUD dismiss];
         NSArray *imageEntityArray = [LDImageEntity mj_objectArrayWithKeyValuesArray:responseObject];
        // LDDLog(@"imageEntityArray:%@",imageEntityArray);
         NSMutableArray *cycleImgArray=[NSMutableArray array];
         for (LDImageEntity *imageEntity in imageEntityArray) {
-            if ([imageEntity.ImgType isEqualToString:@"1"]) {
+            if ([imageEntity.ImgType isEqualToString:@"1"]) {//判断图片是type 1
                 [cycleImgArray addObject:imageEntity.ImgView];
             }
         }
@@ -65,12 +61,6 @@
     
 }
 
-
-
-
-
-
-
 -(void)setupConstraint{
     
     [_mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -78,29 +68,23 @@
     }];
 }
 
-
-
-
-
 -(void)viewWillAppear:(BOOL)animated{
   
     [super viewWillAppear:animated];
     self.navigationItem.hidesBackButton=YES;
-      UIButton *backBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];//设置navigationbar透明
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];//去除navigationbar边缘阴影线
+    UIButton *backBtn=[UIButton buttonWithType:UIButtonTypeCustom];
     [backBtn setImage:[UIImage imageNamed:@"backBtn"] forState:UIControlStateNormal];
     UIBarButtonItem *leftItem=[[UIBarButtonItem alloc]initWithCustomView:backBtn];
     [backBtn addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
     backBtn.frame=CGRectMake(0, 0, 30, 30);
     self.navigationItem.leftBarButtonItem=leftItem;
-
 }
 
 -(void)popViewController{
     [self.navigationController popViewControllerAnimated:YES];
     
 }
-
-
-
 
 @end

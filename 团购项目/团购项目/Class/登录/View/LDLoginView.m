@@ -39,8 +39,6 @@
         [self addSubview:self.checkBox];
         [self addSubview:self.remPassLabel];
         [self addSubview:self.forgetBtn];
-      
- 
     }
     return self;
 }
@@ -56,7 +54,7 @@
        [_forgetBtn setTitle:@"忘记密码？" forState:UIControlStateHighlighted ];
         [_forgetBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted ];
         _forgetBtn.titleLabel.font=[UIFont systemFontOfSize:14];
-        _forgetBtn.titleLabel.textAlignment=UITextAlignmentLeft;
+        _forgetBtn.titleLabel.textAlignment=NSTextAlignmentLeft;
     }
     return _forgetBtn;
     

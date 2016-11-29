@@ -64,7 +64,6 @@
  
         _cycleScrollView.pageDotColor=[UIColor grayColor];
         _cycleScrollView.currentPageDotColor=[UIColor redColor];
-    
         _cycleScrollView.pageControlAliment= SDCycleScrollViewPageContolAlimentCenter
         ;
       //  _cycleScrollView.pageControlStyle= SDCycleScrollViewPageContolStyleAnimated;
@@ -132,8 +131,6 @@
         _productTableView.goodsIDBlcok=^(NSString *goodsID){
             LDDetailViewController *detailVC=[[LDDetailViewController alloc]init];
             detailVC.detailGoodsID=goodsID;
-         
-
             [weakself.navigationController pushViewController:detailVC animated:YES];
             
         };
@@ -225,7 +222,13 @@
     
 }
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.title=@"首页";
+    self.navigationController.navigationBar.translucent=NO;//设置不透明
+    self.navigationController.navigationBar.barTintColor=RGBCOLOR(55, 158, 222);
+    
+}
 
 
 

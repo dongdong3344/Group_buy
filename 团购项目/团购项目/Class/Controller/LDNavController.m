@@ -41,12 +41,12 @@
         [backBtn setBackgroundImage:[UIImage imageNamed: @"common_btn_back_pressed" ]forState:UIControlStateSelected];
         
         [backBtn addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
-//        //创建空格
-//        UIBarButtonItem * spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-//        //将宽度设为负值
-//        spaceItem.width = -10;
+        //创建空格
+        UIBarButtonItem * spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        //将宽度设为负值
+        spaceItem.width = -10;
         UIBarButtonItem* leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
-        viewController.navigationItem.backBarButtonItem=leftBarButtonItem;
+        viewController.navigationItem.leftBarButtonItem=leftBarButtonItem;
     }
     
     [super pushViewController:viewController animated:animated];
