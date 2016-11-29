@@ -158,7 +158,7 @@
     NSString  *str=[NSString stringWithFormat:@"欢迎你,%@",phoneStr];
     NSMutableAttributedString *welcomeStr = [[NSMutableAttributedString alloc] initWithString:str];
     [welcomeStr addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, 4)];
-    [welcomeStr addAttribute:NSForegroundColorAttributeName value:RGBCOLOR(56, 166, 243)range:NSMakeRange(4, 11)];
+    //[welcomeStr addAttribute:NSForegroundColorAttributeName value:RGBCOLOR(56, 166, 243)range:NSMakeRange(4, 11)];
     self.headView.welcomeLabel.attributedText=welcomeStr;
 //    NSLog(@"电话号码:%@",phoneStr);
     

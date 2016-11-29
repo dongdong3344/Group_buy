@@ -9,10 +9,17 @@
 #import "LDDetailViewController.h"
 #import "LDCycleImgView.h"
 #import "LDImageEntity.h"
+#import "LDTitleLabelView.h"
+#import "LDTitleEntity.h"
+
 @interface LDDetailViewController ()
 @property(nonatomic,strong)UIScrollView *mainScrollView;
 @property(nonatomic,strong)LDCycleImgView *cycleView;
+@property(nonatomic,strong)LDTitleLabelView *titleLabelView;
+
 @end
+
+
 @implementation LDDetailViewController
 
 - (void)viewDidLoad {
@@ -22,9 +29,17 @@
     self.view.backgroundColor=[UIColor whiteColor];
     [self.view addSubview:self.mainScrollView];
     [self.mainScrollView addSubview:self.cycleView];
+    [self.mainScrollView addSubview:self.titleLabelView];
     [self setupConstraint];
     [self getCycleImages];
+    [self getTitleData];
 
+}
+-(LDTitleLabelView *)titleLabelView{
+    if (!_titleLabelView) {
+        _titleLabelView=[[LDTitleLabelView alloc]init];
+    }
+    return _titleLabelView;
 }
 
 -(LDCycleImgView *)cycleView{
@@ -61,10 +76,28 @@
     
 }
 
+-(void)getTitleData{
+    
+    [self getWithURLString:@"appGoods/findGoodsDetail.do" parameters:@{@"GoodsId":self.detailGoodsID} success:^(id responseObject) {
+        LDTitleEntity *titleEntity=[LDTitleEntity mj_objectWithKeyValues:responseObject];
+        self.titleLabelView.titleEntity=titleEntity;
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
 -(void)setupConstraint{
     
     [_mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 45, 0));
+    }];
+    
+    
+    [_titleLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.cycleView.mas_bottom);
+        make.right.left.equalTo(self.view);
+        make.height.mas_equalTo(300);
     }];
 }
 

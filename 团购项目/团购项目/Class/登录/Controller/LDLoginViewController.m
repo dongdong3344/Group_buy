@@ -12,8 +12,6 @@
 #import "LDLoginView.h"
 #import "LDNextViewController.h"
 
-
-
 NSString * const KEY_USERNAME_PASSWORD = @"com.company.app.usernamepassword";
 NSString * const KEY_USERNAME = @"com.company.app.username";
 NSString * const KEY_PASSWORD = @"com.company.app.password";

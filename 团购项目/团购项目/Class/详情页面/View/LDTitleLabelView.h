@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LDTitleEntity.h"
 
 @interface LDTitleLabelView : UIView
-
+@property(strong,nonatomic)LDTitleEntity *titleEntity;
 @end

@@ -39,7 +39,7 @@
     
     if (self.isProductTableView) {
         return 170;
-    }else  return 200;
+    }else return 200;
     
 }
 
@@ -83,7 +83,8 @@
             _goodsIDBlcok([self.productEntityArry[indexPath.row] GoodsId]);
         }
     }
-    
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];//表格被选中，然后立即变成未选中状态，防止一直处于灰色状态
+ 
 }
 
 

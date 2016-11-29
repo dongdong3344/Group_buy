@@ -178,6 +178,7 @@
 		C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF411DE07C4B00601687 /* LDDKeyChain.m */; };
 		C7CCCF441DE086D800601687 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CCCF431DE086D800601687 /* Security.framework */; };
 		C7CCCF491DE144E400601687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CCCF481DE144E400601687 /* Assets.xcassets */; };
+		C7CE2A5E1DED6C0500136C11 /* LDTitleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CE2A5D1DED6C0500136C11 /* LDTitleEntity.m */; };
 		C7F5F4071DE961FF00DC081D /* LDButtonSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F5F4061DE961FF00DC081D /* LDButtonSwitchView.m */; };
 /* End PBXBuildFile section */
 
@@ -391,6 +392,8 @@
 		C7CCCF431DE086D800601687 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C7CCCF471DE11C1500601687 /* 团购项目.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "团购项目.entitlements"; sourceTree = "<group>"; };
 		C7CCCF481DE144E400601687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7CE2A5C1DED6C0500136C11 /* LDTitleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTitleEntity.h; sourceTree = "<group>"; };
+		C7CE2A5D1DED6C0500136C11 /* LDTitleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTitleEntity.m; sourceTree = "<group>"; };
 		C7F5F4051DE961FF00DC081D /* LDButtonSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDButtonSwitchView.h; sourceTree = "<group>"; };
 		C7F5F4061DE961FF00DC081D /* LDButtonSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDButtonSwitchView.m; sourceTree = "<group>"; };
 		E8C5B3B6E1E624CBFDFF3F40 /* Pods-团购项目.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-团购项目.release.xcconfig"; path = "Pods/Target Support Files/Pods-团购项目/Pods-团购项目.release.xcconfig"; sourceTree = "<group>"; };
@@ -1238,6 +1241,8 @@
 			children = (
 				C759A7381DEBFFB9009135FC /* LDImageEntity.h */,
 				C759A7391DEBFFB9009135FC /* LDImageEntity.m */,
+				C7CE2A5C1DED6C0500136C11 /* LDTitleEntity.h */,
+				C7CE2A5D1DED6C0500136C11 /* LDTitleEntity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1521,6 +1526,7 @@
 				C759A7371DEBE002009135FC /* LDCycleImgView.m in Sources */,
 				C783D6781DE7F8F1003E7FBF /* LDBrandEntity.m in Sources */,
 				C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */,
+				C7CE2A5E1DED6C0500136C11 /* LDTitleEntity.m in Sources */,
 				C73078841DE6CF4400A0743D /* LDProductEntity.m in Sources */,
 				C709C2BE1DDA9F88007D7929 /* ViewController.m in Sources */,
 				C70607E81DE3FE99008E64FE /* LDSheetViewController.m in Sources */,
@@ -1673,7 +1679,7 @@
 				INFOPLIST_FILE = "团购项目/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.omni.----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omni.myiphone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1689,7 +1695,7 @@
 				INFOPLIST_FILE = "团购项目/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.omni.----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.omni.myiphone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

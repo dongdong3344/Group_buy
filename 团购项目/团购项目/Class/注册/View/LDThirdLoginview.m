@@ -104,7 +104,7 @@
     if (!_qqBtn) {
         _qqBtn=[UIButton buttonWithType:UIButtonTypeCustom];
         [_qqBtn setImage:[UIImage imageNamed:@"registerAndLogin_qq_button"] forState:UIControlStateNormal];
-         [_qqBtn setImage:[UIImage imageNamed:@"registerAndLogin_qq_button"] forState:UIControlStateSelected];
+        [_qqBtn setImage:[UIImage imageNamed:@"registerAndLogin_qq_button"] forState:UIControlStateSelected];
     }
     return _qqBtn;
 }
@@ -143,11 +143,9 @@
     }];
     
     [_weChatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.size.mas_equalTo(CGSizeMake(50, 50));
         make.top.equalTo(self.oneKeyLogin.mas_bottom).offset(40);
         make.centerX.equalTo(self.mas_centerX);
-        
     }];
     
     
@@ -173,7 +171,6 @@
     }];
     
     [_sinaBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.size.mas_equalTo(CGSizeMake(50, 50));
         make.top.equalTo(self.oneKeyLogin.mas_bottom).offset(40);
         make.left.equalTo(self.weChatBtn.mas_right).offset((self.frame.size.width-150)/4);
@@ -189,15 +186,12 @@
     
     
     [_lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.centerY.equalTo(self.oneKeyLogin.mas_centerY);
         make.height.equalTo(@1);
         make.left.equalTo(self.mas_left).offset(16);
         make.right.equalTo(self.mas_right).offset(-16);
         
     }];
-
-    
-    
+  
 }
 @end
