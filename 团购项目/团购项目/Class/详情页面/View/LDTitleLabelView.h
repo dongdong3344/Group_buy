@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "LDTitleEntity.h"
 
+typedef void(^TitleLabelViewBlock)(CGFloat height);
+
 @interface LDTitleLabelView : UIView
 @property(strong,nonatomic)LDTitleEntity *titleEntity;
+@property(copy,nonatomic)TitleLabelViewBlock titleLabelViewBlock;
+
 @end

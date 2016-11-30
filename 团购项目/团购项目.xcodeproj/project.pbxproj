@@ -124,22 +124,10 @@
 		C709C1DB1DD96591007D7929 /* 购物车界面静态购物车图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0AC1DD96590007D7929 /* 购物车界面静态购物车图标@2x.png */; };
 		C709C1DC1DD96591007D7929 /* 购物车界面静态购物车图标@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0AD1DD96590007D7929 /* 购物车界面静态购物车图标@3x.png */; };
 		C709C2451DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C1351DD96591007D7929 /* Contents.json */; };
-		C709C2461DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C1371DD96591007D7929 /* Contents.json */; };
-		C709C2471DD96591007D7929 /* 详情界面加入购物车按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1381DD96591007D7929 /* 详情界面加入购物车按钮.png */; };
-		C709C2481DD96591007D7929 /* 详情界面加入购物车按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1391DD96591007D7929 /* 详情界面加入购物车按钮@2x.png */; };
-		C709C2491DD96591007D7929 /* 详情界面加入购物车按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C13A1DD96591007D7929 /* 详情界面加入购物车按钮@3x.png */; };
 		C709C24A1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C13C1DD96591007D7929 /* Contents.json */; };
 		C709C24B1DD96591007D7929 /* 详情界面收藏按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C13D1DD96591007D7929 /* 详情界面收藏按钮.png */; };
 		C709C24C1DD96591007D7929 /* 详情界面收藏按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C13E1DD96591007D7929 /* 详情界面收藏按钮@2x.png */; };
 		C709C24D1DD96591007D7929 /* 详情界面收藏按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C13F1DD96591007D7929 /* 详情界面收藏按钮@3x.png */; };
-		C709C24E1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C1411DD96591007D7929 /* Contents.json */; };
-		C709C24F1DD96591007D7929 /* 详情界面立即购买按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1421DD96591007D7929 /* 详情界面立即购买按钮.png */; };
-		C709C2501DD96591007D7929 /* 详情界面立即购买按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1431DD96591007D7929 /* 详情界面立即购买按钮@2x.png */; };
-		C709C2511DD96591007D7929 /* 详情界面立即购买按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1441DD96591007D7929 /* 详情界面立即购买按钮@3x.png */; };
-		C709C2521DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C1461DD96591007D7929 /* Contents.json */; };
-		C709C2531DD96591007D7929 /* 详情界面购物车按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1471DD96591007D7929 /* 详情界面购物车按钮.png */; };
-		C709C2541DD96591007D7929 /* 详情界面购物车按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1481DD96591007D7929 /* 详情界面购物车按钮@2x.png */; };
-		C709C2551DD96591007D7929 /* 详情界面购物车按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C1491DD96591007D7929 /* 详情界面购物车按钮@3x.png */; };
 		C709C2561DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C14B1DD96591007D7929 /* Contents.json */; };
 		C709C2571DD96591007D7929 /* 详情界面转发按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C14C1DD96591007D7929 /* 详情界面转发按钮.png */; };
 		C709C2581DD96591007D7929 /* 详情界面转发按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C14D1DD96591007D7929 /* 详情界面转发按钮@2x.png */; };
@@ -171,6 +159,10 @@
 		C759A7371DEBE002009135FC /* LDCycleImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = C759A7361DEBE002009135FC /* LDCycleImgView.m */; };
 		C759A73A1DEBFFB9009135FC /* LDImageEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C759A7391DEBFFB9009135FC /* LDImageEntity.m */; };
 		C759A73D1DEC0ED5009135FC /* LDTitleLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C759A73C1DEC0ED5009135FC /* LDTitleLabelView.m */; };
+		C764E6601DEE652800487F10 /* LDDetailsContentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C764E65F1DEE652800487F10 /* LDDetailsContentEntity.m */; };
+		C764E6661DEE65CF00487F10 /* LDDetailsContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C764E6651DEE65CF00487F10 /* LDDetailsContentView.m */; };
+		C764E6691DEE9C7500487F10 /* LDImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C764E6681DEE9C7500487F10 /* LDImageView.m */; };
+		C764E66F1DEEB24500487F10 /* LDBottomBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = C764E66E1DEEB24500487F10 /* LDBottomBtnView.m */; };
 		C783D6781DE7F8F1003E7FBF /* LDBrandEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C783D6771DE7F8F1003E7FBF /* LDBrandEntity.m */; };
 		C783D67B1DE7F914003E7FBF /* LDBrandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C783D67A1DE7F914003E7FBF /* LDBrandTableViewCell.m */; };
 		C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */; };
@@ -304,22 +296,10 @@
 		C709C0AC1DD96590007D7929 /* 购物车界面静态购物车图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面静态购物车图标@2x.png"; sourceTree = "<group>"; };
 		C709C0AD1DD96590007D7929 /* 购物车界面静态购物车图标@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面静态购物车图标@3x.png"; sourceTree = "<group>"; };
 		C709C1351DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C1371DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C1381DD96591007D7929 /* 详情界面加入购物车按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面加入购物车按钮.png"; sourceTree = "<group>"; };
-		C709C1391DD96591007D7929 /* 详情界面加入购物车按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面加入购物车按钮@2x.png"; sourceTree = "<group>"; };
-		C709C13A1DD96591007D7929 /* 详情界面加入购物车按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面加入购物车按钮@3x.png"; sourceTree = "<group>"; };
 		C709C13C1DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C13D1DD96591007D7929 /* 详情界面收藏按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面收藏按钮.png"; sourceTree = "<group>"; };
 		C709C13E1DD96591007D7929 /* 详情界面收藏按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面收藏按钮@2x.png"; sourceTree = "<group>"; };
 		C709C13F1DD96591007D7929 /* 详情界面收藏按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面收藏按钮@3x.png"; sourceTree = "<group>"; };
-		C709C1411DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C1421DD96591007D7929 /* 详情界面立即购买按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面立即购买按钮.png"; sourceTree = "<group>"; };
-		C709C1431DD96591007D7929 /* 详情界面立即购买按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面立即购买按钮@2x.png"; sourceTree = "<group>"; };
-		C709C1441DD96591007D7929 /* 详情界面立即购买按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面立即购买按钮@3x.png"; sourceTree = "<group>"; };
-		C709C1461DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C1471DD96591007D7929 /* 详情界面购物车按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面购物车按钮.png"; sourceTree = "<group>"; };
-		C709C1481DD96591007D7929 /* 详情界面购物车按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面购物车按钮@2x.png"; sourceTree = "<group>"; };
-		C709C1491DD96591007D7929 /* 详情界面购物车按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面购物车按钮@3x.png"; sourceTree = "<group>"; };
 		C709C14B1DD96591007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C14C1DD96591007D7929 /* 详情界面转发按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面转发按钮.png"; sourceTree = "<group>"; };
 		C709C14D1DD96591007D7929 /* 详情界面转发按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "详情界面转发按钮@2x.png"; sourceTree = "<group>"; };
@@ -379,6 +359,14 @@
 		C759A7391DEBFFB9009135FC /* LDImageEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDImageEntity.m; sourceTree = "<group>"; };
 		C759A73B1DEC0ED5009135FC /* LDTitleLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTitleLabelView.h; sourceTree = "<group>"; };
 		C759A73C1DEC0ED5009135FC /* LDTitleLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTitleLabelView.m; sourceTree = "<group>"; };
+		C764E65E1DEE652800487F10 /* LDDetailsContentEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDDetailsContentEntity.h; sourceTree = "<group>"; };
+		C764E65F1DEE652800487F10 /* LDDetailsContentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDDetailsContentEntity.m; sourceTree = "<group>"; };
+		C764E6641DEE65CF00487F10 /* LDDetailsContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDDetailsContentView.h; sourceTree = "<group>"; };
+		C764E6651DEE65CF00487F10 /* LDDetailsContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDDetailsContentView.m; sourceTree = "<group>"; };
+		C764E6671DEE9C7500487F10 /* LDImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDImageView.h; sourceTree = "<group>"; };
+		C764E6681DEE9C7500487F10 /* LDImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDImageView.m; sourceTree = "<group>"; };
+		C764E66D1DEEB24500487F10 /* LDBottomBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBottomBtnView.h; sourceTree = "<group>"; };
+		C764E66E1DEEB24500487F10 /* LDBottomBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBottomBtnView.m; sourceTree = "<group>"; };
 		C783D6761DE7F8F1003E7FBF /* LDBrandEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDBrandEntity.h; path = ../View/LDBrandEntity.h; sourceTree = "<group>"; };
 		C783D6771DE7F8F1003E7FBF /* LDBrandEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDBrandEntity.m; path = ../View/LDBrandEntity.m; sourceTree = "<group>"; };
 		C783D6791DE7F914003E7FBF /* LDBrandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBrandTableViewCell.h; sourceTree = "<group>"; };
@@ -826,24 +814,10 @@
 			isa = PBXGroup;
 			children = (
 				C709C1351DD96591007D7929 /* Contents.json */,
-				C709C1361DD96591007D7929 /* 详情界面加入购物车按钮.imageset */,
 				C709C13B1DD96591007D7929 /* 详情界面收藏按钮.imageset */,
-				C709C1401DD96591007D7929 /* 详情界面立即购买按钮.imageset */,
-				C709C1451DD96591007D7929 /* 详情界面购物车按钮.imageset */,
 				C709C14A1DD96591007D7929 /* 详情界面转发按钮.imageset */,
 			);
 			path = "详情界面切图";
-			sourceTree = "<group>";
-		};
-		C709C1361DD96591007D7929 /* 详情界面加入购物车按钮.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				C709C1371DD96591007D7929 /* Contents.json */,
-				C709C1381DD96591007D7929 /* 详情界面加入购物车按钮.png */,
-				C709C1391DD96591007D7929 /* 详情界面加入购物车按钮@2x.png */,
-				C709C13A1DD96591007D7929 /* 详情界面加入购物车按钮@3x.png */,
-			);
-			path = "详情界面加入购物车按钮.imageset";
 			sourceTree = "<group>";
 		};
 		C709C13B1DD96591007D7929 /* 详情界面收藏按钮.imageset */ = {
@@ -855,28 +829,6 @@
 				C709C13F1DD96591007D7929 /* 详情界面收藏按钮@3x.png */,
 			);
 			path = "详情界面收藏按钮.imageset";
-			sourceTree = "<group>";
-		};
-		C709C1401DD96591007D7929 /* 详情界面立即购买按钮.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				C709C1411DD96591007D7929 /* Contents.json */,
-				C709C1421DD96591007D7929 /* 详情界面立即购买按钮.png */,
-				C709C1431DD96591007D7929 /* 详情界面立即购买按钮@2x.png */,
-				C709C1441DD96591007D7929 /* 详情界面立即购买按钮@3x.png */,
-			);
-			path = "详情界面立即购买按钮.imageset";
-			sourceTree = "<group>";
-		};
-		C709C1451DD96591007D7929 /* 详情界面购物车按钮.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				C709C1461DD96591007D7929 /* Contents.json */,
-				C709C1471DD96591007D7929 /* 详情界面购物车按钮.png */,
-				C709C1481DD96591007D7929 /* 详情界面购物车按钮@2x.png */,
-				C709C1491DD96591007D7929 /* 详情界面购物车按钮@3x.png */,
-			);
-			path = "详情界面购物车按钮.imageset";
 			sourceTree = "<group>";
 		};
 		C709C14A1DD96591007D7929 /* 详情界面转发按钮.imageset */ = {
@@ -1243,6 +1195,8 @@
 				C759A7391DEBFFB9009135FC /* LDImageEntity.m */,
 				C7CE2A5C1DED6C0500136C11 /* LDTitleEntity.h */,
 				C7CE2A5D1DED6C0500136C11 /* LDTitleEntity.m */,
+				C764E65E1DEE652800487F10 /* LDDetailsContentEntity.h */,
+				C764E65F1DEE652800487F10 /* LDDetailsContentEntity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1254,6 +1208,12 @@
 				C759A7361DEBE002009135FC /* LDCycleImgView.m */,
 				C759A73B1DEC0ED5009135FC /* LDTitleLabelView.h */,
 				C759A73C1DEC0ED5009135FC /* LDTitleLabelView.m */,
+				C764E6641DEE65CF00487F10 /* LDDetailsContentView.h */,
+				C764E6651DEE65CF00487F10 /* LDDetailsContentView.m */,
+				C764E6671DEE9C7500487F10 /* LDImageView.h */,
+				C764E6681DEE9C7500487F10 /* LDImageView.m */,
+				C764E66D1DEEB24500487F10 /* LDBottomBtnView.h */,
+				C764E66E1DEEB24500487F10 /* LDBottomBtnView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1326,10 +1286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C709C2471DD96591007D7929 /* 详情界面加入购物车按钮.png in Resources */,
 				C709C1C21DD96591007D7929 /* 购物车界面商品选中对号按钮.png in Resources */,
-				C709C2511DD96591007D7929 /* 详情界面立即购买按钮@3x.png in Resources */,
-				C709C2491DD96591007D7929 /* 详情界面加入购物车按钮@3x.png in Resources */,
 				C709C1CA1DD96591007D7929 /* 购物车界面意见反馈图标.png in Resources */,
 				C709C1811DD96591007D7929 /* 分类界面抗氧防衰图标@3x.png in Resources */,
 				C709C1C31DD96591007D7929 /* 购物车界面商品选中对号按钮@2x.png in Resources */,
@@ -1343,7 +1300,6 @@
 				C709C1BD1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1C81DD96591007D7929 /* 购物车界面客服热线图标@3x.png in Resources */,
 				C709C1911DD96591007D7929 /* 分类界面淡斑亮白图标@3x.png in Resources */,
-				C709C2481DD96591007D7929 /* 详情界面加入购物车按钮@2x.png in Resources */,
 				C709C1991DD96591007D7929 /* 分类界面眼霜图标@3x.png in Resources */,
 				C709C1CB1DD96591007D7929 /* 购物车界面意见反馈图标@2x.png in Resources */,
 				C709C1891DD96591007D7929 /* 分类界面敏感肌肤图标@3x.png in Resources */,
@@ -1354,7 +1310,6 @@
 				C709C1D11DD96591007D7929 /* Contents.json in Resources */,
 				C709C24C1DD96591007D7929 /* 详情界面收藏按钮@2x.png in Resources */,
 				C709C1D21DD96591007D7929 /* 购物车界面退出登录按钮.png in Resources */,
-				C709C2521DD96591007D7929 /* Contents.json in Resources */,
 				C709C1CD1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1B91DD96591007D7929 /* Contents.json in Resources */,
 				C709C1761DD96591007D7929 /* Contents.json in Resources */,
@@ -1376,7 +1331,6 @@
 				C709C1721DD96591007D7929 /* Contents.json in Resources */,
 				C709C17F1DD96591007D7929 /* 分类界面抗氧防衰图标.png in Resources */,
 				C709C1B21DD96591007D7929 /* 购物车界面关于我们图标.png in Resources */,
-				C709C2541DD96591007D7929 /* 详情界面购物车按钮@2x.png in Resources */,
 				C709C1BE1DD96591007D7929 /* 购物车界面商品未选中.png in Resources */,
 				C709C1881DD96591007D7929 /* 分类界面敏感肌肤图标@2x.png in Resources */,
 				C709C24D1DD96591007D7929 /* 详情界面收藏按钮@3x.png in Resources */,
@@ -1386,7 +1340,6 @@
 				C709C2561DD96591007D7929 /* Contents.json in Resources */,
 				C709C19B1DD96591007D7929 /* 分类界面眼霜眼贴图标.png in Resources */,
 				C709BFE21DD96166007D7929 /* LaunchScreen.storyboard in Resources */,
-				C709C2501DD96591007D7929 /* 详情界面立即购买按钮@2x.png in Resources */,
 				C709C1C91DD96591007D7929 /* Contents.json in Resources */,
 				C709C1D71DD96591007D7929 /* 购物车界面逛一逛按钮@2x.png in Resources */,
 				C709C1D51DD96591007D7929 /* Contents.json in Resources */,
@@ -1397,7 +1350,6 @@
 				C709C2571DD96591007D7929 /* 详情界面转发按钮.png in Resources */,
 				C709C16E1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1851DD96591007D7929 /* 分类界面提升紧致图标@3x.png in Resources */,
-				C709C2531DD96591007D7929 /* 详情界面购物车按钮.png in Resources */,
 				C709C1791DD96591007D7929 /* 分类界面唇膏图标@3x.png in Resources */,
 				C709C1DB1DD96591007D7929 /* 购物车界面静态购物车图标@2x.png in Resources */,
 				C709C19F1DD96591007D7929 /* 分类界面补水保湿图标.png in Resources */,
@@ -1428,16 +1380,13 @@
 				C709C1781DD96591007D7929 /* 分类界面唇膏图标@2x.png in Resources */,
 				C709C1D91DD96591007D7929 /* Contents.json in Resources */,
 				C709C1771DD96591007D7929 /* 分类界面唇膏图标.png in Resources */,
-				C709C24E1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1CF1DD96591007D7929 /* 购物车界面我的收藏图标@2x.png in Resources */,
-				C709C2551DD96591007D7929 /* 详情界面购物车按钮@3x.png in Resources */,
 				C709C1A01DD96591007D7929 /* 分类界面补水保湿图标@2x.png in Resources */,
 				C709C1A61DD96591007D7929 /* Contents.json in Resources */,
 				C709C1B71DD96591007D7929 /* 购物车界面去结算按钮@2x.png in Resources */,
 				C709C24B1DD96591007D7929 /* 详情界面收藏按钮.png in Resources */,
 				C709C19E1DD96591007D7929 /* Contents.json in Resources */,
 				C709C19A1DD96591007D7929 /* Contents.json in Resources */,
-				C709C24F1DD96591007D7929 /* 详情界面立即购买按钮.png in Resources */,
 				C709C1C71DD96591007D7929 /* 购物车界面客服热线图标@2x.png in Resources */,
 				C709C1BB1DD96591007D7929 /* 购物车界面商品加减按钮@2x.png in Resources */,
 				C709C1A41DD96591007D7929 /* 分类界面面膜图标@2x.png in Resources */,
@@ -1454,7 +1403,6 @@
 				C709C1951DD96591007D7929 /* 分类界面清痘去印图标@3x.png in Resources */,
 				C709C1BF1DD96591007D7929 /* 购物车界面商品未选中@2x.png in Resources */,
 				C709C1BC1DD96591007D7929 /* 购物车界面商品加减按钮@3x.png in Resources */,
-				C709C2461DD96591007D7929 /* Contents.json in Resources */,
 				C709C1C61DD96591007D7929 /* 购物车界面客服热线图标.png in Resources */,
 				C709C1B01DD96591007D7929 /* 地址背景@3x.png in Resources */,
 				C709C1CE1DD96591007D7929 /* 购物车界面我的收藏图标.png in Resources */,
@@ -1525,6 +1473,7 @@
 				C709C2C61DDA9F88007D7929 /* LDBuyCarViewController.m in Sources */,
 				C759A7371DEBE002009135FC /* LDCycleImgView.m in Sources */,
 				C783D6781DE7F8F1003E7FBF /* LDBrandEntity.m in Sources */,
+				C764E6661DEE65CF00487F10 /* LDDetailsContentView.m in Sources */,
 				C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */,
 				C7CE2A5E1DED6C0500136C11 /* LDTitleEntity.m in Sources */,
 				C73078841DE6CF4400A0743D /* LDProductEntity.m in Sources */,
@@ -1540,7 +1489,9 @@
 				C759A73A1DEBFFB9009135FC /* LDImageEntity.m in Sources */,
 				C709C2BD1DDA9F88007D7929 /* AppDelegate.m in Sources */,
 				C718A8FD1DDD9E6B003CD60F /* UIView+Toast.m in Sources */,
+				C764E66F1DEEB24500487F10 /* LDBottomBtnView.m in Sources */,
 				C709C2BC1DDA9F88007D7929 /* LDTabbarController.m in Sources */,
+				C764E6691DEE9C7500487F10 /* LDImageView.m in Sources */,
 				C709C2C21DDA9F88007D7929 /* LDMessageCell.m in Sources */,
 				C709BFD41DD96166007D7929 /* main.m in Sources */,
 				C709C2C71DDA9F88007D7929 /* LDHomeViewController.m in Sources */,
@@ -1553,6 +1504,7 @@
 				C7F5F4071DE961FF00DC081D /* LDButtonSwitchView.m in Sources */,
 				C73078811DE6C84600A0743D /* LDProductTableViewCell.m in Sources */,
 				C709C2C31DDA9F88007D7929 /* LDMyMessageHeadView.m in Sources */,
+				C764E6601DEE652800487F10 /* LDDetailsContentEntity.m in Sources */,
 				C709C2BF1DDA9F88007D7929 /*  LDCategoryViewController.m in Sources */,
 				C75212501DDB05FD00772012 /* LDNextViewController.m in Sources */,
 			);

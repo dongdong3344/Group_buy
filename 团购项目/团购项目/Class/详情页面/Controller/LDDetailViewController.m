@@ -11,33 +11,110 @@
 #import "LDImageEntity.h"
 #import "LDTitleLabelView.h"
 #import "LDTitleEntity.h"
-
+#import "LDDetailsContentEntity.h"
+#import "LDDetailsContentView.h"
+#import "LDImageView.h"
+#import "LDBottomBtnView.h"
 @interface LDDetailViewController ()
 @property(nonatomic,strong)UIScrollView *mainScrollView;
 @property(nonatomic,strong)LDCycleImgView *cycleView;
 @property(nonatomic,strong)LDTitleLabelView *titleLabelView;
+@property(nonatomic,strong)LDDetailsContentView *detailsContentView;
+@property(nonatomic,strong)LDImageView *bottomImageView;
+@property(nonatomic,assign)CGFloat mainScrollviewContentHeight;
+@property(nonatomic,strong)LDBottomBtnView *bottomBtnView;
 
 @end
 
 
 @implementation LDDetailViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.mainScrollviewContentHeight=380;//轮播图高度
    // self.edgesForExtendedLayout = 0;
     self.navigationController.navigationBar.barTintColor=[UIColor whiteColor];
     self.view.backgroundColor=[UIColor whiteColor];
+   
+    [self.view addSubview:self.bottomBtnView];
     [self.view addSubview:self.mainScrollView];
     [self.mainScrollView addSubview:self.cycleView];
     [self.mainScrollView addSubview:self.titleLabelView];
-    [self setupConstraint];
+    [self.mainScrollView addSubview:self.detailsContentView];
+    [self.mainScrollView addSubview:self.bottomImageView];
+   
     [self getCycleImages];
     [self getTitleData];
-
+    [self getDetailsContent];
+    [self addConstraint];
+    
+    LDDLog(@"frame:%@",NSStringFromCGRect(self.bottomBtnView.frame));
 }
+
+
+-(void)setMainScrollviewContentHeight:(CGFloat)mainScrollviewContentHeight{
+    
+    _mainScrollviewContentHeight=mainScrollviewContentHeight;
+    self.mainScrollView.contentSize=CGSizeMake(0,self.mainScrollviewContentHeight);
+}
+
+
+-(LDBottomBtnView *)bottomBtnView{
+    if (!_bottomBtnView) {
+        _bottomBtnView=[[LDBottomBtnView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-45, SCREEN_WITH, 45)];
+    }
+    return _bottomBtnView;
+}
+
+-(LDImageView *)bottomImageView{
+    if (!_bottomImageView) {
+        _bottomImageView=[[LDImageView alloc]init];
+        
+        __weak typeof(self) weakself=self;
+        _bottomImageView.imageViewBlock=^(CGFloat height){
+           [weakself.bottomImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+               make.height.mas_equalTo(height);
+           }];
+            weakself.mainScrollviewContentHeight +=height;
+    
+        };
+        
+    }
+    return _bottomImageView;
+}
+
+
+-(LDDetailsContentView *)detailsContentView{
+    if (!_detailsContentView) {
+        _detailsContentView=[[LDDetailsContentView alloc]init];
+        
+        __weak typeof(self) weakself=self;
+        _detailsContentView.contentViewBlock=^(CGFloat height){
+            
+            [weakself.detailsContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+                 make.height.mas_equalTo(height);
+            }];
+            weakself.mainScrollviewContentHeight +=height;
+        };
+        
+    }
+    return _detailsContentView;
+}
+
 -(LDTitleLabelView *)titleLabelView{
     if (!_titleLabelView) {
         _titleLabelView=[[LDTitleLabelView alloc]init];
+        __weak typeof(self) weakself=self;
+        _titleLabelView.titleLabelViewBlock=^(CGFloat height){
+            [weakself.titleLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(height);
+            }];
+            weakself.mainScrollviewContentHeight +=height;
+           
+        };
+        
     }
     return _titleLabelView;
 }
@@ -52,24 +129,26 @@
 -(UIScrollView *)mainScrollView{
     if (!_mainScrollView) {
         _mainScrollView=[[UIScrollView alloc]init];
-        _mainScrollView.contentSize=CGSizeMake(0, 2000);
+        
     }
     return _mainScrollView;
 }
 
 -(void)getCycleImages{
     
-    [self  getWithURLString:@"appGoods/findGoodsImgList.do"parameters:@{@"GoodsId":self.detailGoodsID} success:^(id responseObject) {
+    [self getWithURLString:@"appGoods/findGoodsImgList.do"parameters:@{@"GoodsId":self.detailGoodsID} success:^(id responseObject) {
         [SVProgressHUD dismiss];
         NSArray *imageEntityArray = [LDImageEntity mj_objectArrayWithKeyValuesArray:responseObject];
        // LDDLog(@"imageEntityArray:%@",imageEntityArray);
         NSMutableArray *cycleImgArray=[NSMutableArray array];
         for (LDImageEntity *imageEntity in imageEntityArray) {
             if ([imageEntity.ImgType isEqualToString:@"1"]) {//判断图片是type 1
+                
                 [cycleImgArray addObject:imageEntity.ImgView];
             }
         }
         self.cycleView.imageArray=cycleImgArray;
+        self.bottomImageView.imageArray=imageEntityArray;
     } failure:^(NSError *error) {
         LDDLog(@"error : %@",error);
     }];
@@ -87,7 +166,18 @@
     }];
 }
 
--(void)setupConstraint{
+-(void)getDetailsContent{
+    [self getWithURLString:@"appGoods/findGoodsDetailList.do?" parameters:@{@"GoodsId":self.detailGoodsID} success:^(id responseObject) {
+        NSArray *detailsContentEntityArry=[LDDetailsContentEntity  mj_objectArrayWithKeyValuesArray:responseObject];
+        self.detailsContentView.detailsContentEntityArry=detailsContentEntityArry;/*将获取到的模型数组赋值给detailsContentView（detailsContentView里有公开接口detailsContentEntityArry）*/
+    } failure:^(NSError *error) {
+        LDDLog(@"error:%@",error);
+    }];
+    
+}
+
+
+-(void)addConstraint{
     
     [_mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 45, 0));
@@ -97,7 +187,18 @@
     [_titleLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.cycleView.mas_bottom);
         make.right.left.equalTo(self.view);
-        make.height.mas_equalTo(300);
+        
+    }];
+    
+    [_detailsContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleLabelView.mas_bottom).offset(10);
+        make.right.left.equalTo(self.view);
+       
+    }];
+    
+    [_bottomImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.detailsContentView.mas_bottom);
+        make.right.left.equalTo(self.view);
     }];
 }
 
@@ -116,6 +217,7 @@
 }
 
 -(void)popViewController{
+    
     [self.navigationController popViewControllerAnimated:YES];
     
 }

@@ -9,7 +9,7 @@
 #import "LDTitleLabelView.h"
 
 @interface LDTitleLabelView ()
-@property(strong,nonatomic)UILabel *titleLabel,*priceLabel,*separatorLineLabel,*contentLabel,*shopName,*countryName,*hintLabel,*hintLineLabel;//标题,价格,分割线,内容标签,商店名称,国家名称，提示标签；
+@property(strong,nonatomic)UILabel *titleLabel,*priceLabel,*separatorLineLabel,*contentLabel,*countryName,*hintLabel,*hintLineLabel,*shopName;//标题,价格,分割线,内容标签,国家名称，提示标签,商店名称；
 @property(strong,nonatomic)UIButton * clickToViewProductBtn;//查看产品按钮
 @property(strong,nonatomic)UIImageView *shopIcon,*countryIcon,*nextBtnImage;//产品图片，国旗，向右箭头图片
 @property(strong,nonatomic)UIView *bgView;//背景
@@ -35,12 +35,16 @@
         [self addSubview:self.nextBtnImage];
         [self addSubview:self.hintLabel];
         [self addSubview:self.hintLineLabel];
-        [self addLayout];
+        [self addConstraint];//添加约束条件
+     
     }
     return self;
 }
 
+#pragma mark - 重写set方法-
 -(void)setTitleEntity:(LDTitleEntity *)titleEntity{
+    
+    CGFloat viewHeight=210;
     
     _titleEntity=titleEntity;
     self.titleLabel.text=titleEntity.Abbreviation;
@@ -64,13 +68,13 @@
 
     [self.shopIcon sd_setImageWithURL:[NSURL URLWithString:titleEntity.ShopImage] placeholderImage:nil];
     self.shopName.text=titleEntity.BrandCNName;
-    self.countryName.text=titleEntity.CountryName;
+    //LDDLog(@"shopName:%@",self.shopName.text);
+    //self.countryName.text=titleEntity.CountryName;
     
-    
-    
-
-
-
+    //block
+    if (self.titleLabelViewBlock) {
+        self.titleLabelViewBlock(viewHeight+titleLabelHeight+contentLabelHeight);
+    }
 }
 
 
@@ -95,6 +99,7 @@
     if (!_hintLineLabel) {
         _hintLineLabel=[[UILabel alloc]init];
         _hintLineLabel.backgroundColor=RGBCOLOR(242, 242, 242);
+        //RGBCOLOR(242, 242, 242);
     }
     return _hintLineLabel;
 }
@@ -122,6 +127,7 @@
     if (!_separatorLineLabel) {
         _separatorLineLabel=[[UILabel alloc]init];
         _separatorLineLabel.backgroundColor=RGBCOLOR(242, 242, 242);
+        //RGBCOLOR(242, 242, 242);
     }
     return _separatorLineLabel;
 }
@@ -130,11 +136,14 @@
     if (!_contentLabel) {
         _contentLabel=[[UILabel alloc]init];
         _contentLabel.font=[UIFont systemFontOfSize:13];
+      
         _contentLabel.textColor=RGBCOLOR(83, 83, 83);
         _contentLabel.numberOfLines=0;
     }
     return _contentLabel;
 }
+
+
 -(UIView *)bgView{
     if (!_bgView) {
         _bgView=[[UIView alloc]init];
@@ -142,14 +151,17 @@
     }
     return _bgView;
 }
+
 -(UILabel *)shopName{
     if (!_shopName) {
         _shopName=[[UILabel alloc]init];
         _shopName.font=[UIFont systemFontOfSize:13];
+        _shopName.backgroundColor=[UIColor orangeColor];
+        
+        //LDDLog(@"shopName frame:%@",NSStringFromCGRect(self.shopName.frame));
     }
     return _shopName;
 }
-
 
 -(UILabel *)countryName{
     if (!_countryName) {
@@ -162,6 +174,7 @@
 -(UIImageView *)shopIcon{
     if (!_shopIcon) {
         _shopIcon=[[UIImageView alloc]init];
+        _shopIcon.contentMode=UIViewContentModeScaleAspectFit;//设置图片不变形
     }
     return _shopIcon;
 }
@@ -192,24 +205,26 @@
 }
 
 #pragma mark ——添加约束——
--(void)addLayout{
+
+-(void)addConstraint{
 
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(15);
         make.right.equalTo(self.mas_right).offset(-15);
-        make.top.equalTo(self.mas_top);  //标题高度不确定，高度不在此处定义
+        make.top.equalTo(self.mas_top);  //标题高度不确定，高度需要更新约束
         make.height.mas_equalTo(20);
       }];
+    
     [_priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(20);
         make.top.equalTo(self.titleLabel.mas_bottom).offset(25);
         make.right.left.equalTo(self);
-        
     }];
     
     [_separatorLineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(1);
-        make.right.left.equalTo(self);
+        make.right.equalTo(self.mas_right).offset(-15);
+        make.left.equalTo(self.mas_left).offset(15);
         make.top.equalTo(self.priceLabel.mas_bottom).offset(25);
     }];
     
@@ -217,13 +232,13 @@
         make.left.equalTo(self.mas_left).offset(15);
         make.right.equalTo(self.mas_right).offset(-15);
         make.top.equalTo(self.separatorLineLabel).offset(20);
-        //不添加高度
+        //标题高度不确定，高度需要更新约束
         make.height.mas_equalTo(20);
     }];
     
     [_bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.left.equalTo(self);
-        make.height.mas_equalTo(100);
+        make.height.mas_equalTo(50);
         make.top.equalTo(self.contentLabel.mas_bottom).offset(18);
     }];
     
@@ -232,7 +247,7 @@
     }];
     
     [_shopIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(15);
+        make.left.equalTo(self.clickToViewProductBtn.mas_left).offset(15);
         make.centerY.equalTo(self.clickToViewProductBtn.mas_centerY);
         make.size.mas_equalTo(CGSizeMake(50, 50));
     }];
@@ -243,11 +258,11 @@
         make.height.mas_equalTo(12);
         make.right.equalTo(self.mas_right).offset(-120);
     }];
-    
+   
     [_countryIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(18, 14));
+        make.size.mas_equalTo(CGSizeMake(18, 13));
         make.left.equalTo(self.shopIcon.mas_right).offset(15);
-        make.bottom.equalTo(self.mas_bottom).offset(-5);
+        make.bottom.equalTo(self.shopIcon.mas_bottom).offset(-5);
     }];
     
     [_countryName mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -276,11 +291,6 @@
         
     }];
     
-    
-    
-    
-    
-    
-    
+  
 }
 @end

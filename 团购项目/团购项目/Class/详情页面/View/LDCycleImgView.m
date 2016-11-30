@@ -47,7 +47,7 @@
 -(void)setImageArray:(NSArray *)imageArray{
     
     _cycleScrollView.imageURLStringsGroup = imageArray;
-
+   
 }
 
 
@@ -66,6 +66,7 @@
         _cycleScrollView.currentPageDotColor=[UIColor redColor];
         
         _cycleScrollView.pageControlAliment= SDCycleScrollViewPageContolAlimentCenter;
+       // _cycleScrollView.bannerImageViewContentMode=UIViewContentModeScaleAspectFit;//图片不变形
     }
     return _cycleScrollView;
 }
