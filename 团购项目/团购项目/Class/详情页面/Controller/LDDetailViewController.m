@@ -15,6 +15,7 @@
 #import "LDDetailsContentView.h"
 #import "LDImageView.h"
 #import "LDBottomBtnView.h"
+
 @interface LDDetailViewController ()
 @property(nonatomic,strong)UIScrollView *mainScrollView;
 @property(nonatomic,strong)LDCycleImgView *cycleView;
@@ -22,7 +23,7 @@
 @property(nonatomic,strong)LDDetailsContentView *detailsContentView;
 @property(nonatomic,strong)LDImageView *bottomImageView;
 @property(nonatomic,assign)CGFloat mainScrollviewContentHeight;
-@property(nonatomic,strong)LDBottomBtnView *bottomBtnView;
+@property(nonatomic,strong)LDBottomBtnView *buttonView;
 
 @end
 
@@ -34,23 +35,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mainScrollviewContentHeight=380;//轮播图高度
-   // self.edgesForExtendedLayout = 0;
+    //self.edgesForExtendedLayout = 0;
     self.navigationController.navigationBar.barTintColor=[UIColor whiteColor];
-    self.view.backgroundColor=[UIColor whiteColor];
    
-    [self.view addSubview:self.bottomBtnView];
     [self.view addSubview:self.mainScrollView];
     [self.mainScrollView addSubview:self.cycleView];
     [self.mainScrollView addSubview:self.titleLabelView];
     [self.mainScrollView addSubview:self.detailsContentView];
     [self.mainScrollView addSubview:self.bottomImageView];
-   
+    [self.view addSubview:self.buttonView];
     [self getCycleImages];
     [self getTitleData];
     [self getDetailsContent];
     [self addConstraint];
-    
-    LDDLog(@"frame:%@",NSStringFromCGRect(self.bottomBtnView.frame));
+
 }
 
 
@@ -60,14 +58,15 @@
     self.mainScrollView.contentSize=CGSizeMake(0,self.mainScrollviewContentHeight);
 }
 
-
--(LDBottomBtnView *)bottomBtnView{
-    if (!_bottomBtnView) {
-        _bottomBtnView=[[LDBottomBtnView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-45, SCREEN_WITH, 45)];
+//底部的3个按钮
+-(LDBottomBtnView *)buttonView{
+    if (!_buttonView) {
+        _buttonView=[[LDBottomBtnView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-45-64, SCREEN_WITH, 45)];
     }
-    return _bottomBtnView;
+    return _buttonView;
 }
 
+//底部的几张图片
 -(LDImageView *)bottomImageView{
     if (!_bottomImageView) {
         _bottomImageView=[[LDImageView alloc]init];
@@ -85,7 +84,7 @@
     return _bottomImageView;
 }
 
-
+//详细描述信息
 -(LDDetailsContentView *)detailsContentView{
     if (!_detailsContentView) {
         _detailsContentView=[[LDDetailsContentView alloc]init];
@@ -103,6 +102,7 @@
     return _detailsContentView;
 }
 
+//标题
 -(LDTitleLabelView *)titleLabelView{
     if (!_titleLabelView) {
         _titleLabelView=[[LDTitleLabelView alloc]init];
@@ -118,7 +118,7 @@
     }
     return _titleLabelView;
 }
-
+//轮播图
 -(LDCycleImgView *)cycleView{
     if (!_cycleView) {
         _cycleView=[[LDCycleImgView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WITH, 380)];
@@ -139,7 +139,8 @@
     [self getWithURLString:@"appGoods/findGoodsImgList.do"parameters:@{@"GoodsId":self.detailGoodsID} success:^(id responseObject) {
         [SVProgressHUD dismiss];
         NSArray *imageEntityArray = [LDImageEntity mj_objectArrayWithKeyValuesArray:responseObject];
-       // LDDLog(@"imageEntityArray:%@",imageEntityArray);
+        
+        //LDDLog(@"imageEntityArray:%@",imageEntityArray);
         NSMutableArray *cycleImgArray=[NSMutableArray array];
         for (LDImageEntity *imageEntity in imageEntityArray) {
             if ([imageEntity.ImgType isEqualToString:@"1"]) {//判断图片是type 1
@@ -158,8 +159,10 @@
 -(void)getTitleData{
     
     [self getWithURLString:@"appGoods/findGoodsDetail.do" parameters:@{@"GoodsId":self.detailGoodsID} success:^(id responseObject) {
+       // LDDLog(@"responsObj:%@",responseObject);
         LDTitleEntity *titleEntity=[LDTitleEntity mj_objectWithKeyValues:responseObject];
         self.titleLabelView.titleEntity=titleEntity;
+        self.cycleView.titleEntity=titleEntity;
         
     } failure:^(NSError *error) {
         
@@ -180,7 +183,7 @@
 -(void)addConstraint{
     
     [_mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 45, 0));
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 45, 0));//预留45给底部的3个button
     }];
     
     

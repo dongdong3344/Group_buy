@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LDTitleEntity.h"
 
 @interface LDCycleImgView : UIView
 @property(strong,nonatomic)NSArray *imageArray;//轮播图数组
-@property(strong,nonatomic)NSString *buyCount;//购买人数
+@property(strong,nonatomic)LDTitleEntity *titleEntity;
 @end

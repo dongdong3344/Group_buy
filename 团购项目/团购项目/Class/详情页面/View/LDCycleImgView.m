@@ -50,12 +50,11 @@
    
 }
 
-
--(void)setBuyCount:(NSString *)buyCount{
-    
-    _buyCountLabel.text=buyCount;
+//重写set方法，将模型里的BuyCount赋值给buyCountLabel
+-(void)setTitleEntity:(LDTitleEntity *)titleEntity{
+    _titleEntity=titleEntity;
+    _buyCountLabel.text=titleEntity.BuyCount;
 }
-
 
 -(SDCycleScrollView *)cycleScrollView{
     

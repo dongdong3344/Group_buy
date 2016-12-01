@@ -9,7 +9,7 @@
 #import "LDBottomBtnView.h"
 
 @interface LDBottomBtnView ()
-@property(nonatomic,strong)UIButton *buyCarBtn,*buyBtn,*addToBuyCarBtn;
+@property(nonatomic,strong)UIButton *buyCarBtn,*buyBtn,*addToBuyCarBtn;//购物车按钮，立即购买按钮，添加到购物车按钮
 @end
 
 @implementation LDBottomBtnView
@@ -18,10 +18,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor=RGBCOLOR(242, 242, 242);
         [self addSubview:self.buyBtn];
         [self addSubview:self.buyCarBtn];
         [self addSubview:self.addToBuyCarBtn];
-        self.backgroundColor=[UIColor orangeColor];
     }
     return self;
 }
@@ -29,9 +29,11 @@
 -(UIButton *)addToBuyCarBtn{
     if (!_addToBuyCarBtn) {
         _addToBuyCarBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        _addToBuyCarBtn.backgroundColor=[UIColor redColor];
-        _addToBuyCarBtn.titleLabel.text=@"加入购物车";
-        _addToBuyCarBtn.titleLabel.font=[UIFont systemFontOfSize:14];
+        _addToBuyCarBtn.backgroundColor=[UIColor blueColor];
+        
+        [_addToBuyCarBtn setTitle:@"加入购物车" forState:UIControlStateNormal];
+        _addToBuyCarBtn.titleLabel.font=[UIFont boldSystemFontOfSize:16];
+        _addToBuyCarBtn.titleLabel.textAlignment=NSTextAlignmentCenter;
         [_addToBuyCarBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
     return _addToBuyCarBtn;
@@ -40,9 +42,10 @@
 -(UIButton *)buyBtn{
     if (!_buyBtn) {
         _buyBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        _buyBtn.backgroundColor=[UIColor blueColor];
-        _buyBtn.titleLabel.text=@"立即购买";
-        _buyBtn.titleLabel.font=[UIFont systemFontOfSize:14];
+        _buyBtn.backgroundColor=[UIColor redColor];
+        [_buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
+        _buyBtn.titleLabel.font=[UIFont boldSystemFontOfSize:16];
+        _buyBtn.titleLabel.textAlignment=NSTextAlignmentCenter;
         [_buyBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 
     }
@@ -67,17 +70,17 @@
     }];
     
     [_addToBuyCarBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(70);
+        make.height.mas_equalTo(45);
         make.centerY.equalTo(self.mas_centerY);//Y方向居中
         make.left.equalTo(self.buyCarBtn.mas_right).offset(35);
-        make.right.equalTo(self.buyBtn.mas_left).offset(30);
+        make.right.equalTo(self.buyBtn.mas_left).offset(-5);
     }];
     
     [_buyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(70);
+        make.height.mas_equalTo(45);
         make.centerY.equalTo(self.mas_centerY);//Y方向居中
         make.width.equalTo(self.addToBuyCarBtn.mas_width);
-        make.right.equalTo(self.mas_right).offset(-15);
+        make.right.equalTo(self.mas_right);
     }];
     
     

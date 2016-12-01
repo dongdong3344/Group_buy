@@ -12,6 +12,8 @@
 #import "LDButtonSwitchView.h"
 #import "LDTableView.h"
 #import "LDDetailViewController.h"
+#import "LDCategoryViewController.h"
+#import "LDSearchViewController.h"
 
 #define PRODUCT_CELL_WIDTH 170
 #define BRAND_CELL_WIDTH 200
@@ -35,13 +37,51 @@
     [self.mainScrollView addSubview:self.productTableView];
     [self.mainScrollView addSubview:self.brandTableView];
     [self.mainScrollView addSubview:self.buttonSwitchView];
-    [self  getCycleImages];
+    [self getCycleImages];
     [self getProducts];
     [self getBrands];
-
+    [self addUIbarbuttonItems];
 }
 
 
+-(void)addUIbarbuttonItems{
+    //搜索按钮
+    UIButton *rightItemBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    rightItemBtn.frame=CGRectMake(0, 0, 30, 30);
+    [rightItemBtn setImage:[UIImage imageNamed:@"home_title_search1"] forState:UIControlStateNormal];
+    [rightItemBtn setImage:[UIImage imageNamed:@"home_title_search"] forState:UIControlStateHighlighted];
+    [rightItemBtn addTarget:self action:@selector(pushToSearchVC) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithCustomView:rightItemBtn];
+    self.navigationItem.rightBarButtonItem=rightItem;
+   
+    //分类按钮
+    UIButton *leftItemBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    leftItemBtn.frame=CGRectMake(0, 0, 30, 30);
+    [leftItemBtn setImage:[UIImage imageNamed:@"home_title_menu1"] forState:UIControlStateNormal];
+    [leftItemBtn setImage:[UIImage imageNamed:@"home_title_menu"] forState:UIControlStateHighlighted];
+    [leftItemBtn addTarget:self action:@selector(pushToCategoryVC) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem=[[UIBarButtonItem alloc]initWithCustomView:leftItemBtn];
+    self.navigationItem.leftBarButtonItem=leftItem;
+    
+    //titleView
+    UIImageView *image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"xianshigou"]];
+    image.frame=CGRectMake(0, 0, 90, 30);
+    self.navigationItem.titleView=image;
+   
+}
+//跳转至分类
+-(void)pushToCategoryVC{
+    
+    self.tabBarController.selectedIndex=1;//直接跳转至分类页面
+    
+}
+
+//跳转至搜索
+-(void)pushToSearchVC{
+    LDSearchViewController *searchVC=[[LDSearchViewController alloc]init];
+    [self.navigationController pushViewController:searchVC animated:YES];
+    
+}
 
 -(UIScrollView *)mainScrollView{
     
@@ -56,7 +96,7 @@
     
 }
 
-
+//轮播图
 -(SDCycleScrollView *)cycleScrollView{
     
     if (!_cycleScrollView) {
@@ -85,7 +125,7 @@
  
 }
 
-
+//按钮切换不同的表格
 -(void)changeTableView:(UIButton *)button{
     
     if (button==self.buttonSwitchView.productBtn) {//如何新品团购按钮被选中
@@ -120,6 +160,7 @@
     
 }
 
+//新品团购
 -(LDTableView *)productTableView{
     
     if (!_productTableView) {
@@ -139,7 +180,7 @@
     return _productTableView;
 }
 
-
+//品牌团购
 -(LDTableView *)brandTableView{
     
     if (!_brandTableView) {
@@ -190,9 +231,9 @@
 -(void)getBrands{
      //  http://123.57.141.249:8080/beautalk/appActivity/appActivityList.do
        [self getWithURLString:@"appActivity/appActivityList.do" parameters:nil success:^(id responseObject) {
-        self.brandEntityArry=[LDBrandEntity  mj_objectArrayWithKeyValuesArray:responseObject];
+        self.brandEntityArry=[LDBrandEntity mj_objectArrayWithKeyValuesArray:responseObject];//拿到字典数组
         self.brandTableView.brandEntityArry=self.brandEntityArry;
-        CGRect  rect=self.brandTableView.frame;
+        CGRect rect=self.brandTableView.frame;
         rect.size.height=self.brandEntityArry.count*200;  //改变brandTableView的高度
         self.brandTableView.frame=rect;
         [self.brandTableView reloadData];

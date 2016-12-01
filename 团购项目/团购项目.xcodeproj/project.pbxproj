@@ -136,7 +136,7 @@
 		C709C2BC1DDA9F88007D7929 /* LDTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2891DDA9F88007D7929 /* LDTabbarController.m */; };
 		C709C2BD1DDA9F88007D7929 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C28C1DDA9F88007D7929 /* AppDelegate.m */; };
 		C709C2BE1DDA9F88007D7929 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2901DDA9F88007D7929 /* ViewController.m */; };
-		C709C2BF1DDA9F88007D7929 /*  LDCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2951DDA9F88007D7929 /*  LDCategoryViewController.m */; };
+		C709C2BF1DDA9F88007D7929 /* LDCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2951DDA9F88007D7929 /* LDCategoryViewController.m */; };
 		C709C2C01DDA9F88007D7929 /* LDMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C29B1DDA9F88007D7929 /* LDMineViewController.m */; };
 		C709C2C11DDA9F88007D7929 /* cellList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C709C29E1DDA9F88007D7929 /* cellList.plist */; };
 		C709C2C21DDA9F88007D7929 /* LDMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C709C2A01DDA9F88007D7929 /* LDMessageCell.m */; };
@@ -151,6 +151,7 @@
 		C718A8FD1DDD9E6B003CD60F /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = C718A8FC1DDD9E6B003CD60F /* UIView+Toast.m */; };
 		C73078811DE6C84600A0743D /* LDProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C73078801DE6C84600A0743D /* LDProductTableViewCell.m */; };
 		C73078841DE6CF4400A0743D /* LDProductEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C73078831DE6CF4400A0743D /* LDProductEntity.m */; };
+		C74469171DEFC9F20045D6AD /* LDSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74469161DEFC9F20045D6AD /* LDSearchViewController.m */; };
 		C75212451DDAD86500772012 /* LDRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75212441DDAD86500772012 /* LDRegisterView.m */; };
 		C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */ = {isa = PBXBuildFile; fileRef = C75212471DDADBDE00772012 /* LDThirdLoginview.m */; };
 		C75212501DDB05FD00772012 /* LDNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C752124F1DDB05FD00772012 /* LDNextViewController.m */; };
@@ -314,8 +315,8 @@
 		C709C28E1DDA9F88007D7929 /* shop.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shop.pch; sourceTree = "<group>"; };
 		C709C28F1DDA9F88007D7929 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C709C2901DDA9F88007D7929 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C709C2941DDA9F88007D7929 /*  LDCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = " LDCategoryViewController.h"; sourceTree = "<group>"; };
-		C709C2951DDA9F88007D7929 /*  LDCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = " LDCategoryViewController.m"; sourceTree = "<group>"; };
+		C709C2941DDA9F88007D7929 /* LDCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDCategoryViewController.h; sourceTree = "<group>"; };
+		C709C2951DDA9F88007D7929 /* LDCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDCategoryViewController.m; sourceTree = "<group>"; };
 		C709C29A1DDA9F88007D7929 /* LDMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDMineViewController.h; sourceTree = "<group>"; };
 		C709C29B1DDA9F88007D7929 /* LDMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDMineViewController.m; sourceTree = "<group>"; };
 		C709C29E1DDA9F88007D7929 /* cellList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cellList.plist; sourceTree = "<group>"; };
@@ -343,6 +344,8 @@
 		C73078801DE6C84600A0743D /* LDProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDProductTableViewCell.m; sourceTree = "<group>"; };
 		C73078821DE6CF4400A0743D /* LDProductEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDProductEntity.h; sourceTree = "<group>"; };
 		C73078831DE6CF4400A0743D /* LDProductEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDProductEntity.m; sourceTree = "<group>"; };
+		C74469151DEFC9F20045D6AD /* LDSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDSearchViewController.h; sourceTree = "<group>"; };
+		C74469161DEFC9F20045D6AD /* LDSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDSearchViewController.m; sourceTree = "<group>"; };
 		C75212431DDAD86500772012 /* LDRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDRegisterView.h; sourceTree = "<group>"; };
 		C75212441DDAD86500772012 /* LDRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDRegisterView.m; sourceTree = "<group>"; };
 		C75212461DDADBDE00772012 /* LDThirdLoginview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDThirdLoginview.h; path = "../../注册/View/LDThirdLoginview.h"; sourceTree = "<group>"; };
@@ -845,6 +848,7 @@
 		C709C2841DDA9F88007D7929 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				C74469111DEFC9B90045D6AD /* 搜索 */,
 				C759A72E1DEBD55C009135FC /* 详情页面 */,
 				C709C28A1DDA9F88007D7929 /* Other */,
 				C709C2851DDA9F88007D7929 /* Controller */,
@@ -910,8 +914,8 @@
 		C709C2931DDA9F88007D7929 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C709C2941DDA9F88007D7929 /*  LDCategoryViewController.h */,
-				C709C2951DDA9F88007D7929 /*  LDCategoryViewController.m */,
+				C709C2941DDA9F88007D7929 /* LDCategoryViewController.h */,
+				C709C2951DDA9F88007D7929 /* LDCategoryViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1132,6 +1136,39 @@
 				C718A8FC1DDD9E6B003CD60F /* UIView+Toast.m */,
 			);
 			path = Toast;
+			sourceTree = "<group>";
+		};
+		C74469111DEFC9B90045D6AD /* 搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				C74469121DEFC9B90045D6AD /* controller */,
+				C74469131DEFC9B90045D6AD /* model */,
+				C74469141DEFC9B90045D6AD /* view */,
+			);
+			path = "搜索";
+			sourceTree = "<group>";
+		};
+		C74469121DEFC9B90045D6AD /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				C74469151DEFC9F20045D6AD /* LDSearchViewController.h */,
+				C74469161DEFC9F20045D6AD /* LDSearchViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		C74469131DEFC9B90045D6AD /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C74469141DEFC9B90045D6AD /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		C752124A1DDB05E000772012 /* 下一步 */ = {
@@ -1492,6 +1529,7 @@
 				C764E66F1DEEB24500487F10 /* LDBottomBtnView.m in Sources */,
 				C709C2BC1DDA9F88007D7929 /* LDTabbarController.m in Sources */,
 				C764E6691DEE9C7500487F10 /* LDImageView.m in Sources */,
+				C74469171DEFC9F20045D6AD /* LDSearchViewController.m in Sources */,
 				C709C2C21DDA9F88007D7929 /* LDMessageCell.m in Sources */,
 				C709BFD41DD96166007D7929 /* main.m in Sources */,
 				C709C2C71DDA9F88007D7929 /* LDHomeViewController.m in Sources */,
@@ -1505,7 +1543,7 @@
 				C73078811DE6C84600A0743D /* LDProductTableViewCell.m in Sources */,
 				C709C2C31DDA9F88007D7929 /* LDMyMessageHeadView.m in Sources */,
 				C764E6601DEE652800487F10 /* LDDetailsContentEntity.m in Sources */,
-				C709C2BF1DDA9F88007D7929 /*  LDCategoryViewController.m in Sources */,
+				C709C2BF1DDA9F88007D7929 /* LDCategoryViewController.m in Sources */,
 				C75212501DDB05FD00772012 /* LDNextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

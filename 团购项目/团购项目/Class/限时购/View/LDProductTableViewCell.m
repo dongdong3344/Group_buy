@@ -10,12 +10,16 @@
 
 
 @interface LDProductTableViewCell ()
-@property (strong, nonatomic)   UIImageView *iconImage;              /** 图片 */
-
-@property (strong, nonatomic)   UILabel *titleLabel;                    /** 标题label */
-@property (strong, nonatomic)   UILabel *contentLabel;              /** 内容 */
-@property (strong, nonatomic)   UILabel *pricLabel;                   /** 价格label */
-@property (strong, nonatomic)   UIButton *buyCarBtn;              /** 购物车按钮 */
+/** 图片 */
+@property (strong, nonatomic)   UIImageView *iconImage;
+/** 标题label */
+@property (strong, nonatomic)   UILabel *titleLabel;
+/** 内容 */
+@property (strong, nonatomic)   UILabel *contentLabel;
+/** 价格label */
+@property (strong, nonatomic)   UILabel *pricLabel;
+/** 购物车按钮 */
+@property (strong, nonatomic)   UIButton *buyCarBtn;
 @end
 
 @implementation LDProductTableViewCell
@@ -37,28 +41,26 @@
 //重写set方法
 -(void)setProductEntiy:(LDProductEntity *)productEntiy{
     
-     _productEntiy=productEntiy;
+    _productEntiy=productEntiy;
     _titleLabel.text=productEntiy.Title;
     _contentLabel.text = productEntiy.GoodsIntro;//icon_placeholder
     [_iconImage sd_setImageWithURL:[NSURL URLWithString:self.productEntiy.ImgView] placeholderImage:[UIImage imageNamed:@"icon_placeholder"]];
-      //_pricLabel.text=[NSString stringWithFormat:@"￥:%@,%@",productEntiy.DomesticPrice,productEntiy.Price];
-    [self priceAttributedString];
+    
+    [self priceAttributedString];//设置价格富文本格式
 }
 
 - (void)priceAttributedString{
     
     NSString *price=[NSString stringWithFormat:@"%@ ",self.productEntiy.Price];
-    NSMutableAttributedString   *priceStr=[[NSMutableAttributedString alloc]initWithString:price attributes:@{NSForegroundColorAttributeName:RGBCOLOR(230, 50, 37),NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
+    NSMutableAttributedString *priceStr=[[NSMutableAttributedString alloc]initWithString:price attributes:@{NSForegroundColorAttributeName:RGBCOLOR(230, 50, 37),NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
     
     
-    NSString *domesticPrice=[NSString stringWithFormat:@"￥%@",self.productEntiy.DomesticPrice];
+    NSString *domesticPrice=[NSString stringWithFormat:@"￥%@ ",self.productEntiy.DomesticPrice];
     NSMutableAttributedString   *domesticPriceStr =[[NSMutableAttributedString alloc]initWithString:domesticPrice attributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132),NSFontAttributeName:[UIFont systemFontOfSize:12],NSStrikethroughStyleAttributeName:@(2),NSStrikethroughColorAttributeName:[UIColor grayColor]}];
     
     [priceStr insertAttributedString:domesticPriceStr atIndex:price.length];
     self.pricLabel.attributedText=priceStr;
   
-
-    
 }
 
 
