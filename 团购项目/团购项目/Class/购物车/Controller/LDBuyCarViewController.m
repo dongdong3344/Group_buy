@@ -23,12 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    // self.view.backgroundColor=RGBCOLOR(242, 242, 242);
-     self.edgesForExtendedLayout = 0;
+    self.edgesForExtendedLayout = 0;
     [self.view addSubview:self.buycarView];
     [self.view addSubview:self.label];
     [self.view addSubview:self.goShopBtn];
     [self.view addSubview:self.collectionBtn];
-    [self setupContrains];
+    [self addContrains];
     
    }
 
@@ -85,26 +85,30 @@
 }
 
 
+/***点击按钮时，背景颜色高亮***/
 
 -(void)backGroundHighlighted:(UIButton*)button{
-    button.backgroundColor=RGBCOLOR(1, 14, 66);//背景颜色高亮
+    button.backgroundColor=RGBCOLOR(1, 14, 66);
 }
 
 
-//设置颜色，点击时按钮颜色高亮，然后再回到页面上，恢复原始颜色。在viewWillAppear方法里恢复
+/***设置颜色，点击时按钮颜色高亮，然后再回到页面上，恢复原始颜色。在viewWillAppear方法里恢复***/
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.goShopBtn.backgroundColor=RGBCOLOR(18, 99, 177);
     self.collectionBtn.backgroundColor=RGBCOLOR(18, 99, 177);
 }
+
+
+/***跳转至首页***/
 -(void)backToHomePage{
    
     self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:0];
 
-
 }
 
--(void)setupContrains{
+/***设置约束条件***/
+-(void)addContrains{
     
     [_buycarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(179, 155));
@@ -137,9 +141,6 @@
 
     
 }
-
-
-
 
 @end
 

@@ -9,7 +9,10 @@
 #import "LDBottomBtnView.h"
 
 @interface LDBottomBtnView ()
-@property(nonatomic,strong)UIButton *buyCarBtn,*buyBtn,*addToBuyCarBtn;//购物车按钮，立即购买按钮，添加到购物车按钮
+@property(nonatomic,strong)UIButton *buyBtn,*addToBuyCarBtn;//购物车按钮，立即购买按钮，添加到购物车按钮
+@property(assign,nonatomic)NSInteger clicks;
+
+
 @end
 
 @implementation LDBottomBtnView
@@ -18,13 +21,15 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor=RGBCOLOR(242, 242, 242);
+        self.backgroundColor=RGBCOLOR(239, 239, 239);
+      
         [self addSubview:self.buyBtn];
         [self addSubview:self.buyCarBtn];
         [self addSubview:self.addToBuyCarBtn];
     }
     return self;
 }
+
 
 -(UIButton *)addToBuyCarBtn{
     if (!_addToBuyCarBtn) {
@@ -33,17 +38,61 @@
         
         [_addToBuyCarBtn setTitle:@"加入购物车" forState:UIControlStateNormal];
         _addToBuyCarBtn.titleLabel.font=[UIFont boldSystemFontOfSize:16];
+        [_addToBuyCarBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         _addToBuyCarBtn.titleLabel.textAlignment=NSTextAlignmentCenter;
         [_addToBuyCarBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_addToBuyCarBtn addTarget:self action:@selector(addToBuyCar) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addToBuyCarBtn;
 }
 
+
+/***点击加入购物车按钮方法***/
+-(void)addToBuyCar{
+    JSBadgeView  *badgeView=[[JSBadgeView alloc]initWithParentView:self.buyCarBtn alignment:JSBadgeViewAlignmentTopRight];
+    
+    //1、背景色
+    badgeView.badgeBackgroundColor = [UIColor redColor];
+    //2、没有反光面
+    badgeView.badgeOverlayColor = [UIColor clearColor];
+    //3、外圈的颜色，默认是白色
+    badgeView.badgeStrokeColor = [UIColor clearColor];
+    
+   
+    
+    /*****设置数字****/
+    //1、用字符
+    badgeView.badgeText =[NSString stringWithFormat:@"%ld",(long)(self.clicks+1)];
+    
+    self.clicks++;
+    
+    //2、如果不显示就设置为空
+   // badgeView.badgeText = nil;x
+    
+    //当更新数字时，最好刷新，不然由于frame固定的，数字为2位时，红圈变形
+    [badgeView setNeedsLayout];
+    
+    
+    NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+    
+    [userDefaults setObject:badgeView.badgeText forKey:@"badgeText"];
+    
+    [userDefaults synchronize];
+    
+     self.badgeView=badgeView;
+    
+    
+   // LDDLog(@"数字是：%@",self.badgeView.badgeText);
+    
+}
+
+
 -(UIButton *)buyBtn{
     if (!_buyBtn) {
         _buyBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-        _buyBtn.backgroundColor=[UIColor redColor];
+        _buyBtn.backgroundColor=RGBCOLOR(199, 0, 0);
         [_buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
+        [_buyBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         _buyBtn.titleLabel.font=[UIFont boldSystemFontOfSize:16];
         _buyBtn.titleLabel.textAlignment=NSTextAlignmentCenter;
         [_buyBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -59,6 +108,7 @@
     }
     return _buyCarBtn;
 }
+
 
 -(void)layoutSubviews{
     [super layoutSubviews];
@@ -83,8 +133,8 @@
         make.right.equalTo(self.mas_right);
     }];
     
-    
-    
 }
+
+
 
 @end

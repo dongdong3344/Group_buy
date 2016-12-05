@@ -22,5 +22,6 @@
 #import "MJRefresh.h"
 #import "SDCycleScrollView.h"
 #import "MJExtension.h"
+#import "JSBadgeView.h"
 
 #endif /* shop_pch */

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LDBottomBtnView : UIView
-
+@property(nonatomic,strong)UIButton *buyCarBtn;
+@property(strong,nonatomic)JSBadgeView *badgeView;
 @end

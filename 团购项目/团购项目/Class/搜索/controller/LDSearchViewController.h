@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LDSearchViewController : UIViewController
+#import "LDBaseViewController.h"
+@interface LDSearchViewController : LDBaseViewController
 
 @end

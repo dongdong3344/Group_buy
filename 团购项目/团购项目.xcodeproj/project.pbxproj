@@ -166,6 +166,11 @@
 		C764E66F1DEEB24500487F10 /* LDBottomBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = C764E66E1DEEB24500487F10 /* LDBottomBtnView.m */; };
 		C783D6781DE7F8F1003E7FBF /* LDBrandEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C783D6771DE7F8F1003E7FBF /* LDBrandEntity.m */; };
 		C783D67B1DE7F914003E7FBF /* LDBrandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C783D67A1DE7F914003E7FBF /* LDBrandTableViewCell.m */; };
+		C7BD43CB1DF28CFC00A79D0D /* LDGoodsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43CA1DF28CFC00A79D0D /* LDGoodsListViewController.m */; };
+		C7BD43CE1DF2949600A79D0D /* LDGoodsListEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43CD1DF2949600A79D0D /* LDGoodsListEntity.m */; };
+		C7BD43D11DF2975300A79D0D /* LDTopButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43D01DF2975300A79D0D /* LDTopButtonView.m */; };
+		C7BD43D41DF2B80000A79D0D /* LDGoodsListCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43D31DF2B80000A79D0D /* LDGoodsListCollectionView.m */; };
+		C7BD43D71DF2BDC800A79D0D /* LDGoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43D61DF2BDC800A79D0D /* LDGoodsCollectionViewCell.m */; };
 		C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */; };
 		C7CCCF3E1DDEA4E900601687 /* LDLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3D1DDEA4E900601687 /* LDLoginView.m */; };
 		C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF411DE07C4B00601687 /* LDDKeyChain.m */; };
@@ -374,6 +379,16 @@
 		C783D6771DE7F8F1003E7FBF /* LDBrandEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDBrandEntity.m; path = ../View/LDBrandEntity.m; sourceTree = "<group>"; };
 		C783D6791DE7F914003E7FBF /* LDBrandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDBrandTableViewCell.h; sourceTree = "<group>"; };
 		C783D67A1DE7F914003E7FBF /* LDBrandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDBrandTableViewCell.m; sourceTree = "<group>"; };
+		C7BD43C91DF28CFC00A79D0D /* LDGoodsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDGoodsListViewController.h; sourceTree = "<group>"; };
+		C7BD43CA1DF28CFC00A79D0D /* LDGoodsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDGoodsListViewController.m; sourceTree = "<group>"; };
+		C7BD43CC1DF2949600A79D0D /* LDGoodsListEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDGoodsListEntity.h; path = "../../商品列表/Model/LDGoodsListEntity.h"; sourceTree = "<group>"; };
+		C7BD43CD1DF2949600A79D0D /* LDGoodsListEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDGoodsListEntity.m; path = "../../商品列表/Model/LDGoodsListEntity.m"; sourceTree = "<group>"; };
+		C7BD43CF1DF2975300A79D0D /* LDTopButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTopButtonView.h; sourceTree = "<group>"; };
+		C7BD43D01DF2975300A79D0D /* LDTopButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTopButtonView.m; sourceTree = "<group>"; };
+		C7BD43D21DF2B80000A79D0D /* LDGoodsListCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDGoodsListCollectionView.h; sourceTree = "<group>"; };
+		C7BD43D31DF2B80000A79D0D /* LDGoodsListCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDGoodsListCollectionView.m; sourceTree = "<group>"; };
+		C7BD43D51DF2BDC800A79D0D /* LDGoodsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDGoodsCollectionViewCell.h; sourceTree = "<group>"; };
+		C7BD43D61DF2BDC800A79D0D /* LDGoodsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDGoodsCollectionViewCell.m; sourceTree = "<group>"; };
 		C7CCCF391DDE991B00601687 /* LDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLoginViewController.h; sourceTree = "<group>"; };
 		C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDLoginViewController.m; sourceTree = "<group>"; };
 		C7CCCF3C1DDEA4E900601687 /* LDLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLoginView.h; sourceTree = "<group>"; };
@@ -848,6 +863,7 @@
 		C709C2841DDA9F88007D7929 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				C7BD43C51DF28CDD00A79D0D /* 商品列表 */,
 				C74469111DEFC9B90045D6AD /* 搜索 */,
 				C759A72E1DEBD55C009135FC /* 详情页面 */,
 				C709C28A1DDA9F88007D7929 /* Other */,
@@ -1160,6 +1176,8 @@
 		C74469131DEFC9B90045D6AD /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C7BD43CC1DF2949600A79D0D /* LDGoodsListEntity.h */,
+				C7BD43CD1DF2949600A79D0D /* LDGoodsListEntity.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1251,6 +1269,45 @@
 				C764E6681DEE9C7500487F10 /* LDImageView.m */,
 				C764E66D1DEEB24500487F10 /* LDBottomBtnView.h */,
 				C764E66E1DEEB24500487F10 /* LDBottomBtnView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C7BD43C51DF28CDD00A79D0D /* 商品列表 */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD43C61DF28CDD00A79D0D /* Controller */,
+				C7BD43C71DF28CDD00A79D0D /* Model */,
+				C7BD43C81DF28CDD00A79D0D /* View */,
+			);
+			path = "商品列表";
+			sourceTree = "<group>";
+		};
+		C7BD43C61DF28CDD00A79D0D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD43C91DF28CFC00A79D0D /* LDGoodsListViewController.h */,
+				C7BD43CA1DF28CFC00A79D0D /* LDGoodsListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C7BD43C71DF28CDD00A79D0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C7BD43C81DF28CDD00A79D0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD43CF1DF2975300A79D0D /* LDTopButtonView.h */,
+				C7BD43D01DF2975300A79D0D /* LDTopButtonView.m */,
+				C7BD43D21DF2B80000A79D0D /* LDGoodsListCollectionView.h */,
+				C7BD43D31DF2B80000A79D0D /* LDGoodsListCollectionView.m */,
+				C7BD43D51DF2BDC800A79D0D /* LDGoodsCollectionViewCell.h */,
+				C7BD43D61DF2BDC800A79D0D /* LDGoodsCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1506,6 +1563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C709C2C01DDA9F88007D7929 /* LDMineViewController.m in Sources */,
+				C7BD43D11DF2975300A79D0D /* LDTopButtonView.m in Sources */,
 				C709C2C51DDA9F88007D7929 /* LDRegisterViewController.m in Sources */,
 				C709C2C61DDA9F88007D7929 /* LDBuyCarViewController.m in Sources */,
 				C759A7371DEBE002009135FC /* LDCycleImgView.m in Sources */,
@@ -1530,13 +1588,17 @@
 				C709C2BC1DDA9F88007D7929 /* LDTabbarController.m in Sources */,
 				C764E6691DEE9C7500487F10 /* LDImageView.m in Sources */,
 				C74469171DEFC9F20045D6AD /* LDSearchViewController.m in Sources */,
+				C7BD43CB1DF28CFC00A79D0D /* LDGoodsListViewController.m in Sources */,
 				C709C2C21DDA9F88007D7929 /* LDMessageCell.m in Sources */,
 				C709BFD41DD96166007D7929 /* main.m in Sources */,
+				C7BD43D41DF2B80000A79D0D /* LDGoodsListCollectionView.m in Sources */,
 				C709C2C71DDA9F88007D7929 /* LDHomeViewController.m in Sources */,
 				C759A72D1DEBC45B009135FC /* LDTableView.m in Sources */,
 				C718A8F61DDD4267003CD60F /* LDHTTPTool.m in Sources */,
 				C75212451DDAD86500772012 /* LDRegisterView.m in Sources */,
 				C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */,
+				C7BD43CE1DF2949600A79D0D /* LDGoodsListEntity.m in Sources */,
+				C7BD43D71DF2BDC800A79D0D /* LDGoodsCollectionViewCell.m in Sources */,
 				C718A8F31DDC2459003CD60F /* LDNextStepView.m in Sources */,
 				C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */,
 				C7F5F4071DE961FF00DC081D /* LDButtonSwitchView.m in Sources */,

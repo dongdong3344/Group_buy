@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JSBadgeView-JSBadgeView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSBadgeView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,22 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>08E43AB7D039537807954E684079AA57</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107FC511B01CDA14F01A7A647152DEB8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>32654E7F18DBEA3A9D02520AFBA89260</key>
+		<key>6BA3908FC4EFA523CD692796BB03F806</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>360017886C740F2788BA3B3A1462C564</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>75D23A0386E37CAA75DE9623C96C9E20</key>
+		<key>84120872EEAD40EB9F82D10BFA17BD46</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA7F571DBE4D3B1B7F68766E269B9759</key>
+		<key>B82E16FB33EE768F78E74D4F4874B729</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE6406A25CF144D8A6A366D57CE24BFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E60B35DEC38004F3C0964FFBB362B70C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

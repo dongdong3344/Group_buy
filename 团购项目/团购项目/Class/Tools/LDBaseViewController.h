@@ -10,7 +10,7 @@
 
 typedef void(^requestSuccessBlock)(id responseObject);
 
-typedef void(^requestFailureBlock)(NSError  *error);
+typedef void(^requestFailureBlock)(NSError *error);
 
 @interface LDBaseViewController : UIViewController
 
