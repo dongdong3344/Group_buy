@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^AddGoodsToBuyCarBlock)();
 @interface LDBottomBtnView : UIView
+
 @property(nonatomic,strong)UIButton *buyCarBtn;
 @property(strong,nonatomic)JSBadgeView *badgeView;
+
+@property(copy,nonatomic)AddGoodsToBuyCarBlock addGoodsTobuyCarBlock;
 @end

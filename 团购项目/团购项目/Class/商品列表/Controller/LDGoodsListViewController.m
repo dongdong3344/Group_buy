@@ -9,7 +9,7 @@
 #import "LDGoodsListViewController.h"
 #import "LDTopButtonView.h"
 #import "LDGoodsListCollectionView.h"
-
+#import "LDDetailViewController.h"
 @interface LDGoodsListViewController ()
 @property(nonatomic,strong)LDTopButtonView *topButtonView;
 @property(nonatomic,strong)LDGoodsListCollectionView *goodsListCollectionView;
@@ -40,9 +40,21 @@
         _goodsListCollectionView=[[LDGoodsListCollectionView alloc]initWithFrame:CGRectMake(0, 0, 0, 0) collectionViewLayout:flowLayout];
         _goodsListCollectionView.backgroundColor=RGBCOLOR(242, 242, 242);
         _goodsListCollectionView.goodsListArray=self.goodsListEntityArray;
+        __weak typeof(self) weakself=self;
+        _goodsListCollectionView.goodsIDBlock=^(NSString *goodsID){
+            [weakself pushDetailViewController:goodsID];
+            
+        };
         
     }
     return _goodsListCollectionView;
+}
+
+-(void)pushDetailViewController:(NSString *)goodsID{
+    LDDetailViewController *detailVC=[[LDDetailViewController alloc]init];
+    detailVC.detailGoodsID=goodsID;
+    [self.navigationController pushViewController:detailVC animated:YES];
+    
 }
 
 -(LDTopButtonView *)topButtonView{

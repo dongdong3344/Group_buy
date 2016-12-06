@@ -10,7 +10,7 @@
 #import "LDRegisterViewController.h"
 #import "LDThirdLoginview.h"
 #import "LDLoginView.h"
-#import "LDNextViewController.h"
+#import "LDMineViewController.h"
 
 NSString * const KEY_USERNAME_PASSWORD = @"com.company.app.usernamepassword";
 NSString * const KEY_USERNAME = @"com.company.app.username";
@@ -88,7 +88,7 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
                 [self saveUserInfo];//保存用户名和密码信息
                 [self showTostMessage:@"登录成功"];
             //存储登录状态
-            [[NSUserDefaults standardUserDefaults ]setObject:responseObject forKey:@"ISLOGIN"];
+            [[NSUserDefaults standardUserDefaults ]setObject:responseObject forKey:@"ISLOGIN"]; //把responseObject 字典信息存储
             [self performSelector:@selector(popToMineViewController) withObject:nil afterDelay:1];//1秒后跳转我的界面
         }else if ([responseObject[@"ErrorMessage"] isEqualToString:@"密码错误"]){
             [self showTostMessage:@"用户名或密码错误，请认真核实后重新输入"];

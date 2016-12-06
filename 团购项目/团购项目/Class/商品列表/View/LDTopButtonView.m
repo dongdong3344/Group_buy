@@ -36,17 +36,13 @@
         make.centerX.equalTo(self.hotBtn.mas_centerX);
     }];
     
-  
-    
 }
-
 
 -(void)clickButton:(UIButton*)sender{
     sender.selected=YES;//当前点击的按钮变成选中状态
     self.privousBtn.selected=NO;//之前被选中的按钮状态变成no
     self.privousBtn=sender;//当前的按钮成为被选中的
-    
-    
+
     [_lineLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(sender.mas_centerX);
         make.size.mas_equalTo(CGSizeMake(36, 2));

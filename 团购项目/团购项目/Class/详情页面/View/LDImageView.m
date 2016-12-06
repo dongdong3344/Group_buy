@@ -34,7 +34,7 @@
         if ([imageEntity.ImgType isEqualToString:@"1"]) {
             //LDDLog(@"Resolution:%@",imageEntity.Resolution);
             
-            NSArray *sizeArray=[imageEntity.Resolution componentsSeparatedByString:@"*"];//字符串截取,以*号以断点
+            NSArray *sizeArray=[imageEntity.Resolution componentsSeparatedByString:@"*"];//字符串截取,以*号为断点
             //LDDLog(@"sizeArray: %@",sizeArray);
             CGFloat height=SCREEN_WITH/[sizeArray[0] floatValue] *[sizeArray[1] floatValue];
             UIImageView *image=[[UIImageView alloc]initWithFrame:CGRectMake(0, imageHeight, SCREEN_WITH,height)];

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0DBD14A7D4FE4DF980AAB51F /* libPods-团购项目.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDF239B3A22FCB0A61247AF /* libPods-团购项目.a */; };
+		C700EF3B1DF65A1B006FD626 /* LDCheckoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = C700EF3A1DF65A1B006FD626 /* LDCheckoutView.m */; };
+		C700EF3E1DF67C8D006FD626 /* LDEmptyCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C700EF3D1DF67C8D006FD626 /* LDEmptyCarView.m */; };
 		C70607E81DE3FE99008E64FE /* LDSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C70607E61DE3FE99008E64FE /* LDSheetViewController.m */; };
 		C70607E91DE3FE99008E64FE /* LDSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C70607E71DE3FE99008E64FE /* LDSheetViewController.xib */; };
 		C709BFD41DD96166007D7929 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C709BFD31DD96166007D7929 /* main.m */; };
@@ -87,18 +89,6 @@
 		C709C1B61DD96591007D7929 /* 购物车界面去结算按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C07E1DD96590007D7929 /* 购物车界面去结算按钮.png */; };
 		C709C1B71DD96591007D7929 /* 购物车界面去结算按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C07F1DD96590007D7929 /* 购物车界面去结算按钮@2x.png */; };
 		C709C1B81DD96591007D7929 /* 购物车界面去结算按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0801DD96590007D7929 /* 购物车界面去结算按钮@3x.png */; };
-		C709C1B91DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0821DD96590007D7929 /* Contents.json */; };
-		C709C1BA1DD96591007D7929 /* 购物车界面商品加减按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0831DD96590007D7929 /* 购物车界面商品加减按钮.png */; };
-		C709C1BB1DD96591007D7929 /* 购物车界面商品加减按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0841DD96590007D7929 /* 购物车界面商品加减按钮@2x.png */; };
-		C709C1BC1DD96591007D7929 /* 购物车界面商品加减按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0851DD96590007D7929 /* 购物车界面商品加减按钮@3x.png */; };
-		C709C1BD1DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0871DD96590007D7929 /* Contents.json */; };
-		C709C1BE1DD96591007D7929 /* 购物车界面商品未选中.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0881DD96590007D7929 /* 购物车界面商品未选中.png */; };
-		C709C1BF1DD96591007D7929 /* 购物车界面商品未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0891DD96590007D7929 /* 购物车界面商品未选中@2x.png */; };
-		C709C1C01DD96591007D7929 /* 购物车界面商品未选中@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C08A1DD96590007D7929 /* 购物车界面商品未选中@3x.png */; };
-		C709C1C11DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C08C1DD96590007D7929 /* Contents.json */; };
-		C709C1C21DD96591007D7929 /* 购物车界面商品选中对号按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C08D1DD96590007D7929 /* 购物车界面商品选中对号按钮.png */; };
-		C709C1C31DD96591007D7929 /* 购物车界面商品选中对号按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C08E1DD96590007D7929 /* 购物车界面商品选中对号按钮@2x.png */; };
-		C709C1C41DD96591007D7929 /* 购物车界面商品选中对号按钮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C08F1DD96590007D7929 /* 购物车界面商品选中对号按钮@3x.png */; };
 		C709C1C51DD96591007D7929 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = C709C0911DD96590007D7929 /* Contents.json */; };
 		C709C1C61DD96591007D7929 /* 购物车界面客服热线图标.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0921DD96590007D7929 /* 购物车界面客服热线图标.png */; };
 		C709C1C71DD96591007D7929 /* 购物车界面客服热线图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C709C0931DD96590007D7929 /* 购物车界面客服热线图标@2x.png */; };
@@ -171,6 +161,9 @@
 		C7BD43D11DF2975300A79D0D /* LDTopButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43D01DF2975300A79D0D /* LDTopButtonView.m */; };
 		C7BD43D41DF2B80000A79D0D /* LDGoodsListCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43D31DF2B80000A79D0D /* LDGoodsListCollectionView.m */; };
 		C7BD43D71DF2BDC800A79D0D /* LDGoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43D61DF2BDC800A79D0D /* LDGoodsCollectionViewCell.m */; };
+		C7BD43DA1DF52C7600A79D0D /* LDBuyCarEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43D91DF52C7600A79D0D /* LDBuyCarEntity.m */; };
+		C7BD43DD1DF5332F00A79D0D /* LDBuycarListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43DC1DF5332F00A79D0D /* LDBuycarListTableView.m */; };
+		C7BD43E01DF5358300A79D0D /* LDBuyCarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD43DF1DF5358300A79D0D /* LDBuyCarTableViewCell.m */; };
 		C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */; };
 		C7CCCF3E1DDEA4E900601687 /* LDLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF3D1DDEA4E900601687 /* LDLoginView.m */; };
 		C7CCCF421DE07C4B00601687 /* LDDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CCCF411DE07C4B00601687 /* LDDKeyChain.m */; };
@@ -183,6 +176,10 @@
 /* Begin PBXFileReference section */
 		2DDF239B3A22FCB0A61247AF /* libPods-团购项目.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-团购项目.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA62325D170AB7B60CB63CC /* Pods-团购项目.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-团购项目.debug.xcconfig"; path = "Pods/Target Support Files/Pods-团购项目/Pods-团购项目.debug.xcconfig"; sourceTree = "<group>"; };
+		C700EF391DF65A1B006FD626 /* LDCheckoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDCheckoutView.h; path = "团购项目/Class/商品列表/View/LDCheckoutView.h"; sourceTree = SOURCE_ROOT; };
+		C700EF3A1DF65A1B006FD626 /* LDCheckoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDCheckoutView.m; path = "团购项目/Class/商品列表/View/LDCheckoutView.m"; sourceTree = SOURCE_ROOT; };
+		C700EF3C1DF67C8D006FD626 /* LDEmptyCarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDEmptyCarView.h; path = "团购项目/Class/商品列表/View/LDEmptyCarView.h"; sourceTree = SOURCE_ROOT; };
+		C700EF3D1DF67C8D006FD626 /* LDEmptyCarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDEmptyCarView.m; path = "团购项目/Class/商品列表/View/LDEmptyCarView.m"; sourceTree = SOURCE_ROOT; };
 		C70607E51DE3FE99008E64FE /* LDSheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDSheetViewController.h; path = "../../登录/Controller/LDSheetViewController.h"; sourceTree = "<group>"; };
 		C70607E61DE3FE99008E64FE /* LDSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDSheetViewController.m; path = "../../登录/Controller/LDSheetViewController.m"; sourceTree = "<group>"; };
 		C70607E71DE3FE99008E64FE /* LDSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LDSheetViewController.xib; path = "../../登录/Controller/LDSheetViewController.xib"; sourceTree = "<group>"; };
@@ -265,18 +262,6 @@
 		C709C07E1DD96590007D7929 /* 购物车界面去结算按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面去结算按钮.png"; sourceTree = "<group>"; };
 		C709C07F1DD96590007D7929 /* 购物车界面去结算按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面去结算按钮@2x.png"; sourceTree = "<group>"; };
 		C709C0801DD96590007D7929 /* 购物车界面去结算按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面去结算按钮@3x.png"; sourceTree = "<group>"; };
-		C709C0821DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C0831DD96590007D7929 /* 购物车界面商品加减按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面商品加减按钮.png"; sourceTree = "<group>"; };
-		C709C0841DD96590007D7929 /* 购物车界面商品加减按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面商品加减按钮@2x.png"; sourceTree = "<group>"; };
-		C709C0851DD96590007D7929 /* 购物车界面商品加减按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面商品加减按钮@3x.png"; sourceTree = "<group>"; };
-		C709C0871DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C0881DD96590007D7929 /* 购物车界面商品未选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面商品未选中.png"; sourceTree = "<group>"; };
-		C709C0891DD96590007D7929 /* 购物车界面商品未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面商品未选中@2x.png"; sourceTree = "<group>"; };
-		C709C08A1DD96590007D7929 /* 购物车界面商品未选中@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面商品未选中@3x.png"; sourceTree = "<group>"; };
-		C709C08C1DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		C709C08D1DD96590007D7929 /* 购物车界面商品选中对号按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面商品选中对号按钮.png"; sourceTree = "<group>"; };
-		C709C08E1DD96590007D7929 /* 购物车界面商品选中对号按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面商品选中对号按钮@2x.png"; sourceTree = "<group>"; };
-		C709C08F1DD96590007D7929 /* 购物车界面商品选中对号按钮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面商品选中对号按钮@3x.png"; sourceTree = "<group>"; };
 		C709C0911DD96590007D7929 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		C709C0921DD96590007D7929 /* 购物车界面客服热线图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面客服热线图标.png"; sourceTree = "<group>"; };
 		C709C0931DD96590007D7929 /* 购物车界面客服热线图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车界面客服热线图标@2x.png"; sourceTree = "<group>"; };
@@ -389,6 +374,12 @@
 		C7BD43D31DF2B80000A79D0D /* LDGoodsListCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDGoodsListCollectionView.m; sourceTree = "<group>"; };
 		C7BD43D51DF2BDC800A79D0D /* LDGoodsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDGoodsCollectionViewCell.h; sourceTree = "<group>"; };
 		C7BD43D61DF2BDC800A79D0D /* LDGoodsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDGoodsCollectionViewCell.m; sourceTree = "<group>"; };
+		C7BD43D81DF52C7600A79D0D /* LDBuyCarEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDBuyCarEntity.h; path = "团购项目/Class/商品列表/View/LDBuyCarEntity.h"; sourceTree = SOURCE_ROOT; };
+		C7BD43D91DF52C7600A79D0D /* LDBuyCarEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDBuyCarEntity.m; path = "团购项目/Class/商品列表/View/LDBuyCarEntity.m"; sourceTree = SOURCE_ROOT; };
+		C7BD43DB1DF5332F00A79D0D /* LDBuycarListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDBuycarListTableView.h; path = "团购项目/Class/商品列表/View/LDBuycarListTableView.h"; sourceTree = SOURCE_ROOT; };
+		C7BD43DC1DF5332F00A79D0D /* LDBuycarListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDBuycarListTableView.m; path = "团购项目/Class/商品列表/View/LDBuycarListTableView.m"; sourceTree = SOURCE_ROOT; };
+		C7BD43DE1DF5358300A79D0D /* LDBuyCarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDBuyCarTableViewCell.h; path = "团购项目/Class/商品列表/View/LDBuyCarTableViewCell.h"; sourceTree = SOURCE_ROOT; };
+		C7BD43DF1DF5358300A79D0D /* LDBuyCarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDBuyCarTableViewCell.m; path = "团购项目/Class/商品列表/View/LDBuyCarTableViewCell.m"; sourceTree = SOURCE_ROOT; };
 		C7CCCF391DDE991B00601687 /* LDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLoginViewController.h; sourceTree = "<group>"; };
 		C7CCCF3A1DDE991B00601687 /* LDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDLoginViewController.m; sourceTree = "<group>"; };
 		C7CCCF3C1DDEA4E900601687 /* LDLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDLoginView.h; sourceTree = "<group>"; };
@@ -674,9 +665,6 @@
 				C709C0731DD96590007D7929 /* 地址背景.imageset */,
 				C709C0771DD96590007D7929 /* 购物车界面关于我们图标.imageset */,
 				C709C07C1DD96590007D7929 /* 购物车界面去结算按钮.imageset */,
-				C709C0811DD96590007D7929 /* 购物车界面商品加减按钮.imageset */,
-				C709C0861DD96590007D7929 /* 购物车界面商品未选中.imageset */,
-				C709C08B1DD96590007D7929 /* 购物车界面商品选中对号按钮.imageset */,
 				C709C0901DD96590007D7929 /* 购物车界面客服热线图标.imageset */,
 				C709C0951DD96590007D7929 /* 购物车界面意见反馈图标.imageset */,
 				C709C09A1DD96590007D7929 /* 购物车界面我的收藏图标.imageset */,
@@ -727,39 +715,6 @@
 				C709C0801DD96590007D7929 /* 购物车界面去结算按钮@3x.png */,
 			);
 			path = "购物车界面去结算按钮.imageset";
-			sourceTree = "<group>";
-		};
-		C709C0811DD96590007D7929 /* 购物车界面商品加减按钮.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				C709C0821DD96590007D7929 /* Contents.json */,
-				C709C0831DD96590007D7929 /* 购物车界面商品加减按钮.png */,
-				C709C0841DD96590007D7929 /* 购物车界面商品加减按钮@2x.png */,
-				C709C0851DD96590007D7929 /* 购物车界面商品加减按钮@3x.png */,
-			);
-			path = "购物车界面商品加减按钮.imageset";
-			sourceTree = "<group>";
-		};
-		C709C0861DD96590007D7929 /* 购物车界面商品未选中.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				C709C0871DD96590007D7929 /* Contents.json */,
-				C709C0881DD96590007D7929 /* 购物车界面商品未选中.png */,
-				C709C0891DD96590007D7929 /* 购物车界面商品未选中@2x.png */,
-				C709C08A1DD96590007D7929 /* 购物车界面商品未选中@3x.png */,
-			);
-			path = "购物车界面商品未选中.imageset";
-			sourceTree = "<group>";
-		};
-		C709C08B1DD96590007D7929 /* 购物车界面商品选中对号按钮.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				C709C08C1DD96590007D7929 /* Contents.json */,
-				C709C08D1DD96590007D7929 /* 购物车界面商品选中对号按钮.png */,
-				C709C08E1DD96590007D7929 /* 购物车界面商品选中对号按钮@2x.png */,
-				C709C08F1DD96590007D7929 /* 购物车界面商品选中对号按钮@3x.png */,
-			);
-			path = "购物车界面商品选中对号按钮.imageset";
 			sourceTree = "<group>";
 		};
 		C709C0901DD96590007D7929 /* 购物车界面客服热线图标.imageset */ = {
@@ -1088,6 +1043,8 @@
 		C709C2B31DDA9F88007D7929 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C7BD43D81DF52C7600A79D0D /* LDBuyCarEntity.h */,
+				C7BD43D91DF52C7600A79D0D /* LDBuyCarEntity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1095,6 +1052,14 @@
 		C709C2B41DDA9F88007D7929 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C7BD43DB1DF5332F00A79D0D /* LDBuycarListTableView.h */,
+				C7BD43DC1DF5332F00A79D0D /* LDBuycarListTableView.m */,
+				C7BD43DE1DF5358300A79D0D /* LDBuyCarTableViewCell.h */,
+				C7BD43DF1DF5358300A79D0D /* LDBuyCarTableViewCell.m */,
+				C700EF391DF65A1B006FD626 /* LDCheckoutView.h */,
+				C700EF3A1DF65A1B006FD626 /* LDCheckoutView.m */,
+				C700EF3C1DF67C8D006FD626 /* LDEmptyCarView.h */,
+				C700EF3D1DF67C8D006FD626 /* LDEmptyCarView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1380,10 +1345,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C709C1C21DD96591007D7929 /* 购物车界面商品选中对号按钮.png in Resources */,
 				C709C1CA1DD96591007D7929 /* 购物车界面意见反馈图标.png in Resources */,
 				C709C1811DD96591007D7929 /* 分类界面抗氧防衰图标@3x.png in Resources */,
-				C709C1C31DD96591007D7929 /* 购物车界面商品选中对号按钮@2x.png in Resources */,
 				C709C1941DD96591007D7929 /* 分类界面清痘去印图标@2x.png in Resources */,
 				C709C1D81DD96591007D7929 /* 购物车界面逛一逛按钮@3x.png in Resources */,
 				C709C1961DD96591007D7929 /* Contents.json in Resources */,
@@ -1391,7 +1354,6 @@
 				C709C1B41DD96591007D7929 /* 购物车界面关于我们图标@3x.png in Resources */,
 				C709C1AC1DD96591007D7929 /* 位置@2x.png in Resources */,
 				C709C2591DD96591007D7929 /* 详情界面转发按钮@3x.png in Resources */,
-				C709C1BD1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1C81DD96591007D7929 /* 购物车界面客服热线图标@3x.png in Resources */,
 				C709C1911DD96591007D7929 /* 分类界面淡斑亮白图标@3x.png in Resources */,
 				C709C1991DD96591007D7929 /* 分类界面眼霜图标@3x.png in Resources */,
@@ -1405,17 +1367,13 @@
 				C709C24C1DD96591007D7929 /* 详情界面收藏按钮@2x.png in Resources */,
 				C709C1D21DD96591007D7929 /* 购物车界面退出登录按钮.png in Resources */,
 				C709C1CD1DD96591007D7929 /* Contents.json in Resources */,
-				C709C1B91DD96591007D7929 /* Contents.json in Resources */,
 				C709C1761DD96591007D7929 /* Contents.json in Resources */,
-				C709C1C11DD96591007D7929 /* Contents.json in Resources */,
 				C709C1DC1DD96591007D7929 /* 购物车界面静态购物车图标@3x.png in Resources */,
 				C709C1921DD96591007D7929 /* Contents.json in Resources */,
-				C709C1C41DD96591007D7929 /* 购物车界面商品选中对号按钮@3x.png in Resources */,
 				C709C1CC1DD96591007D7929 /* 购物车界面意见反馈图标@3x.png in Resources */,
 				C709C19D1DD96591007D7929 /* 分类界面眼霜眼贴图标@3x.png in Resources */,
 				C709C1D31DD96591007D7929 /* 购物车界面退出登录按钮@2x.png in Resources */,
 				C709C1B81DD96591007D7929 /* 购物车界面去结算按钮@3x.png in Resources */,
-				C709C1C01DD96591007D7929 /* 购物车界面商品未选中@3x.png in Resources */,
 				C709C18C1DD96591007D7929 /* 分类界面水乳咖喱图标@2x.png in Resources */,
 				C709C1731DD96591007D7929 /* 分类界面口腔洁牙图标.png in Resources */,
 				C709C1801DD96591007D7929 /* 分类界面抗氧防衰图标@2x.png in Resources */,
@@ -1425,7 +1383,6 @@
 				C709C1721DD96591007D7929 /* Contents.json in Resources */,
 				C709C17F1DD96591007D7929 /* 分类界面抗氧防衰图标.png in Resources */,
 				C709C1B21DD96591007D7929 /* 购物车界面关于我们图标.png in Resources */,
-				C709C1BE1DD96591007D7929 /* 购物车界面商品未选中.png in Resources */,
 				C709C1881DD96591007D7929 /* 分类界面敏感肌肤图标@2x.png in Resources */,
 				C709C24D1DD96591007D7929 /* 详情界面收藏按钮@3x.png in Resources */,
 				C7CCCF491DE144E400601687 /* Assets.xcassets in Resources */,
@@ -1439,7 +1396,6 @@
 				C709C1D51DD96591007D7929 /* Contents.json in Resources */,
 				C709C19C1DD96591007D7929 /* 分类界面眼霜眼贴图标@2x.png in Resources */,
 				C709C1861DD96591007D7929 /* Contents.json in Resources */,
-				C709C1BA1DD96591007D7929 /* 购物车界面商品加减按钮.png in Resources */,
 				C709C1A11DD96591007D7929 /* 分类界面补水保湿图标@3x.png in Resources */,
 				C709C2571DD96591007D7929 /* 详情界面转发按钮.png in Resources */,
 				C709C16E1DD96591007D7929 /* Contents.json in Resources */,
@@ -1482,7 +1438,6 @@
 				C709C19E1DD96591007D7929 /* Contents.json in Resources */,
 				C709C19A1DD96591007D7929 /* Contents.json in Resources */,
 				C709C1C71DD96591007D7929 /* 购物车界面客服热线图标@2x.png in Resources */,
-				C709C1BB1DD96591007D7929 /* 购物车界面商品加减按钮@2x.png in Resources */,
 				C709C1A41DD96591007D7929 /* 分类界面面膜图标@2x.png in Resources */,
 				C709C1A31DD96591007D7929 /* 分类界面面膜图标.png in Resources */,
 				C709C17B1DD96591007D7929 /* 分类界面孕婴护理图标.png in Resources */,
@@ -1495,8 +1450,6 @@
 				C709C1D01DD96591007D7929 /* 购物车界面我的收藏图标@3x.png in Resources */,
 				C709C1981DD96591007D7929 /* 分类界面眼霜图标@2x.png in Resources */,
 				C709C1951DD96591007D7929 /* 分类界面清痘去印图标@3x.png in Resources */,
-				C709C1BF1DD96591007D7929 /* 购物车界面商品未选中@2x.png in Resources */,
-				C709C1BC1DD96591007D7929 /* 购物车界面商品加减按钮@3x.png in Resources */,
 				C709C1C61DD96591007D7929 /* 购物车界面客服热线图标.png in Resources */,
 				C709C1B01DD96591007D7929 /* 地址背景@3x.png in Resources */,
 				C709C1CE1DD96591007D7929 /* 购物车界面我的收藏图标.png in Resources */,
@@ -1563,13 +1516,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C709C2C01DDA9F88007D7929 /* LDMineViewController.m in Sources */,
+				C700EF3B1DF65A1B006FD626 /* LDCheckoutView.m in Sources */,
 				C7BD43D11DF2975300A79D0D /* LDTopButtonView.m in Sources */,
 				C709C2C51DDA9F88007D7929 /* LDRegisterViewController.m in Sources */,
 				C709C2C61DDA9F88007D7929 /* LDBuyCarViewController.m in Sources */,
 				C759A7371DEBE002009135FC /* LDCycleImgView.m in Sources */,
 				C783D6781DE7F8F1003E7FBF /* LDBrandEntity.m in Sources */,
+				C700EF3E1DF67C8D006FD626 /* LDEmptyCarView.m in Sources */,
 				C764E6661DEE65CF00487F10 /* LDDetailsContentView.m in Sources */,
 				C7CCCF3B1DDE991B00601687 /* LDLoginViewController.m in Sources */,
+				C7BD43DA1DF52C7600A79D0D /* LDBuyCarEntity.m in Sources */,
 				C7CE2A5E1DED6C0500136C11 /* LDTitleEntity.m in Sources */,
 				C73078841DE6CF4400A0743D /* LDProductEntity.m in Sources */,
 				C709C2BE1DDA9F88007D7929 /* ViewController.m in Sources */,
@@ -1577,6 +1533,7 @@
 				C709C2C41DDA9F88007D7929 /* LDMyMessageTableView.m in Sources */,
 				C709C2BB1DDA9F88007D7929 /* LDNavController.m in Sources */,
 				C718A8F91DDD8B43003CD60F /* LDBaseViewController.m in Sources */,
+				C7BD43DD1DF5332F00A79D0D /* LDBuycarListTableView.m in Sources */,
 				C759A7341DEBD5AB009135FC /* LDDetailViewController.m in Sources */,
 				C783D67B1DE7F914003E7FBF /* LDBrandTableViewCell.m in Sources */,
 				C759A73D1DEC0ED5009135FC /* LDTitleLabelView.m in Sources */,
@@ -1603,6 +1560,7 @@
 				C75212481DDADBDE00772012 /* LDThirdLoginview.m in Sources */,
 				C7F5F4071DE961FF00DC081D /* LDButtonSwitchView.m in Sources */,
 				C73078811DE6C84600A0743D /* LDProductTableViewCell.m in Sources */,
+				C7BD43E01DF5358300A79D0D /* LDBuyCarTableViewCell.m in Sources */,
 				C709C2C31DDA9F88007D7929 /* LDMyMessageHeadView.m in Sources */,
 				C764E6601DEE652800487F10 /* LDDetailsContentEntity.m in Sources */,
 				C709C2BF1DDA9F88007D7929 /* LDCategoryViewController.m in Sources */,

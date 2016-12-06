@@ -83,9 +83,6 @@
 
             });
        
-//            UIAlertController *alterVC=[UIAlertController alertControllerWithTitle:nil message:@"抱歉，目前库内无此商品" preferredStyle:UIAlertControllerStyleAlert];
-//            UIAlertAction *acttion=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-//            [goodsListVC presentViewController:alterVC animated:YES completion:nil];
         }
     } failure:^(NSError *error) {
         

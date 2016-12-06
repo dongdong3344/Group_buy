@@ -28,7 +28,7 @@
     return self;
 }
 
-
+/***setter方法，进行赋值***/
 -(void)setGoodsListEntity:(LDGoodsListEntity *)goodsListEntity{
     _goodsListEntity=goodsListEntity;
     _titleLabel.text=goodsListEntity.Title;
@@ -36,9 +36,29 @@
 
     [_productImg sd_setImageWithURL:[NSURL URLWithString:goodsListEntity.ImgView] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
-    _priceLabel.text=[NSString stringWithFormat:@"%@ ￥%@",goodsListEntity.Price,goodsListEntity.DomesticPrice];
+//    _priceLabel.text=[NSString stringWithFormat:@"%@ ￥%@",goodsListEntity.Price,goodsListEntity.DomesticPrice];
+    
+    [self priceAttributedString];
     
 }
+
+
+/***设置价格富文本***/
+- (void)priceAttributedString{
+    
+    NSString *price=[NSString stringWithFormat:@"%@ ",self.goodsListEntity.Price];
+    NSMutableAttributedString *priceStr=[[NSMutableAttributedString alloc]initWithString:price attributes:@{NSForegroundColorAttributeName:RGBCOLOR(230, 50, 37),NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
+    
+    
+    NSString *domesticPrice=[NSString stringWithFormat:@"￥%@ ",_goodsListEntity.DomesticPrice];
+    NSMutableAttributedString   *domesticPriceStr =[[NSMutableAttributedString alloc]initWithString:domesticPrice attributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132),NSFontAttributeName:[UIFont systemFontOfSize:12],NSStrikethroughStyleAttributeName:@(2),NSStrikethroughColorAttributeName:[UIColor grayColor]}];
+    
+    [priceStr insertAttributedString:domesticPriceStr atIndex:price.length];
+    self.priceLabel.attributedText=priceStr;
+    
+}
+
+
 -(UIImageView *)countryImg{
     if (!_countryImg) {
         _countryImg=[[UIImageView alloc]init];
@@ -73,7 +93,7 @@
     return _priceLabel;
 }
 
-
+/***添加约束条件***/
 -(void)layoutSubviews{
     [_productImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.equalTo(self);

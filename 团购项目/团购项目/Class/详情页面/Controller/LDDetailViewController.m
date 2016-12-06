@@ -15,6 +15,7 @@
 #import "LDDetailsContentView.h"
 #import "LDImageView.h"
 #import "LDBottomBtnView.h"
+#import "LDMineViewController.h"
 
 @interface LDDetailViewController ()
 @property(nonatomic,strong)UIScrollView *mainScrollView;
@@ -47,6 +48,7 @@
     [self getTitleData];
     [self getDetailsContent];
     [self addConstraint];
+  
 
 }
 
@@ -62,8 +64,50 @@
     if (!_buttonView) {
         _buttonView=[[LDBottomBtnView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-45-64, SCREEN_WITH, 45)];
         [_buttonView.buyCarBtn addTarget:self action:@selector(changeToBuyVC) forControlEvents:UIControlEventTouchUpInside];
+        __weak typeof(self) weakself=self;
+        _buttonView.addGoodsTobuyCarBlock=^(){
+          
+              [weakself insertGoodsIntoBuyCar];
+            
+        };
     }
     return _buttonView;
+}
+
+/***加入购物车***/
+-(void)insertGoodsIntoBuyCar{
+    /*
+     URL：http://123.57.141.249:8080/beautalk/appShopCart/insert.do
+     传入数据：
+     参数标记：
+     会员登录名 ：MemberId
+     美食ID ： GoodsId
+     */
+    NSDictionary *dic=[[NSUserDefaults standardUserDefaults]objectForKey:@"ISLOGIN"];
+    if (dic.count>0) {
+        [self getWithURLString:@"appShopCart/insert.do" parameters:@{@"MemberId":dic[@"MemberId"],@"GoodsId":self.detailGoodsID} success:^(id responseObject) {
+            if ([responseObject[@"result"] isEqualToString:@"success"]) {
+                [self showTostMessage:@"添加购物车成功!"];
+            }else{
+                [self showTostMessage:@"添加购物车失败!"];
+                
+            }
+            //LDDLog(@"responseObject:%@",responseObject);
+        } failure:^(NSError *error) {
+            
+        }];
+        
+    }else{
+        //跳转至登录界面
+       
+        [self showTostMessage:@"添加购物车前，请先登录……"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             self.tabBarController.selectedIndex=3;
+        });
+       
+        
+    }
+   
 }
 
 /***点击购物车按钮，跳转至购物车页面***/

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SelectCellGoodsIDBlock)(NSString *goodsID);
+
 @interface LDGoodsListCollectionView : UICollectionView
 @property(strong,nonatomic)NSArray *goodsListArray;
+@property(copy,nonatomic)SelectCellGoodsIDBlock goodsIDBlock;
 @end

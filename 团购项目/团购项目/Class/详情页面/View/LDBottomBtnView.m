@@ -41,51 +41,57 @@
         [_addToBuyCarBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         _addToBuyCarBtn.titleLabel.textAlignment=NSTextAlignmentCenter;
         [_addToBuyCarBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_addToBuyCarBtn addTarget:self action:@selector(addToBuyCar) forControlEvents:UIControlEventTouchUpInside];
+        [_addToBuyCarBtn addTarget:self action:@selector(addGoodsToBuyCar) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addToBuyCarBtn;
 }
 
 
-/***点击加入购物车按钮方法***/
--(void)addToBuyCar{
-    JSBadgeView  *badgeView=[[JSBadgeView alloc]initWithParentView:self.buyCarBtn alignment:JSBadgeViewAlignmentTopRight];
-    
-    //1、背景色
-    badgeView.badgeBackgroundColor = [UIColor redColor];
-    //2、没有反光面
-    badgeView.badgeOverlayColor = [UIColor clearColor];
-    //3、外圈的颜色，默认是白色
-    badgeView.badgeStrokeColor = [UIColor clearColor];
-    
-   
-    
-    /*****设置数字****/
-    //1、用字符
-    badgeView.badgeText =[NSString stringWithFormat:@"%ld",(long)(self.clicks+1)];
-    
-    self.clicks++;
-    
-    //2、如果不显示就设置为空
-   // badgeView.badgeText = nil;x
-    
-    //当更新数字时，最好刷新，不然由于frame固定的，数字为2位时，红圈变形
-    [badgeView setNeedsLayout];
-    
-    
-    NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
-    
-    [userDefaults setObject:badgeView.badgeText forKey:@"badgeText"];
-    
-    [userDefaults synchronize];
-    
-     self.badgeView=badgeView;
-    
-    
-   // LDDLog(@"数字是：%@",self.badgeView.badgeText);
-    
+/***调用block***/
+-(void)addGoodsToBuyCar{
+    if (self.addGoodsTobuyCarBlock) {
+        self.addGoodsTobuyCarBlock();
+    }
 }
-
+///***点击加入购物车按钮方法***/
+//-(void)addToBuyCar{
+//    JSBadgeView  *badgeView=[[JSBadgeView alloc]initWithParentView:self.buyCarBtn alignment:JSBadgeViewAlignmentTopRight];
+//    
+//    //1、背景色
+//    badgeView.badgeBackgroundColor = [UIColor redColor];
+//    //2、没有反光面
+//    badgeView.badgeOverlayColor = [UIColor clearColor];
+//    //3、外圈的颜色，默认是白色
+//    badgeView.badgeStrokeColor = [UIColor clearColor];
+//    
+//   
+//    
+//    /*****设置数字****/
+//    //1、用字符
+//    badgeView.badgeText =[NSString stringWithFormat:@"%ld",(long)(self.clicks+1)];
+//    
+//    self.clicks++;
+//    
+//    //2、如果不显示就设置为空
+//   // badgeView.badgeText = nil;x
+//    
+//    //当更新数字时，最好刷新，不然由于frame固定的，数字为2位时，红圈变形
+//    [badgeView setNeedsLayout];
+//    
+//    
+//    NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+//    
+//    [userDefaults setObject:badgeView.badgeText forKey:@"badgeText"];
+//    
+//    [userDefaults synchronize];
+//    
+//     self.badgeView=badgeView;
+//    
+//    
+//   // LDDLog(@"数字是：%@",self.badgeView.badgeText);
+//    
+//}
+//
 
 -(UIButton *)buyBtn{
     if (!_buyBtn) {

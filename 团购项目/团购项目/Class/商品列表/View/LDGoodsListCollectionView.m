@@ -54,6 +54,10 @@
 //点击事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    if (self.goodsIDBlock) {
+        self.goodsIDBlock([self.goodsListArray[indexPath.row] GoodsId]);//获取商品ID
+    }
+    
 }
 
 
