@@ -56,7 +56,7 @@
     
     
     NSString *domesticPrice=[NSString stringWithFormat:@"￥%@ ",self.productEntiy.DomesticPrice];
-    NSMutableAttributedString   *domesticPriceStr =[[NSMutableAttributedString alloc]initWithString:domesticPrice attributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132),NSFontAttributeName:[UIFont systemFontOfSize:12],NSStrikethroughStyleAttributeName:@(2),NSStrikethroughColorAttributeName:[UIColor grayColor]}];
+    NSMutableAttributedString *domesticPriceStr =[[NSMutableAttributedString alloc]initWithString:domesticPrice attributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132),NSFontAttributeName:[UIFont systemFontOfSize:12],NSStrikethroughStyleAttributeName:@(2),NSStrikethroughColorAttributeName:[UIColor grayColor]}];
     
     [priceStr insertAttributedString:domesticPriceStr atIndex:price.length];
     self.pricLabel.attributedText=priceStr;
@@ -142,7 +142,7 @@
 - (UIButton *)buyCarBtn{
     if (!_buyCarBtn) {
         _buyCarBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_buyCarBtn setImage:[UIImage imageNamed:@"buycar_btn"] forState:(UIControlStateNormal)];
+        [_buyCarBtn setImage:[UIImage imageNamed:@""] forState:(UIControlStateNormal)];
     }
     return _buyCarBtn;
 }

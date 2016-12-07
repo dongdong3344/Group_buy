@@ -13,18 +13,21 @@
 #import "LDTableView.h"
 #import "LDDetailViewController.h"
 #import "LDCategoryViewController.h"
-#import "LDSearchViewController.h"
+
+#import "LDGoodsListViewController.h"
+#import "LDGoodsListEntity.h"
 
 #define PRODUCT_CELL_WIDTH 170
 #define BRAND_CELL_WIDTH 200
 
-@interface LDHomeViewController ()<UIScrollViewDelegate>
+@interface LDHomeViewController ()<UIScrollViewDelegate,PYSearchViewControllerDelegate,UISearchBarDelegate>
 @property(strong,nonatomic)UIScrollView *mainScrollView;
 @property(strong,nonatomic)SDCycleScrollView *cycleScrollView;
 @property(strong,nonatomic)LDTableView *productTableView,*brandTableView;
 @property(strong,nonatomic)LDButtonSwitchView *buttonSwitchView;
 @property(strong,nonatomic)NSArray *productEntityArry;//存放新品数据模型的数组
 @property(strong,nonatomic)NSArray *brandEntityArry;//存放品牌数据模型的数组
+@property(strong,nonatomic)UISearchBar *mySearchBar;
 @end
 
 @implementation LDHomeViewController
@@ -50,7 +53,7 @@
     rightItemBtn.frame=CGRectMake(0, 0, 30, 30);
     [rightItemBtn setImage:[UIImage imageNamed:@"home_title_search1"] forState:UIControlStateNormal];
     [rightItemBtn setImage:[UIImage imageNamed:@"home_title_search"] forState:UIControlStateHighlighted];
-    [rightItemBtn addTarget:self action:@selector(pushToSearchVC) forControlEvents:UIControlEventTouchUpInside];
+    [rightItemBtn addTarget:self action:@selector(presentSearchVC) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithCustomView:rightItemBtn];
     self.navigationItem.rightBarButtonItem=rightItem;
    
@@ -64,8 +67,8 @@
     self.navigationItem.leftBarButtonItem=leftItem;
     
     //titleView
-    UIImageView *image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"xianshigou"]];
-    image.frame=CGRectMake(0, 0, 90, 30);
+    UIImageView *image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tmmarket_today_crazy_title"]];
+    image.frame=CGRectMake(0, 0, 90, 40);
     self.navigationItem.titleView=image;
    
 }
@@ -76,11 +79,61 @@
     
 }
 
-//跳转至搜索
--(void)pushToSearchVC{
-    LDSearchViewController *searchVC=[[LDSearchViewController alloc]init];
-    [self.navigationController pushViewController:searchVC animated:YES];
+//跳转至搜索控制器
+-(void)presentSearchVC{
+
+        NSArray *hotSeaches = @[@"美白",@"保湿",@"护理", @"补水",@"面膜",@"眼霜",@"水乳",@"口腔",@"化妆品",@"面部精华"];
+   
+        PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"请输入搜索关键字" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
+            
+            [self postWithURLString:@"appSearch/searchList.do" parameters:@{@"search":searchBar.text,@"OrderName":@"host",@"OrderType":@"Desc"} success:^(id responseObject) {
+            NSArray *goodsListArry=[LDGoodsListEntity mj_objectArrayWithKeyValuesArray:responseObject];//取得模型数组
+           
+            /***网络请求成功后再跳转***/
+            LDGoodsListViewController *goodsListVC=[[LDGoodsListViewController alloc]init];
+            goodsListVC.title=searchBar.text;//标题是search搜索框内的文字
+            goodsListVC.goodsListEntityArray=goodsListArry;
+           
+            [self.navigationController pushViewController:goodsListVC animated:YES];
+            [self dismissViewControllerAnimated:NO completion:nil];
     
+            if (goodsListArry.count==0) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [goodsListVC.view makeToast:@"抱歉，目前库内无此商品!" duration:1.5 position:@"CSToastPositionCenter"];
+                });
+                
+            }
+        } failure:^(NSError *error) {
+            
+        }];
+        
+    }];
+    
+    searchViewController.delegate = self;
+ 
+    searchViewController.searchHistoryStyle = PYHotSearchStyleDefault; // 搜索历史风格
+    searchViewController.hotSearchStyle = PYHotSearchStyleColorfulTag; // 热门搜索风格为默认
+    //设置取消按钮样式
+    UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame=CGRectMake(0, 0, 40, 25);
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setTitle:@"取消" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(backToHomeVC) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithCustomView:btn];
+    searchViewController.navigationItem.rightBarButtonItem=rightItem;
+    
+    //跳转至搜索控制器
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+    [self presentViewController:nav animated:NO completion:nil];
+
+
+}
+
+-(void)backToHomeVC{
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 -(UIScrollView *)mainScrollView{

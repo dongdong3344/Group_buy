@@ -18,9 +18,9 @@
 //get
 -(void)getWithURLString:(NSString *)url parameters:(NSDictionary *)param success:(requestSuccessBlock)successBlock failure:(requestFailureBlock)failureBlock{
     
-    [SVProgressHUD setDefaultAnimationType:  SVProgressHUDAnimationTypeNative ];//小圆圈动画风格
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative ];//小圆圈动画风格
     
-     [SVProgressHUD show];//小圆圈动起来，
+    [SVProgressHUD show];//小圆圈动起来，
     
     
     [LDHTTPTool getWithURLString:url parameters:param success:^(id responseObject) {
@@ -45,7 +45,7 @@
 -(void)postWithURLString:(NSString *)url parameters:(NSDictionary *)param success:(requestSuccessBlock)successBlock failure:(requestFailureBlock)failureBlock{
     [SVProgressHUD showWithStatus:nil];//小圆圈动起来
   
-    [LDHTTPTool  postWithURLString:url parameters:param success:^(id responseObject) {
+    [LDHTTPTool postWithURLString:url parameters:param success:^(id responseObject) {
        [self performSelector:@selector(dismiss)withObject:nil afterDelay:1];///小圆圈显示1秒后消失
         
         if (successBlock) {

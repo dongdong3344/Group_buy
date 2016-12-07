@@ -262,10 +262,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-    NSUserDefaults *user=[NSUserDefaults standardUserDefaults];
-    NSString *str=[user objectForKey:@"badgeText"];
-    self.buttonView.badgeView.badgeText=str;
+
     
     self.navigationItem.hidesBackButton=YES;
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];//设置navigationbar透明

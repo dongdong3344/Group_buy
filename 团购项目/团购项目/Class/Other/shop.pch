@@ -23,5 +23,6 @@
 #import "SDCycleScrollView.h"
 #import "MJExtension.h"
 #import "JSBadgeView.h"
+#import "PYSearch.h" //搜索
 
 #endif /* shop_pch */

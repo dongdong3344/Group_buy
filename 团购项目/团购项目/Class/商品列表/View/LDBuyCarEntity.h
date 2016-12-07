@@ -22,6 +22,8 @@
 @property (assign, nonatomic) CGFloat Price;
 /**是否选中*/
 @property (assign, nonatomic) BOOL isSelectButton;
+
+@property (assign, nonatomic) BOOL isSelectAllButton;
 /**商品标记*/
 @property (copy, nonatomic) NSString *UUID;
 /**商品重量*/

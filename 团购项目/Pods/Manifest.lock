@@ -19,6 +19,7 @@ PODS:
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - PYSearch (0.3.8)
   - SDCycleScrollView (1.65):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.8.2):
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - Masonry (~> 1.0.2)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
+  - PYSearch (~> 0.3.8)
   - SDCycleScrollView (~> 1.65)
   - SDWebImage (~> 3.8.2)
   - SVProgressHUD (~> 2.0.3)
@@ -44,10 +46,11 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PYSearch: ee7396890f681d8095182289eab72e80b1bf8beb
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 4e870b4eed47197e09ba4b3c32792127c5769f46
+PODFILE CHECKSUM: 119e7f8b44d52dd6f9c3669c4d54f55ed57bd191
 
 COCOAPODS: 1.1.1

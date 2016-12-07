@@ -18,14 +18,12 @@
 -(instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
     self=[super initWithFrame:frame style:style];
     if (self) {
-        self.separatorStyle=UITableViewCellSeparatorStyleNone;
         self.separatorInset=UIEdgeInsetsMake(0, 43, 0, 0);
         self.backgroundColor=RGBCOLOR(242, 242, 242);
         self.dataSource=self;
         self.delegate=self;
         self.bounces=NO;
         self.tableFooterView = [[UIView alloc] init];//去除UITableView底部多余行及分割线
-        
     }
     return self;
 }
@@ -37,7 +35,8 @@
     _buycarListData =buycarListData;
     
     for (LDBuyCarEntity *buyCarEntity in self.buycarListData) {
-        [buyCarEntity setIsSelectButton:YES];
+        [buyCarEntity setIsSelectButton:NO];//设置所有商品未选中
+        [buyCarEntity setIsSelectAllButton:NO];
     }
     
     [self reloadData];
@@ -113,6 +112,7 @@
     [buyCarEntity setGoodsCount:buyCarEntity.GoodsCount+1];
     [self reloadData];
     [self changeData];
+    [self changeBuyCountNum];
     
     
 }
@@ -128,27 +128,40 @@
         [buyCarEntity setGoodsCount:buyCarEntity.GoodsCount-1];
     }
     [self reloadData];
-    [self changeData];
+    [self changeData];//改变购买数字
+    [self changeBuyCountNum];//改变去结算按钮上的商品数量
 }
 
-/***选中商品方法***/
+/***选中按钮方法***/
 -(void)selectTheGoods:(UIButton*)sender{
     
-    sender.selected=!sender.selected;
+    //sender.selected=!sender.selected;
     
     UIView *cell=[sender superview];
    
     LDBuyCarEntity *buyCarEntity=self.buycarListData[cell.tag-1000];
     if (sender.selected) {
+        sender.selected=NO;
         [buyCarEntity setIsSelectButton:NO];
+        
+        
+        
     }else{
+        sender.selected=YES;
         [buyCarEntity setIsSelectButton:YES];
     }
     [self reloadData];
     [self changeData];
+    [self changeBuyCountNum];
 }
 
 
+-(void)changeBuyCountNum{
+    if (self.changeNumBlcok) {
+        self.changeNumBlcok();
+    }
+  
+}
 
 -(void)changeData{
     if (self.changeDataBlcok) {
@@ -159,7 +172,10 @@
 /***设置左滑删除按钮***/
 -(NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
   
-    UITableViewRowAction *deleteAction=[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+    UITableViewRowAction *deleteAction=[UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        LDBuyCarEntity *buyCarEntity=self.buycarListData[indexPath.row];
+        [buyCarEntity setGoodsCount:0];
+        [self changeData];
         [self.buycarListData removeObjectAtIndex:indexPath.row];//移除数据源
         [self deleteRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationAutomatic];//删除表格
     }];
@@ -167,7 +183,9 @@
     return @[deleteAction];
 }
 
-
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
 
 
 @end

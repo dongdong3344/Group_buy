@@ -20,40 +20,27 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-      
-       // [self setupCellBackgroundColor];
+    
      //   self.userInteractionEnabled=NO;//不让点击
         [self addSubview:self.titleLabel];
         [self addSubview:self.priceLabel];
         [self addSubview:self.buyCountLabel];
         [self addSubview:self.isSelectedBtn];
         [self addSubview:self.productImgView];
-
         [self addSubview:self.bgImgView];
         [self addSubview:self.plusBtn];
         [self addSubview:self.minusBtn];
-       
-        
+  
     }
     return self;
 }
 
-/***设置cell背景色，cell之间看起来有一定的间隔***/
--(void)setupCellBackgroundColor{
-    self.backgroundColor=[UIColor clearColor];
-    self.contentView.backgroundColor=[UIColor clearColor];
-    UIImageView *view=[[UIImageView alloc]init];
-    view.backgroundColor=[UIColor whiteColor];
-    view.frame=CGRectMake(0, 0, SCREEN_WITH, 70);
-    [self.contentView addSubview:view];
-
-}
 /***setter***/
 -(void)setBuycarEntity:(LDBuyCarEntity *)buycarEntity{
     
     _buycarEntity=buycarEntity;
     self.titleLabel.text=buycarEntity.GoodsTitle;
-    self.priceLabel.text=[NSString stringWithFormat:@"￥%.lf",buycarEntity.Price];
+    self.priceLabel.text=[NSString stringWithFormat:@"￥%.2lf",buycarEntity.Price];
     self.buyCountLabel.text=[NSString stringWithFormat:@"%ld",(long)buycarEntity.GoodsCount];
     [self.productImgView sd_setImageWithURL:[NSURL URLWithString:buycarEntity.ImgView] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     self.isSelectedBtn.selected=buycarEntity.isSelectButton;
@@ -136,7 +123,7 @@
     [super layoutSubviews];
     
     [_isSelectedBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(15);
+        make.left.equalTo(self.mas_left).offset(12);
         make.size.mas_equalTo(CGSizeMake(20, 20));
         make.centerY.equalTo(self.mas_centerY);//Y方向居中
     }];

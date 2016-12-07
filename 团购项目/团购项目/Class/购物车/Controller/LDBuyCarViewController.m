@@ -29,13 +29,41 @@
     self.view.backgroundColor=RGBCOLOR(242, 242, 242);
     self.edgesForExtendedLayout = 0;
     [self createItems];
-    [self requestBuyCarData];
     [self.view addSubview:self.buycarListTableView];
     [self.view addSubview:self.checkoutView];
     [self.view addSubview:self.emptyCarView];
     [self addContrains];
+ }
+
+-(void)setupFont{
     
-   }
+    NSInteger i=0;
+    for (LDBuyCarEntity *buyCarEntity in self.buycarEntityArray) {
+        if (buyCarEntity.isSelectButton) {
+            i+= buyCarEntity.GoodsCount;
+           // self.tabBarItem.badgeValue=[NSString stringWithFormat:@"%ld",i];//设置角标
+            NSString *str=[NSString stringWithFormat:@"去结算(%ld)",i];
+            [self.checkoutView.gotoCheckoutBtn setTitle:str forState:UIControlStateNormal];
+            [self.checkoutView.gotoCheckoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            self.checkoutView.gotoCheckoutBtn.backgroundColor=[UIColor redColor];
+            
+        }else{
+            // self.tabBarItem.badgeValue=[NSString stringWithFormat:@"%ld",i];
+            NSString *str=[NSString stringWithFormat:@"去结算(%ld)",i];
+            [self.checkoutView.gotoCheckoutBtn setTitle:str forState:UIControlStateNormal];
+            [self.checkoutView.gotoCheckoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            if (i==0) {//当商品数量为0时，设置去结算按钮的背景色为灰色
+                self.checkoutView.gotoCheckoutBtn.backgroundColor=[UIColor grayColor];
+               // self.tabBarItem.badgeColor=[UIColor clearColor];
+            }
+            
+        }
+
+        
+    }
+    
+    
+}
 
 -(LDEmptyCarView *)emptyCarView{
     if (!_emptyCarView) {
@@ -53,23 +81,79 @@
 -(LDCheckoutView *)checkoutView{
     if (!_checkoutView) {
         _checkoutView=[[LDCheckoutView alloc]init];
-        
-        
+        [_checkoutView.selectAllBtn addTarget:self action:@selector(selectAllTheGoods:) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _checkoutView;
+     return _checkoutView;
 }
 /***购物车商品列表***/
+
+-(void)selectAllTheGoods:(UIButton *)sender{
+//    sender.selected=!sender.selected;
+//    LDDLog(@"hhhaha");
+    
+    
+    if (sender.selected) {
+        sender.selected=NO;
+        for (LDBuyCarEntity *buyCarEntity in self.buycarEntityArray) {
+            [buyCarEntity setIsSelectButton:NO];
+        }
+        [self.buycarListTableView reloadData];
+        [self setupFont];
+        [self orderPrice];
+
+    }else{
+        sender.selected=YES;
+        for (LDBuyCarEntity *buyCarEntity in self.buycarEntityArray) {
+            [buyCarEntity setIsSelectButton:YES];
+        }
+        [self.buycarListTableView reloadData];
+        [self setupFont];
+        [self orderPrice];
+        
+    }
+    }
+
 -(LDBuycarListTableView *)buycarListTableView{
     if (!_buycarListTableView) {
         _buycarListTableView=[[LDBuycarListTableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+        
         __weak typeof(self) weakself=self;
         _buycarListTableView.changeDataBlcok=^(){
-            weakself.checkoutView.priceLabel.text=[NSString stringWithFormat:@"%li",[weakself.buycarEntityArray[0] GoodsCount]];
+           
+            [weakself orderPrice];//计算商品总价格
             
         };
+        
+        _buycarListTableView.changeNumBlcok=^(){
+            [weakself setupFont];//设置结算按钮上的购买数量
+        };
+        
     }
     return _buycarListTableView;
 }
+
+/***计算价格****/
+-(void)orderPrice{
+    CGFloat price=0.0;
+    for (LDBuyCarEntity *buyCarEntity in self.buycarEntityArray) {
+        if (buyCarEntity.isSelectButton) {
+            price +=buyCarEntity.Price*buyCarEntity.GoodsCount;
+            
+        }
+    }
+    NSString *str=@"合计:";
+    NSMutableAttributedString *str1=[[NSMutableAttributedString alloc]initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
+
+    NSString *productPrice=[NSString stringWithFormat:@"￥%.2f",price];
+    NSMutableAttributedString *priceStr =[[NSMutableAttributedString alloc]initWithString:productPrice attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor redColor]}];
+    
+    [str1 insertAttributedString:priceStr atIndex:str.length];
+
+    self.checkoutView.priceLabel.attributedText=str1;
+    
+}
+
+
 
 
 /***navigationbar rightButtonItem***/
@@ -106,7 +190,9 @@
                // LDDLog(@"buycarDataArray:%@",buycarDataArray);
                 self.emptyCarView.hidden=YES;
                 self.buycarListTableView.buycarListData=_buycarEntityArray;
-
+                [self orderPrice];//请求完成时，就应该显示价格
+                [self setupFont];//设置结算样品数量
+                
             }
         } failure:^(NSError *error) {
             
@@ -116,12 +202,10 @@
         self.emptyCarView.hidden=NO;
         self.checkoutView.hidden=YES;
         self.buycarListTableView.hidden=YES;
+        self.tabBarItem.badgeColor=[UIColor clearColor];
     }
     
    }
-
-
-
 
 /***点击按钮时，背景颜色高亮***/
 
@@ -136,8 +220,7 @@
     [self requestBuyCarData];
     self.emptyCarView.goShopBtn.backgroundColor=RGBCOLOR(18, 99, 177);
     self.emptyCarView.collectionBtn.backgroundColor=RGBCOLOR(18, 99, 177);
-    
-    
+  
 }
 
 
@@ -152,12 +235,10 @@
 -(void)addContrains{
     [_checkoutView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(45);
+        make.height.mas_equalTo(55);
         make.bottom.equalTo(self.view.mas_bottom);
     }];
-    
-    
-    
+
 }
 
 @end

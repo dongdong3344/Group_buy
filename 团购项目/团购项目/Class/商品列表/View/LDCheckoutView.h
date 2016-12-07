@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LDBuyCarEntity.h"
 
 
 
 @interface LDCheckoutView : UIView
+
 @property(nonatomic,strong)UILabel *priceLabel;
+@property(strong,nonatomic)UIButton *gotoCheckoutBtn,*selectAllBtn;
+@property(strong,nonatomic)LDBuyCarEntity *buycarEntity;
+
 
 @end
