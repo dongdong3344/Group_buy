@@ -10,6 +10,8 @@
 
 typedef void(^returnChangeDataBlcok)();
 typedef void(^returnChangeNumBlcok)();
+typedef void(^changeSelectAllBlcok)();
+typedef void(^changeSelectBlcok)();
 
 
 @interface LDBuycarListTableView : UITableView
@@ -19,5 +21,9 @@ typedef void(^returnChangeNumBlcok)();
 
 @property(copy,nonatomic)returnChangeNumBlcok changeNumBlcok;//修改btn上的数量
 
+@property(copy,nonatomic)changeSelectAllBlcok selectAllBlcok;
+
+@property(copy,nonatomic)changeSelectBlcok selectBlcok;
+@property(assign,nonatomic)NSInteger selectCount;
 
 @end

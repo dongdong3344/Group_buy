@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PYSearch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-团购项目.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,12 +67,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
+		<key>00EECD81FCAE40456AD7B754ACFB602E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>08E43AB7D039537807954E684079AA57</key>
+		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +82,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6BA3908FC4EFA523CD692796BB03F806</key>
+		<key>1E930703AAB7F7B533D7EB10243C2577</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84120872EEAD40EB9F82D10BFA17BD46</key>
+		<key>6BA3908FC4EFA523CD692796BB03F806</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B82E16FB33EE768F78E74D4F4874B729</key>
+		<key>A92F259656111CEBE436FE626ED7672E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B21380D2C331F2D7028838255C0DE51A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E60B35DEC38004F3C0964FFBB362B70C</key>
+		<key>D4D14370249069A81597282463EBEBD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

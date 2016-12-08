@@ -35,7 +35,7 @@
     [self addContrains];
  }
 
--(void)setupFont{
+-(void)calculateBuyCount{
     
     NSInteger i=0;
     for (LDBuyCarEntity *buyCarEntity in self.buycarEntityArray) {
@@ -69,7 +69,6 @@
     if (!_emptyCarView) {
         _emptyCarView=[[LDEmptyCarView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WITH, SCREEN_HEIGHT)];
         [_emptyCarView.goShopBtn addTarget:self action:@selector(backGroundHighlighted:) forControlEvents:UIControlEventTouchDown];
-        
         [_emptyCarView.goShopBtn addTarget:self action:@selector(backToHomePage) forControlEvents:UIControlEventTouchUpInside];
         
     }
@@ -85,33 +84,29 @@
     }
      return _checkoutView;
 }
-/***购物车商品列表***/
 
+/***全选按钮方法***/
 -(void)selectAllTheGoods:(UIButton *)sender{
-//    sender.selected=!sender.selected;
-//    LDDLog(@"hhhaha");
-    
-    
+
     if (sender.selected) {
         sender.selected=NO;
+        self.buycarListTableView.selectCount=0;//全选按钮没有选中时，选中按钮个数置为0；
         for (LDBuyCarEntity *buyCarEntity in self.buycarEntityArray) {
             [buyCarEntity setIsSelectButton:NO];
         }
-        [self.buycarListTableView reloadData];
-        [self setupFont];
-        [self orderPrice];
-
+        
     }else{
         sender.selected=YES;
+        self.buycarListTableView.selectCount=self.buycarEntityArray.count;//全选按钮被选中时，选中按钮个数置为模型数组里元素个数；
         for (LDBuyCarEntity *buyCarEntity in self.buycarEntityArray) {
             [buyCarEntity setIsSelectButton:YES];
         }
-        [self.buycarListTableView reloadData];
-        [self setupFont];
-        [self orderPrice];
-        
     }
-    }
+    [self.buycarListTableView reloadData];
+    [self calculateBuyCount];
+    [self calculateOrderPrice];
+    
+}
 
 -(LDBuycarListTableView *)buycarListTableView{
     if (!_buycarListTableView) {
@@ -120,20 +115,40 @@
         __weak typeof(self) weakself=self;
         _buycarListTableView.changeDataBlcok=^(){
            
-            [weakself orderPrice];//计算商品总价格
+            [weakself calculateOrderPrice];//计算商品总价格
             
         };
         
         _buycarListTableView.changeNumBlcok=^(){
-            [weakself setupFont];//设置结算按钮上的购买数量
+            [weakself calculateBuyCount];//设置结算按钮上的购买数量
         };
         
+        
+        /***有任何一个按钮取消点击时，全选按钮变成未选中状态***/
+
+        _buycarListTableView.selectAllBlcok=^(){
+            
+            weakself.checkoutView.selectAllBtn.selected=NO;
+        };
+        
+                
+        _buycarListTableView.selectBlcok=^(){
+            [UIView animateWithDuration:0.5 animations:^{
+                weakself.checkoutView.selectAllBtn.selected=YES;
+                weakself.checkoutView.selectAllBtn.transform=CGAffineTransformMakeScale(1.4, 1.4);
+            } completion:^(BOOL finished) {
+                weakself.checkoutView.selectAllBtn.transform=CGAffineTransformMakeScale(1, 1);
+
+                
+            }];
+            
+        };
     }
     return _buycarListTableView;
 }
 
 /***计算价格****/
--(void)orderPrice{
+-(void)calculateOrderPrice{
     CGFloat price=0.0;
     for (LDBuyCarEntity *buyCarEntity in self.buycarEntityArray) {
         if (buyCarEntity.isSelectButton) {
@@ -142,30 +157,25 @@
         }
     }
     NSString *str=@"合计:";
-    NSMutableAttributedString *str1=[[NSMutableAttributedString alloc]initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
+    NSMutableAttributedString *totalStr=[[NSMutableAttributedString alloc]initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
 
     NSString *productPrice=[NSString stringWithFormat:@"￥%.2f",price];
     NSMutableAttributedString *priceStr =[[NSMutableAttributedString alloc]initWithString:productPrice attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName:[UIColor redColor]}];
     
-    [str1 insertAttributedString:priceStr atIndex:str.length];
+    [totalStr insertAttributedString:priceStr atIndex:str.length];
 
-    self.checkoutView.priceLabel.attributedText=str1;
+    self.checkoutView.priceLabel.attributedText=totalStr;
     
 }
 
-
-
-
-/***navigationbar rightButtonItem***/
+/***nav rightButtonItem***/
 -(void)createItems{
     UIBarButtonItem *rightItem=[[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editTableView:)];
     
     [rightItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
    
     self.navigationItem.rightBarButtonItem=rightItem;
-   
-    
-    
+
 }
 -(void)editTableView:(UIBarButtonItem *)sender{
     
@@ -173,9 +183,6 @@
     sender.title=self.buycarListTableView.isEditing ? @"完成":@"编辑";
    
 }
-
-
-
 /***请求购物车数据***/
 -(void)requestBuyCarData{
    // http://123.57.141.249:8080/beautalk/appShopCart/appCartGoodsList.do
@@ -186,12 +193,12 @@
         [self getWithURLString:@"appShopCart/appCartGoodsList.do" parameters:@{@"MemberId":dic[@"MemberId"]} success:^(id responseObject) {
             self.buycarEntityArray=[LDBuyCarEntity mj_objectArrayWithKeyValuesArray:responseObject];
             
-            if (_buycarEntityArray.count>0) {//＞0时，显示购物车内容
+            if (self.buycarEntityArray.count>0) {//＞0时，显示购物车内容
                // LDDLog(@"buycarDataArray:%@",buycarDataArray);
                 self.emptyCarView.hidden=YES;
                 self.buycarListTableView.buycarListData=_buycarEntityArray;
-                [self orderPrice];//请求完成时，就应该显示价格
-                [self setupFont];//设置结算样品数量
+                [self calculateOrderPrice];//请求完成时，就应该显示价格
+                [self calculateBuyCount];//设置结算按钮上的购买数量
                 
             }
         } failure:^(NSError *error) {
@@ -207,7 +214,7 @@
     
    }
 
-/***点击按钮时，背景颜色高亮***/
+/***点击去逛逛按钮时，背景颜色高亮***/
 
 -(void)backGroundHighlighted:(UIButton*)button{
     button.backgroundColor=RGBCOLOR(1, 14, 66);
@@ -217,7 +224,10 @@
 /***设置颜色，点击时按钮颜色高亮，然后再回到页面上，恢复原始颜色。在viewWillAppear方法里恢复***/
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self requestBuyCarData];
+    [self requestBuyCarData];//请求购物车数据
+    self.checkoutView.selectAllBtn.selected=NO;
+    self.buycarListTableView.selectCount=0;
+    
     self.emptyCarView.goShopBtn.backgroundColor=RGBCOLOR(18, 99, 177);
     self.emptyCarView.collectionBtn.backgroundColor=RGBCOLOR(18, 99, 177);
   

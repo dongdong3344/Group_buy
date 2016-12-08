@@ -33,15 +33,12 @@
 /***setter更新表格数据***/
 -(void)setBuycarListData:(NSMutableArray *)buycarListData{
     _buycarListData =buycarListData;
-    
     for (LDBuyCarEntity *buyCarEntity in self.buycarListData) {
         [buyCarEntity setIsSelectButton:NO];//设置所有商品未选中
         [buyCarEntity setIsSelectAllButton:NO];
     }
     
     [self reloadData];
-
-    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -59,7 +56,6 @@
     headerLabel.frame = CGRectMake(17, 0, SCREEN_WITH, 20);
     headerLabel.text = @"普通商品";
     [customView addSubview:headerLabel];
-    
     return customView;
 }
 
@@ -98,9 +94,6 @@
     return cell;
     
 }
-
-
-
 /***增加购买数量方法***/
 -(void)addBuyCount:(UIButton*)sender{
     UIView *cell=[sender superview];//[sender superview]如果仅一次，可能拿到的不是cell
@@ -140,16 +133,32 @@
     UIView *cell=[sender superview];
    
     LDBuyCarEntity *buyCarEntity=self.buycarListData[cell.tag-1000];
+   
+
     if (sender.selected) {
         sender.selected=NO;
         [buyCarEntity setIsSelectButton:NO];
         
+        self.selectCount--;
         
+        if (self.selectAllBlcok) {
+            self.selectAllBlcok();//任何一个按钮没有被选中时，全选按钮为未选中状态
+        }
         
     }else{
+        
         sender.selected=YES;
         [buyCarEntity setIsSelectButton:YES];
+        self.selectCount++;
+        LDDLog(@"当前被选中的按钮个数: % ld",self.selectCount);
+        if (self.selectCount==self.buycarListData.count) {
+            if (self.selectBlcok) {
+                self.selectBlcok();
+            }
+        }
+        
     }
+    
     [self reloadData];
     [self changeData];
     [self changeBuyCountNum];
