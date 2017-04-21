@@ -20,8 +20,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-    
-     //   self.userInteractionEnabled=NO;//不让点击
+
         [self addSubview:self.titleLabel];
         [self addSubview:self.priceLabel];
         [self addSubview:self.buyCountLabel];
@@ -35,7 +34,7 @@
     return self;
 }
 
-/***setter***/
+/***setter 进行赋值***/
 -(void)setBuycarEntity:(LDBuyCarEntity *)buycarEntity{
     
     _buycarEntity=buycarEntity;

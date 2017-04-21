@@ -32,11 +32,11 @@
 -(void)setGoodsListEntity:(LDGoodsListEntity *)goodsListEntity{
     _goodsListEntity=goodsListEntity;
     _titleLabel.text=goodsListEntity.Title;
-    [_countryImg sd_setImageWithURL:[NSURL URLWithString:goodsListEntity.CountryImg] placeholderImage:[UIImage imageNamed:@"placeholder"]];
+   // [_countryImg sd_setImageWithURL:[NSURL URLWithString:goodsListEntity.CountryImg] placeholderImage:[UIImage imageNamed:@"placeholder"]];
 
     [_productImg sd_setImageWithURL:[NSURL URLWithString:goodsListEntity.ImgView] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
-//    _priceLabel.text=[NSString stringWithFormat:@"%@ ￥%@",goodsListEntity.Price,goodsListEntity.DomesticPrice];
+
     
     [self priceAttributedString];
     
@@ -51,7 +51,7 @@
     
     
     NSString *domesticPrice=[NSString stringWithFormat:@"￥%@ ",_goodsListEntity.DomesticPrice];
-    NSMutableAttributedString   *domesticPriceStr =[[NSMutableAttributedString alloc]initWithString:domesticPrice attributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132),NSFontAttributeName:[UIFont systemFontOfSize:12],NSStrikethroughStyleAttributeName:@(2),NSStrikethroughColorAttributeName:[UIColor grayColor]}];
+    NSMutableAttributedString  *domesticPriceStr =[[NSMutableAttributedString alloc]initWithString:domesticPrice attributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132),NSFontAttributeName:[UIFont systemFontOfSize:12],NSStrikethroughStyleAttributeName:@(2),NSStrikethroughColorAttributeName:[UIColor grayColor]}];
     
     [priceStr insertAttributedString:domesticPriceStr atIndex:price.length];
     self.priceLabel.attributedText=priceStr;

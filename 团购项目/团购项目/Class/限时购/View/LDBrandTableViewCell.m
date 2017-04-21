@@ -39,7 +39,7 @@
     self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self addSubview:self.pictureView];
-        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;//点击不变色
     }
     return self;
 }

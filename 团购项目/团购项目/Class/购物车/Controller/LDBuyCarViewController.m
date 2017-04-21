@@ -192,10 +192,10 @@
     if (dic.count>0) {
         [self getWithURLString:@"appShopCart/appCartGoodsList.do" parameters:@{@"MemberId":dic[@"MemberId"]} success:^(id responseObject) {
             self.buycarEntityArray=[LDBuyCarEntity mj_objectArrayWithKeyValuesArray:responseObject];
-            
+           // LDDLog(@"buycarDataArray:%@",_buycarEntityArray);
+
             if (self.buycarEntityArray.count>0) {//＞0时，显示购物车内容
-               // LDDLog(@"buycarDataArray:%@",buycarDataArray);
-                self.emptyCarView.hidden=YES;
+                                self.emptyCarView.hidden=YES;
                 self.buycarListTableView.buycarListData=_buycarEntityArray;
                 [self calculateOrderPrice];//请求完成时，就应该显示价格
                 [self calculateBuyCount];//设置结算按钮上的购买数量

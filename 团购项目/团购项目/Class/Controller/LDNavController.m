@@ -15,11 +15,9 @@
 @implementation LDNavController
 +(void)initialize{
     UINavigationBar *navBar=[UINavigationBar appearance];
-   
-    //[navBar setBackgroundImage:[UIImage imageNamed:@"nav_backImage"] forBarMetrics:UIBarMetricsDefault];
+
     navBar.barTintColor=RGBCOLOR(55, 158, 222);
-    [navBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18
-                                                          ],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [navBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     
 }

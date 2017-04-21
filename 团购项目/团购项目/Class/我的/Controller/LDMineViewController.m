@@ -117,10 +117,10 @@
    
 
     
-    NSNotificationCenter *notiCenter = [NSNotificationCenter defaultCenter];
+    
     
     // 注册一个监听事件。第三个参数的事件名， 系统用这个参数来区别不同事件。
-    [notiCenter addObserver:self selector:@selector(receiveNotification) name:@"reloadData" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification) name:@"reloadData" object:nil];
     
    }
 

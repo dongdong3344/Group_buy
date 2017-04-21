@@ -12,9 +12,9 @@
 #import "LDLoginView.h"
 #import "LDMineViewController.h"
 
-NSString * const KEY_USERNAME_PASSWORD = @"com.company.app.usernamepassword";
-NSString * const KEY_USERNAME = @"com.company.app.username";
-NSString * const KEY_PASSWORD = @"com.company.app.password";
+NSString *const KEY_USERNAME_PASSWORD = @"com.company.app.usernamepassword";
+NSString *const KEY_USERNAME = @"com.company.app.username";
+NSString *const KEY_PASSWORD = @"com.company.app.password";
 
 
 @interface LDLoginViewController ()
@@ -130,11 +130,11 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
     
    _phoneNumDefaultes=[NSUserDefaults standardUserDefaults];
     
-    [_phoneNumDefaultes setObject:self.loginView.phoneNumText.text  forKey:@"phone"];
+    [_phoneNumDefaultes setObject:self.loginView.phoneNumText.text forKey:@"phone"];
     
     NSMutableDictionary *mutableDict=[NSMutableDictionary dictionary];
     [mutableDict setObject:self.loginView.phoneNumText.text forKey:KEY_USERNAME];
-     [LDDKeyChain save:KEY_USERNAME data:mutableDict];
+    [LDDKeyChain save:KEY_USERNAME data:mutableDict];
     
        if (self.loginView.checkBox.on) {
         //存用户名和密码到keychain
@@ -239,9 +239,9 @@ NSString * const KEY_PASSWORD = @"com.company.app.password";
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     
-    [self.loginView.phoneNumText resignFirstResponder];
+    [self.loginView endEditing:YES];
     
-    [self.loginView.passwordText resignFirstResponder];
+ 
 }
 
 

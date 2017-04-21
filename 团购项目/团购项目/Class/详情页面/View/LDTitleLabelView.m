@@ -90,12 +90,6 @@
     NSString *originalPrice=[NSString stringWithFormat:@"%@ ",self.titleEntity.OriginalPrice];
     NSMutableAttributedString *originalPriceStr =[[NSMutableAttributedString alloc]initWithString:originalPrice attributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132),NSFontAttributeName:[UIFont systemFontOfSize:18],NSStrikethroughStyleAttributeName:@(2),NSStrikethroughColorAttributeName:[UIColor grayColor]}];
     
-  
-    
-    NSString *discount=[NSString stringWithFormat:@" %@折 ",self.titleEntity.Discount];
-    NSMutableAttributedString *discountStr =[[NSMutableAttributedString alloc]initWithString:discount attributes:@{NSForegroundColorAttributeName:RGBCOLOR(230, 50, 37),NSFontAttributeName:[UIFont systemFontOfSize:14]}];
-
-     [priceStr insertAttributedString:discountStr atIndex:originalPrice.length];
      [priceStr insertAttributedString:originalPriceStr atIndex:price.length];
     
     self.priceLabel.attributedText=priceStr;

@@ -11,7 +11,7 @@
 #define RGBCOLOR(X,Y,Z)  [UIColor colorWithRed:X/255.0 green:Y/255.0 blue:Z/255.0 alpha:1]
 
 #define SCREEN_WITH    [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT    [UIScreen mainScreen].bounds.size.height
+#define SCREEN_HEIGHT  [UIScreen mainScreen].bounds.size.height
 
 
 #ifdef DEBUG

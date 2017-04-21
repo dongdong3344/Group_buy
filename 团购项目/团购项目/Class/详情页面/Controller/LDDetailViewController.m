@@ -36,7 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mainScrollviewContentHeight=380;//轮播图高度
-    //self.edgesForExtendedLayout = 0;
+    self.automaticallyAdjustsScrollViewInsets=YES;//自动调整内边距
+   
     self.navigationController.navigationBar.barTintColor=[UIColor whiteColor];
     [self.view addSubview:self.mainScrollView];
     [self.mainScrollView addSubview:self.cycleView];
@@ -260,14 +261,16 @@
     }];
 }
 
+
+
+/***设置navbar 透明***/
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
-    
-    self.navigationItem.hidesBackButton=YES;
+    self.navigationItem.hidesBackButton=YES;//隐藏返回按钮
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];//设置navigationbar透明
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc]init]];//去除navigationbar边缘阴影线
-    UIButton *backBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *backBtn=[UIButton buttonWithType:UIButtonTypeCustom];//自定义返回按钮
     [backBtn setImage:[UIImage imageNamed:@"backBtn"] forState:UIControlStateNormal];
     UIBarButtonItem *leftItem=[[UIBarButtonItem alloc]initWithCustomView:backBtn];
     [backBtn addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];

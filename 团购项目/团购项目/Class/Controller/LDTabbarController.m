@@ -21,10 +21,10 @@
     [self setupViewcontrollers];
     
 }
+
 -(void)setupViewcontrollers{
     
-  
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBCOLOR(7, 123, 251)} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBCOLOR(211, 37, 62)} forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBCOLOR(132, 132, 132)} forState:UIControlStateNormal];
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_back"]];
     
@@ -38,7 +38,8 @@
         vc.title=titles[i];
     //vc.view.backgroundColor=RGBCOLOR(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255));
         [vc.tabBarItem setImage:[UIImage imageNamed:images[i]]];
-        [vc.tabBarItem setSelectedImage:[UIImage imageNamed:selectedImage[i]]];
+        vc.tabBarItem.selectedImage=[[UIImage imageNamed:selectedImage[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];//保持图片为原来样式
+    
         LDNavController *nav=[[LDNavController alloc]initWithRootViewController:vc];
         [controllersArry replaceObjectAtIndex:i withObject:nav];
     }

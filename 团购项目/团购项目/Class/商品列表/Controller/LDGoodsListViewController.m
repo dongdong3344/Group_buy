@@ -64,4 +64,9 @@
     return _topButtonView;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.barTintColor=RGBCOLOR(55, 158, 222);
+}
+
 @end

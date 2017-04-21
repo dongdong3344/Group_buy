@@ -33,7 +33,7 @@
         [self addSubview:self.contentLabel];
         [self addSubview:self.pricLabel];
         [self addSubview:self.buyCarBtn];
-        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;//点击不变色
     }
     return  self;
 }
